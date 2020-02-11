@@ -26,7 +26,7 @@ input[type=file]:hover{
 input[type=text]:invalid,
 input[type=date]:invalid,
 input[type=file]:invalid,
-input[type=url]:invalid,
+input[type=password]:invalid,
 input[type=tel]:invalid{
     background-color: rgb(244, 244, 250);
     color: black;
@@ -35,6 +35,7 @@ input[type=tel]:invalid{
 input[type=text]:valid, 
 input[type=date]:valid,
 input[type=file]:valid,
+input[type=password]:valid,
 input[type=tel]:valid{
     background-color: rgb(8, 243, 86);
     color: black;
