@@ -4,12 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registro de estudiantes</title>
+    <title>Conversores</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
+  <div class="continer">
+<form id="frmConversores">
+    <div class="row row-cols-4 m-2">
+        <div class="col text-center text-primary">
+        APP COnVERSORES
+    </div>
+    </div>
+    <div class="row row-cols-4 m-2">
+        <div class="col">
+            DE: <select  id="cboDe" class="from-control">
+                <option value="dolar">Dolar</option>
+                <option value="quezal">Quetzal</option>
+                <option value="lempira">Lempira</option>
+                <option value="euro">Euro</option>
+            </select>
+        </div>
+        <div class="col">
+            A: <select  id="cboDe" class="from-control">
+                <option value="dolar">Dolar</option>
+                <option value="quezal">Quetzal</option>
+                <option value="lempira">Lempira</option>
+                <option value="euro">Euro</option>
+            </select>
+        </div>
+       
+    </div>
+    <div class="row row-cols-4 m-2">
+        <div class="col text-center"><input type="text" required="required" pattern="[0-9.]{1,}" placeholder="Cantidad" id="txtCantidadConversor"></div>
+    </div>
+    <div class="col text-center">
+        <p class="bg-success text-white" id="LblRespuesta">Respuesta</p>
+    </div>
+    <div class="row row-cols-4">
+        <div class="col text-center"><input type="submit" id="btnConvertirMoneda" class="btn btn-primary"></div>
+    </div>
+</form>
   
-    </form>
     
 </body>
 </html>
