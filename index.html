@@ -10,26 +10,41 @@
 <body>
     <h1>APP ALUMNOS ONLINE</h1>
     <form name="frmAlumnos" id="frmAlumnos"method="get" >
-        <div class="container">
-            <div class="fila">
-                <input type="text" id="txtCodigoAlumno" 
-                    required="required" placeholder="codigo" pattern="^[A-Z]{4}[0-9]{6}">
-            </div>
-            <div class="fila">
-                <input type="text" id="txtNombreAlumno" required="required" 
-                    placeholder="Nombre" pattern="[a-zA-ZñÑ ]{3,65}">
-            </div>
-            <div class="fila">
-                <input type="text" id="txtDireccionAlumno" required="required" placeholder="Direccion" >
-            </div>
-            <div class="fila">
-                <input type="text" id="txtTelefonoAlumno" required="required" 
-                    placeholder="Telefono" pattern="[0-9]{4}-[0-9]{4}">
-            </div>
-            <div class="fila">
-                <input type="submit" value="Guardar">
-                <input type="button" id="btnRecuperarAlumno" value="Recuperar">
-            </div>
+        <h1 class="controltitulo">Registro <span>Estudiantes</span></h1>
+
+        <div class="centrarH">
+            <input type="text" required="required" id="txtcodigoAlumno"
+            pattern="^[A-Z]{4}[0-9]{6}" size="20" placeholder="Codigo">
+            <input class="buttonBuscar" type="button" value="Buscar" id="btnbuscar">
+            <br>
+            <br>
+        </div>
+
+        <div>
+            <input type="text" required="required" id="txtnombreAlumno"
+            pattern="[a-zA-ZñÑ ]{3,60}" size="20" placeholder="Nombre"><br>
+            <br>
+        </div>
+       
+        <div>
+            <input type="text" required="required" id="txtapellidoAlumno"
+            pattern="[a-zA-ZñÑ ]{3,60}" size="20" placeholder="Apellido"><br>
+            <br>
+        </div>
+        <div>
+            <input type="text" required="required" id="txttelAlumno"
+            placeholder="TEL. 0000-0000" pattern="[0-9]{4}-[0-9]{4}"><br>
+            <br>
+        </div>
+        
+        <div>
+            <input type="text" required="required" id="txtdireccionAlumno" placeholder="Direccion"><br>
+            <br>
+        </div>
+        
+        <div>  
+            <input type="submit" id="btnguardar" value="Guardar">
+            <input type="button" id="btnnuevo" value="Nuevo">
         </div>
     </form>
     <script src="app.js"></script>
