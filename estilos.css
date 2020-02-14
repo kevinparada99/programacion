@@ -1,22 +1,22 @@
 body{
-    font-size: 14px;
+    font-size: 15px;
     font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
 }
 body > h1{
-    background-color: brown;
-    margin: 10px;
+    background-color: rgb(240, 215, 215);
+    margin: 50px;
 }
 input{
-    height: 24px;
-    border: 1px solid rgb(129, 131, 134);
+    height: 40px;
+    border: 2px solid rgb(251, 253, 252);
     border-radius: 5px;
 }
 input[type=submit],
 input[type=button],
 input[type=file]{
-    background-color: rgb(142, 176, 238);
-    color: #FFF;
+    background-color: rgb(182, 243, 240);
+    color: #3b83BD;
     text-transform: uppercase;
     font-weight: bolder;
     height: 32px;
@@ -25,7 +25,7 @@ input[type=submit]:hover,
 input[type=button]:hover,
 input[type=file]:hover{
     color:  rgb(56, 99, 218);
-    background-color: #FFF;
+    background-color: #00FF00;
 }
 input[type=text]:invalid,
 input[type=date]:invalid,

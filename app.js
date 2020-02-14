@@ -30,11 +30,11 @@ function guardarRegistro(e){
     console.log(nombre, apellido, telefono, direccion);
 
     if( 'localStorage' in window ){
-        window.localStorage.setItem("codigo" + codigo, codigo);
-        window.localStorage.setItem("nombre" + codigo, nombre);
-        window.localStorage.setItem("apellido" + codigo, apellido);
-        window.localStorage.setItem("direccion" + codigo, direccion);
-        window.localStorage.setItem("telefono" + codigo, telefono);
+        window.localStorage.setItem("codigo de:"+nombre, codigo);
+        window.localStorage.setItem("nombre de:"+nombre,nombre);
+        window.localStorage.setItem("apellido de:"+nombre, apellido);
+        window.localStorage.setItem("direccion de:"+nombre, direccion);
+        window.localStorage.setItem("telefono de:" +nombre,telefono);
     } else {
         alert("Por favor ACTUALIZATE!!!.");
     }

@@ -11,11 +11,10 @@
     <h1>APP ALUMNOS ONLINE</h1>
     <form name="frmAlumnos" id="frmAlumnos"method="get" >
         <h1 class="controltitulo">Registro <span>Estudiantes</span></h1>
-
         <div class="centrarH">
             <input type="text" required="required" id="txtcodigoAlumno"
             pattern="^[A-Z]{4}[0-9]{6}" size="20" placeholder="Codigo">
-            <input class="buttonBuscar" type="button" value="Buscar" id="btnbuscar">
+            
             <br>
             <br>
         </div>
@@ -44,7 +43,8 @@
         
         <div>  
             <input type="submit" id="btnguardar" value="Guardar">
-            <input type="button" id="btnnuevo" value="Nuevo">
+            <input type="button" id="btnnuevo" value="limpiar">
+            <input class="buttonBuscar" type="button" value="Recuperar" id="btnbuscar">
         </div>
     </form>
     <script src="app.js"></script>
