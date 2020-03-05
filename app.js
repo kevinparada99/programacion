@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded",e=>{
         cantidad = document.querySelector("#txtCantidadConversores").value,
         $res = document.querySelector("#lblRespuesta");
     let monedas={
-        'libras':1.5,
+        'libras':1,
         'toneladas':0.0004535923,
         'honsas':16, 
     };
