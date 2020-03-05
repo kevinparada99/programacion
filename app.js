@@ -1,50 +1,16 @@
-document.addEventListener("DOMContentLoaded", e=>{
-    document.querySelector("#frmAlumnos").addEventListener("submit", event=>{
-        guardarRegistro();
-    });
-     document.querySelector("#btnnuevo").addEventListener("click", event=>{
-        limpiar();
-    });
-    document.querySelector("#btnbuscar").addEventListener("click", event=>{
-        buscar();
-   });
+document.addEventListener("DOMContentLoaded",e=>{
+    document.addEventListener("submit",event=>{
+        event.preventDefault();
+
+        let de = document.querySelector("#cboDe").value,
+        a = document.querySelector("#cboA").value,
+        cantidad = document.querySelector("#txtCantidadConversores").value,
+        $res = document.querySelector("#lblRespuesta");
+    let monedas={
+        'libras':1,
+        'toneladas':0.0004535923,
+        'honsas':16, 
+    };
+    $res.innerHTML = `Respuesta: ${ monedas[a] / monedas[de] * cantidad }`;
 });
-
-function limpiar(){
-        document.querySelector("#txtcodigoAlumno").value = "";
-        document.querySelector("#txtnombreAlumno").value = "";
-        document.querySelector("#txtapellidoAlumno").value = "";
-        document.querySelector("#txttelAlumno").value="";
-        document.querySelector("#txtdireccionAlumno").value="";
-}
-
-function guardarRegistro(e){
-    event.preventDefault();
-
-    let codigo=document.querySelector("#txtcodigoAlumno").value,
-    nombre=document.querySelector("#txtnombreAlumno").value,
-    apellido=document.querySelector("#txtapellidoAlumno").value,
-    telefono=document.querySelector("#txttelAlumno").value,
-    direccion=document.querySelector("#txtdireccionAlumno").value;
-
-    console.log(nombre, apellido, telefono, direccion);
-
-    if( 'localStorage' in window ){
-        window.localStorage.setItem("codigo de:"+nombre, codigo);
-        window.localStorage.setItem("nombre de:"+nombre,nombre);
-        window.localStorage.setItem("apellido de:"+nombre, apellido);
-        window.localStorage.setItem("direccion de:"+nombre, direccion);
-        window.localStorage.setItem("telefono de:" +nombre,telefono);
-    } else {
-        alert("Por favor ACTUALIZATE!!!.");
-    }
-}
-
-function buscar(){
-    let codigo=document.querySelector("#txtcodigoAlumno").value;
-    document.querySelector("#txtnombreAlumno").value=window.localStorage.getItem("nombre" + codigo);
-    document.querySelector("#txtapellidoAlumno").value=window.localStorage.getItem("apellido" + codigo);
-    document.querySelector("#txttelAlumno").value=window.localStorage.getItem("telefono" + codigo);
-    document.querySelector("#txtdireccionAlumno").value=window.localStorage.getItem("direccion" + codigo);
-
-}
+});

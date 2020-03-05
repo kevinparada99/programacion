@@ -6,47 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Registro de alumnos</title>
     <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    <h1>APP ALUMNOS ONLINE</h1>
-    <form name="frmAlumnos" id="frmAlumnos"method="get" >
-        <h1 class="controltitulo">Registro <span>Estudiantes</span></h1>
-        <div class="centrarH">
-            <input type="text" required="required" id="txtcodigoAlumno"
-            pattern="^[A-Z]{4}[0-9]{6}" size="20" placeholder="Codigo">
-            
-            <br>
-            <br>
+    <div class="container">
+        <form id="frmConversores" >
+            <div class="row row-cols-2 p-2">
+                <div class="col text-center bg-info text-white">
+                 conversores de peso
+                </div>
+            </div>
+            <div class="row row-cols-4 p-2">
+                <div class="col">
+                    DE: <select id="cboDe" class="form-control">
+                        <option value="libras">Libras</option>
+                        <option value="toneladas">Toneladas</option>
+                        <option value="honsas">Honsas</option>
+                    </select>
+                </div>
+                <div class="col">
+             A: <select id="cboA" class="form-control">
+                        <option value="libras">Libras</option>
+                        <option value="toneladas">Toneladas</option>
+                        <option value="honsas">Honsas</option>
+                </select>
         </div>
+    </div>
 
-        <div>
-            <input type="text" required="required" id="txtnombreAlumno"
-            pattern="[a-zA-ZñÑ ]{3,60}" size="20" placeholder="Nombre"><br>
-            <br>
+    <div class="row row-cols-4 p-2">
+        <div class="col text-center">
+            <input type="text" required="required" pattern="[0-9.]{1,}" placeholder="cantidad" id="txtCantidadConversores" class="form-control">
         </div>
-       
-        <div>
-            <input type="text" required="required" id="txtapellidoAlumno"
-            pattern="[a-zA-ZñÑ ]{3,60}" size="20" placeholder="Apellido"><br>
-            <br>
+        <div class="col text-center">
+            <p class="bg-success text-white" id="lblRespuesta">Respuesta: ?</p>
         </div>
-        <div>
-            <input type="text" required="required" id="txttelAlumno"
-            placeholder="TEL. 0000-0000" pattern="[0-9]{4}-[0-9]{4}"><br>
-            <br>
-        </div>
-        
-        <div>
-            <input type="text" required="required" id="txtdireccionAlumno" placeholder="Direccion"><br>
-            <br>
-        </div>
-        
-        <div>  
-            <input type="submit" id="btnguardar" value="Guardar">
-            <input type="button" id="btnnuevo" value="limpiar">
-            <input class="buttonBuscar" type="button" value="Recuperar" id="btnbuscar">
-        </div>
-    </form>
+    </div>
+    <div class="row row-cols-2">
+        <div class="col text-center">
+            <input type="submit" id="btnConvertirMoneda"class="btn btn-primary"></div>
+    </div>
+   </form>
+  
     <script src="app.js"></script>
 </body>
 </html>
