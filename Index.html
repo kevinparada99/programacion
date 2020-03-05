@@ -5,36 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="estilos.css">
-    <title>Bienvenido a Programacion IV</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>conversores parcial</title>
 </head>
 <body>
-<P>Bienvenidos a Programacion IV, Vamos a Divertirnos!!!</P>
-<form method="POST">
-    <input pattern="[a-zA-ZÑñ](3,65)" required type="text" placeholder="Nombre">
-    <br><br>
-    <textarea pattern="[\w](110,150)" required cols="30" rows="3">
-        direccion...
-    </textarea> <br>
-    <input type="date">
-    <input type="color">
-<br>
-    <input type="button" value="Resgristar">
-    <input type="radio" name="cbo" id="suma">
-    <input type="radio" name="cbo" id="resta">
-    <input type="radio" name="cbo" id="multi">
-    <input type="radio" name="cbo" id="division">
-    <br>
-    <input type="checkbox" id="php"> <label for="php">PHP</label> <form action=""></form>
-    <input type="checkbox" id="js"> <label for="js">JS</label>
-    <input type="checkbox" id="json"> <label for="json">JSON</label>
-    <input type="checkbox" id="nodejs"> <label for="nodejs">NodeJS</label>
-    <br>
-    <input type="submit" value="Guardar">
-
-
-
-
-
-</form>
+  <form method="post" id="frmConversores">
+    <div class="container">
+        <div class="row row-cols-2">
+            <div class="col text-center bg-info text-white">
+                APP CONVERSORES
+            </div>
+        </div>
+        <div class="row row-cols-4 p-2">
+            <div class="col">
+                CONVERTIR:
+                <select id="cboConvertir" class="form-control" onchange="seleccionar()">
+                    <option value="seleccion">Seleccionar</option>
+                    <option value="moneda">Moneda</option>
+                    <option value="almacenamiento">Almacenamiento</option>
+                    <option value="longitud">Longitud</option>
+                 </select>
+            </div>
+        </div>
+        <div class="row row-cols-4 p-2">
+            <div class="col">
+                DE:
+                <select id="cboDe" class="form-control">
+                </select>
+            </div>
+            <div class="col">
+                A:
+                <select id="cboA" class="form-control">
+                </select>
+            </div>
+        </div> 
+        <div class="row row-cols-4 p-2">
+            <div class="col text-center">
+                <input type="text" required="required" pattern="[0-9.]{1,}" placeholder="Cantidad" id="txtCantidadConversor" class="form-control">
+            </div>
+            <div class="col text-center">
+                <p class="bg-success text-white" id="lblRespuesta">Respuesta:</p>
+            </div>
+        </div>
+        <div class="row row-cols-2 p-2">
+                <input type="submit" id="btnConvertir" value="Convertir" class="btn btn-primary">
+            </div>
+        </div>
+    </div>
+    </form>
+ <script src="app.js"></script>
 </body>
 </html>

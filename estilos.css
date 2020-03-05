@@ -23,15 +23,15 @@ input[type=button]{
 input[type=submit]:hover, 
 input[type=button]:hover{
     background-color: #FFF;
-    color: blue;
+    color: rgb(28, 115, 197);
 }
 input[type=text]:valid, 
 textarea:valid,
 input[type=date]:valid{
-    background-color: rgb(156, 253, 177);
+    background-color: rgb(59, 115, 218);
 }
 input[type=text]:invalid, 
 textarea:invalid,
 input[type=date]:invalid{
-    background-color: rgb(255, 172, 172);
+    background-color: rgb(183, 146, 218);
 }
