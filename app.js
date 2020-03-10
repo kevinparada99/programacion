@@ -3,14 +3,16 @@ document.addEventListener("DOMContentLoaded",e=>{
         event.preventDefault();
 
         let de = document.querySelector("#cboDe").value,
-        a = document.querySelector("#cboA").value,
         cantidad = document.querySelector("#txtCantidadConversores").value,
+        a = document.querySelector("#cboA").value,
         $res = document.querySelector("#lblRespuesta");
-    let monedas={
-        'libras':1,
+    let peso={
+        'libras':1.5,
         'toneladas':0.0004535923,
         'honsas':16, 
+
     };
-    $res.innerHTML = `Respuesta: ${ monedas[a] / monedas[de] * cantidad }`;
+    $res.innerHTML = `Respuesta: ${ peso[a] / peso[de] * cantidad }`;
 });
 });
+
