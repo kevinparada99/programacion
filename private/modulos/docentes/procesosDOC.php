@@ -1,45 +1,46 @@
+
 <?php 
 include('../../Config/Config.php');
-$alumno = new alumno($conexion);
+$docente = new docente($conexion);
 
 $proceso = '';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 	$proceso = $_GET['proceso'];
 }
-$alumno->$proceso( $_GET['alumno'] );
-print_r(json_encode($alumno->respuesta));
+$docente->$proceso( $_GET['docente'] );
+print_r(json_encode($docente->respuesta));
 
-class alumno{
+class docente{
     private $datos = array(), $db;
     public $respuesta = ['msg'=>'correcto'];
     
     public function __construct($db){
         $this->db=$db;
     }
-    public function recibirDatos($alumno){
-        $this->datos = json_decode($alumno, true);
+    public function recibirDatos($docente){
+        $this->datos = json_decode($docente, true);
         $this->validar_datos();
     }
     private function validar_datos(){
         if( empty($this->datos['codigo']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el codigo del estudiante';
+            $this->respuesta['msg'] = 'por favor ingrese el codigo del docente';
         }
         if( empty($this->datos['nombre']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el nombre del estudiante';
+            $this->respuesta['msg'] = 'por favor ingrese el nombre del docente';
         }
-        if( empty($this->datos['direccion']) ){
-            $this->respuesta['msg'] = 'por favor ingrese la direccion del estudiante';
+        if( empty($this->datos['correo']) ){
+            $this->respuesta['msg'] = 'por favor ingrese la correo del docente';
         }
-        $this->almacenar_alumno();
+        $this->almacenar_Docente();
     }
-    private function almacenar_alumno(){
+    private function almacenar_Docente(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO alumnos (codigo,nombre,direccion,telefono) VALUES(
+                    INSERT INTO docente (codigo,nombre,correo,telefono) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
-                        "'. $this->datos['direccion'] .'",
+                        "'. $this->datos['correo'] .'",
                         "'. $this->datos['telefono'] .'"
                     )
                 ');
