@@ -1,7 +1,7 @@
 var $ = el => document.querySelector(el);
 document.addEventListener("DOMContentLoaded",event=>{
-    let alumnos = Document.getElementById("idalumno");
-    let docentes = Document.getElementById("iddocentes");
+    let alumnos = document.getElementById("idalumno");
+    let docentes = document.getElementById("iddocentes");
 
   docentes.addEventListener("click", e=>{
      e.stopPropagation();
