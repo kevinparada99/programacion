@@ -66,7 +66,10 @@ class docente{
         ');
         return $this->respuesta = $this->db->obtener_data();
     }
+
+
     public function eliminarDocente($idDocente = 0){
+
         $this->db->consultas('
             DELETE docentes
             FROM docentes

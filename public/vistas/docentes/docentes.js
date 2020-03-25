@@ -26,3 +26,4 @@ export function modulo(){
         $("#frm-docente").dataset.iddocente = '';
     });
 }
+
