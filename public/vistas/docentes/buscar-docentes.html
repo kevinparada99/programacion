@@ -1,7 +1,7 @@
-<form method="post" id="frm-buscar-docentes">
+<form method="POST" id="frm-buscar-docentes">
     <div class="card text-white bg-dark mb-3" style="max-width: 48rem;">
-        <div class="card-header">
-            BUSQUEDA DE DOCENTES
+        <div class="car-header">
+            BUSQUEDA DOCENTES
 
             <button type="button" id="btn-close-buscar-docentes" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -12,21 +12,30 @@
                 <thead>
                     <tr>
                         <th colspan="5">
-                            <input type="text" id="txtBuscarDocente" placeholder="codigo, nombre o dui" class="form-control">
+                            <input type="text" v-model="valor" v-on:keyup="buscarDocente" placeholder="codigo,nombre o dui" class="form-control">
                         </th>
                     </tr>
                     <tr>
                         <th>CODIGO</th>
                         <th>NOMBRE</th>
                         <th>DUI</th>
-                        <th>TELEFONO</th> 
+                        <th>TELEFONO</th>
                         <th> </th>
                     </tr>
                 </thead>
                 <tbody>
-
+                    <tr v-for="profesor in misdocentes" :key="profesor.idDocente" v-on:click="modificarDocente(profesor)">
+                        <td>{{ profesor.codigo }}</td>
+                        <td>{{ profesor.nombre }}</td>
+                        <td>{{ profesor.dui }}</td>
+                        <td>{{ profesor.telefono }}</td>
+                        <td>
+                            <input v-on:click="eliminarDocente(profesor.idDocente)" type="button" class="btn btn-outline-danger text-white" value="del">
+                        </td>
+                    </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </form>
+<script src="public/vistas/docentes/buscar-docentes.js"></script>
