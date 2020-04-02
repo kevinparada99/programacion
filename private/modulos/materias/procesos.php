@@ -61,7 +61,7 @@ class materia{
         $this->db->consultas('
             select materias.idMateria, materias.codigo, materias.nombre, materias.tipo, materias.descripcion
             from materias
-            where materias.codigo like "%'. $valor .'%" or materias.nombre like "%'. $valor .'%"
+            where materias.codigo like "%'. $valor .'%" or materias.nombre like "%'. $valor .'%" or materias.tipo like "%'. $valor .'%"
         ');
         return $this->respuesta = $this->db->obtener_data();
     }
