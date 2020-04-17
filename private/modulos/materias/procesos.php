@@ -22,35 +22,36 @@ class materia{
     }
     private function validar_datos(){
         if( empty($this->datos['codigo']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el codigo de la materia';
+            $this->respuesta['msg'] = 'por favor ingrese el Código';
         }
         if( empty($this->datos['nombre']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el nombre de la materia';
+            $this->respuesta['msg'] = 'por favor ingrese el Nombre';
         }
-        if( empty($this->datos['tipo']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el tipo de materia';
+        if( empty($this->datos['modalidad']) ){
+            $this->respuesta['msg'] = 'por favor ingrese la Modalidad';
         }
-        $this->almacenar_materia();
+
+        $this->almacenar_docente();
     }
-    private function almacenar_materia(){
+    private function almacenar_docente(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO materias (codigo,nombre,tipo,descripcion) VALUES(
+                    INSERT INTO materias (codigo,nombre,modalidad,informacion) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
-                        "'. $this->datos['tipo'] .'",
-                        "'. $this->datos['descripcion'] .'"
+                        "'. $this->datos['modalidad'] .'",
+                        "'. $this->datos['informacion'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
             } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
                     UPDATE materias SET
-                        codigo     = "'. $this->datos['codigo'] .'",
-                        nombre     = "'. $this->datos['nombre'] .'",
-                        tipo       = "'. $this->datos['tipo'] .'",
-                        descripcion   = "'. $this->datos['descripcion'] .'"
+                        codigo      = "'. $this->datos['codigo'] .'",
+                        nombre      = "'. $this->datos['nombre'] .'",
+                        modalidad   = "'. $this->datos['modalidad'] .'",
+                        informacion    = "'. $this->datos['informacion'] .'"
                     WHERE idMateria = "'. $this->datos['idMateria'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
@@ -59,9 +60,9 @@ class materia{
     }
     public function buscarMateria($valor = ''){
         $this->db->consultas('
-            select materias.idMateria, materias.codigo, materias.nombre, materias.tipo, materias.descripcion
+            select materias.idMateria, materias.codigo, materias.nombre, materias.modalidad, materias.informacion
             from materias
-            where materias.codigo like "%'. $valor .'%" or materias.nombre like "%'. $valor .'%" or materias.tipo like "%'. $valor .'%"
+            where materias.codigo like "%'. $valor .'%" or materias.nombre like "%'. $valor .'%" or materias.modalidad like "%' . $valor .'%"
         ');
         return $this->respuesta = $this->db->obtener_data();
     }

@@ -1,0 +1,60 @@
+<form v-on:submit.prevent="guardarReceta" data-accion="nuevo" data-idreceta='' id="frm-recetas" method="post">
+    <div class="card text-white bg-success mb-3" style="max-width: 24rem;">
+        <div class="card-header">
+            Agregar Receta
+        
+            <button type="button" id="btn-close-recetas" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="row p-2">
+                <div class="col-4">
+                    CODIGO
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="receta.codigo" placeholder="AAAA000000" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    RECETA
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="receta.nombre" placeholder="AAA AAA" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    INGRED
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="receta.ingrediente" placeholder="AAA" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    INFO
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="receta.informacion" placeholder="AAAAAAAA-AAAAAA" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2"> 
+                <div class="col-12 text-center">
+                    <input id="btnGuardarRecetas" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
+                    <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
+                    <input type="button" class="btn btn-outline-dark mostrar-buscar-recetas text-white" data-modulo="recetas" data-form="buscar-recetas" value="Buscar">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 text-center">
+                    <div class="alert alert-success" role="alert">
+                        {{ receta.msg }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="public/vistas/recetas/recetas.js"></script>

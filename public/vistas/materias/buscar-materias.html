@@ -1,7 +1,7 @@
 <form method="POST" id="frm-buscar-materias">
     <div class="card text-white bg-dark mb-3" style="max-width: 48rem;">
         <div class="car-header">
-            BUSQUEDA MATERIAS
+            BUSQUEDA MATERIA
 
             <button type="button" id="btn-close-buscar-materias" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -12,25 +12,28 @@
                 <thead>
                     <tr>
                         <th colspan="5">
-                            <input type="text" v-model="valor" v-on:keyup="buscarMateria" placeholder="codigo,nombre o tipo" class="form-control">
+                            <input type="text" v-model="valor" v-on:keyup="buscarMateria" placeholder="codigo o nombre o modalidad"
+                                class="form-control">
                         </th>
                     </tr>
                     <tr>
                         <th>CODIGO</th>
                         <th>NOMBRE</th>
-                        <th>TIPO</th>
-                        <th>DESCRIPCION</th>
+                        <th>MODALIDAD</th>
+                        <th>INFORMACION</th>
                         <th> </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="asignatura in mismaterias" :key="asignatura.idMaterias" v-on:click="modificarMateria(asignatura)">
+                    <tr v-for="asignatura in mismaterias" :key="asignatura.idMateria"
+                        v-on:click="modificarMateria(asignatura)">
                         <td>{{ asignatura.codigo }}</td>
                         <td>{{ asignatura.nombre }}</td>
-                        <td>{{ asignatura.tipo }}</td>
-                        <td>{{ asignatura.descripcion }}</td>
+                        <td>{{ asignatura.modalidad }}</td>
+                        <td>{{ asignatura.informacion }}</td>
                         <td>
-                            <input v-on:click="eliminarMateria(asignatura.idMateria)" type="button" class="btn btn-outline-danger text-white" value="del">
+                            <input v-on:click="eliminarMateria(asignatura.idMateria)" type="button"
+                                class="btn btn-outline-danger text-white" value="del">
                         </td>
                     </tr>
                 </tbody>

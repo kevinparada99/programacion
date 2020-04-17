@@ -1,0 +1,60 @@
+<form v-on:submit.prevent="guardarUsuario" data-accion="nuevo" data-idusuario='' id="frm-usuarios" method="post">
+    <div class="card text-white bg-success mb-3" style="max-width: 24rem;">
+        <div class="card-header">
+            REGISTRAR USUARIOS
+        
+            <button type="button" id="btn-close-usuarios" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card-body">
+            <div class="row p-2">
+                <div class="col-4">
+                    CODIGO
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="usuario.codigo" placeholder="AAAA000000" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    NOMBRE
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="usuario.nombre" placeholder="AAA AAA" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    EDAD
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="usuario.edad" placeholder="00" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    OBSERVACION
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="usuario.observacion" placeholder="AAAAAAAA" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2"> 
+                <div class="col-12 text-center">
+                    <input id="btnGuardarUsuarios" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
+                    <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
+                    <input type="button" class="btn btn-outline-dark mostrar-buscar-usuarios text-white" data-modulo="usuarios" data-form="buscar-usuarios" value="Buscar">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-12 text-center">
+                    <div class="alert alert-success" role="alert">
+                        {{ usuario.msg }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="public/vistas/usuarios/usuarios.js"></script>

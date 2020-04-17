@@ -12,7 +12,7 @@
                 <thead>
                     <tr>
                         <th colspan="5">
-                            <input type="text" v-model="valor" v-on:keyup="buscarDocente" placeholder="codigo,nombre o dui" class="form-control">
+                            <input type="text" id="txtBuscarDocente" placeholder="codigo o nombre o dui" class="form-control">
                         </th>
                     </tr>
                     <tr>
@@ -24,13 +24,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="profesor in misdocentes" :key="profesor.idDocente" v-on:click="modificarDocente(profesor)">
-                        <td>{{ profesor.codigo }}</td>
-                        <td>{{ profesor.nombre }}</td>
-                        <td>{{ profesor.dui }}</td>
-                        <td>{{ profesor.telefono }}</td>
+                    <tr v-for="maestro in misdocentes" :key="maestro.idDocente" v-on:click="modificarDocente(maestro)">
+                        <td>{{ maestro.codigo }}</td>
+                        <td>{{ maestro.nombre }}</td>
+                        <td>{{ maestro.direccion }}</td>
+                        <td>{{ maestro.telefono }}</td>
                         <td>
-                            <input v-on:click="eliminarDocente(profesor.idDocente)" type="button" class="btn btn-outline-danger text-white" value="del">
+                            <input v-on:click="eliminarDocente(maestro.idDocente)" type="button"
+                                class="btn btn-outline-danger text-white" value="del">
                         </td>
                     </tr>
                 </tbody>

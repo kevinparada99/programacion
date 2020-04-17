@@ -1,6 +1,6 @@
 <?php 
 include('../../config/config.php');
-$alumno = new alumno($conexion);
+$alumno = new alumnos($conexion);
 
 $proceso = '';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
@@ -9,7 +9,7 @@ if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 $alumno->$proceso( $_GET['alumno'] );
 print_r(json_encode($alumno->respuesta));
 
-class alumno{
+class alumnos{
     private $datos = array(), $db;
     public $respuesta = ['msg'=>'correcto'];
     
@@ -46,7 +46,7 @@ class alumno{
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
             } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
-                    UPDATE alumnos SET
+                   UPDATE alumnos SET
                         codigo     = "'. $this->datos['codigo'] .'",
                         nombre     = "'. $this->datos['nombre'] .'",
                         direccion  = "'. $this->datos['direccion'] .'",
@@ -57,21 +57,21 @@ class alumno{
             }
         }
     }
-    public function buscarAlumno($valor = ''){
+    public function buscarAlumno($valor=''){
         $this->db->consultas('
             select alumnos.idAlumno, alumnos.codigo, alumnos.nombre, alumnos.direccion, alumnos.telefono
             from alumnos
-            where alumnos.codigo like "%'. $valor .'%" or alumnos.nombre like "%'. $valor .'%"  or alumnos.direccion like "%'. $valor .'%"
+            where alumnos.codigo like "%'.$valor.'%" or alumnos.nombre like "%'.$valor.'%"
         ');
         return $this->respuesta = $this->db->obtener_data();
     }
-    public function eliminarAlumno($idAlumno = 0){
+    public function eliminarAlumno($idAlumno=''){
         $this->db->consultas('
-            DELETE alumnos
-            FROM alumnos
-            WHERE alumnos.idAlumno="'.$idAlumno.'"
+            delete alumnos
+            from alumnos
+            where alumnos.idAlumno = "'.$idAlumno.'"
         ');
-        return $this->respuesta['msg'] = 'Registro eliminado correctamente';
+        $this->respuesta['msg'] = 'Registro eliminado correctamente';
     }
 }
 ?>
