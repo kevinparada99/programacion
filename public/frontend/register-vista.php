@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login / Registar Nutrición</title>
+    <title>Login / Registar Nutricion</title>
     
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     
@@ -17,7 +17,7 @@
         <div class="header">
             <div class="logo-title">
                 <img src="../../public/Nutricion-master/img/logo.png" alt="">
-                <h2>Nutrición</h2>
+                <h2>Nutricion</h2>
             </div>
             <div class="menu">
                 <a href="../modulos/login.php"><li class="module-login">Login</li></a>
@@ -26,7 +26,7 @@
         </div>
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form">
-            <div class="welcome-form"><h1>Bienvenido</h1><h2>Nutrición</h2></div>
+            <div class="welcome-form"><h1>Bienvenido</h1><h2>Nutricion</h2></div>
             
             <div class="user line-input">
                 <label class="lnr lnr-envelope"></label>

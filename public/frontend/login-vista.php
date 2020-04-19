@@ -17,7 +17,7 @@
         <div class="header">
             <div class="logo-title">
                 <img src="../../public/Nutricion-master/img/logo.png" alt="">
-                <h2>Nutrición</h2>
+                <h2>Nutricion</h2>
             </div>
             <div class="menu">
                 <a href="../../private/modulos/login.php"><li class="module-login active">Login</li></a>
@@ -26,7 +26,7 @@
         </div>
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form">
-            <div class="welcome-form"><h1>Bienvenido</h1><h2>Nutrición</h2></div>
+            <div class="welcome-form"><h1>Bienvenido</h1><h2>Nutricion</h2></div>
             <div class="user line-input">
                 <label class="lnr lnr-user"></label>
                 <input type="text" placeholder="Nombre Usuario" name="usuario">
