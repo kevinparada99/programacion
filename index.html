@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="public/css/estilos.css">
+    <link rel="stylesheet" href="https://unpkg.com/vue-select@3.0.0/dist/vue-select.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>APP ACADEMICA</title>
 </head>
@@ -27,7 +28,7 @@
                     <a class="nav-link mostrar-materias" data-modulo="materias" data-form="materias" href="#">Materias</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link mostrar-matricula" data-modulo="matricula" href="#">Matricula</a>
+                    <a class="nav-link mostrar-matriculas" data-modulo="matriculas" data-form="matriculas" href="#">Matriculas</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link mostrar-inscripcion" data-modulo="inscripcion" href="#">Inscripcion</a>
@@ -45,7 +46,8 @@
         <div class="modulos" id="vista-buscar-docentes"></div>
         <div class="modulos" id="vista-materias"></div>
         <div class="modulos" id="vista-buscar-materias"></div>
-        <div class="modulos" id="vista-matricula"></div>
+        <div class="modulos" id="vista-matriculas"></div>
+        <div class="modulos" id="vista-buscar-matriculas"></div>
         <div class="modulos" id="vista-inscripcion"></div>
         <div class="modulos" id="vista-notas"></div>
     </div>
@@ -53,6 +55,7 @@
     <script src="public/js/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script type="module" src="public/js/app.js"></script>
+    <script src="https://unpkg.com/vue-select@3.0.0"></script>
 </form>
 </body>
 </html>
