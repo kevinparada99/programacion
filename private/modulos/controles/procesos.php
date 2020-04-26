@@ -53,12 +53,38 @@ class control{
         }
     }
     public function buscarControl($valor = ''){
+        if( substr_count($valor, '-')===2 ){
+            $valor = implode('-', array_reverse(explode('-',$valor)));
+        }
         $this->db->consultas('
-            select controles.idControl, controles.codigo, controles.nombre
+            select controles.idControl, controles.idUsuario, controles.tipo, 
+                date_format(controles.fecha,"%d-%m-%Y") AS fecha, controles.fecha AS f, 
+                usuarios.codigo, usuarios.nombre, 
+                controles.tipo AS t
             from controles
-            where controles.codigo like "%'. $valor .'%" or controles.nombre like "%'. $valor .'%"
+                inner join usuarios on(usuarios.idUsuario=controles.idUsuario)
+            where usuarios.nombre like "%'. $valor .'%" or 
+                controles.tipo like "%'. $valor .'%" or
+                controles.fecha like "%'. $valor .'%"
+
         ');
-        return $this->respuesta = $this->db->obtener_data();
+        $controles = $this->respuesta = $this->db->obtener_data();
+        foreach ($controles as $key => $value) {
+            $datos[] = [
+                'idControl' => $value['idControl'],
+                'usuario'      => [
+                    'id'      => $value['idUsuario'],
+                    'label'   => $value['nombre']
+                ],
+                'tipo'       => $value['t'],
+                't'           => $value['tipo'],
+
+                'fecha'       => $value['f'],
+                'f'           => $value['fecha']
+
+            ]; 
+        }
+        return $this->respuesta = $datos;
     }
     public function traer_usuarios(){
         $this->db->consultas('

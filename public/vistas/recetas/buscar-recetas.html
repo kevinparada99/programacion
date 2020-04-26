@@ -12,12 +12,12 @@
                 <thead>
                     <tr>
                         <th colspan="5">
-                            <input type="text" v-model="valor" v-on:keyup="buscarReceta" placeholder="codigo,nombre y ingredientes" class="form-control">
+                            <input type="text" v-model="valor" v-on:keyup="buscarReceta" placeholder="codigo,nombres y ingredientes" class="form-control">
                         </th>
                     </tr>
                     <tr>
                         <th>CODIGO</th>
-                        <th>NOMBRE</th>
+                        <th>nombres</th>
                         <th>INGREDIENTES</th>
                         <th>INFORMACION</th>
                         <th> </th>
@@ -26,7 +26,7 @@
                 <tbody>
                     <tr v-for="recets in misrecetas" :key="recets.idReceta" v-on:click="modificarReceta(recets)">
                         <td>{{ recets.codigo }}</td>
-                        <td>{{ recets.nombre }}</td>
+                        <td>{{ recets.nombres }}</td>
                         <td>{{ recets.ingrediente }}</td>
                         <td>{{ recets.informacion }}</td>
                         <td>
@@ -38,4 +38,4 @@
         </div>
     </div>
 </form>
-<script src="public/vistas/recetas/buscar-recetas.js"></script>
+<script src="../../../public/vistas/recetas/buscar-recetas.js"></script>

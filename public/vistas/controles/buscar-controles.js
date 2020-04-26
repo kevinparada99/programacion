@@ -5,22 +5,27 @@ var appbuscar_controles = new Vue({
         valor:''
     },
     methods:{
-        buscarControles: function(){
-            fetch(`private/Modulos/controles/procesos.php?proceso=buscarControl&control=${this.valor}`).then( resp=>resp.json() ).then(resp=>{ 
+        buscarControles(){
+            fetch(`../controles/procesos.php?proceso=buscarControl&control=${this.valor}`).then( resp=>resp.json() ).then(resp=>{ 
                 this.mis_controles = resp;
             });
         },
-        modificarControles:function(controles){
-            appcontroles.controles = controles;
-            appcontroles.controles.accion = 'modificar';
+        modificarControl(control){
+            appcontroles.control = control;
+            appcontroles.control.accion = 'modificar';
         },
-        eliminarControles:function(idControl){
-            fetch(`private/Modulos/controles/procesos.php?proceso=eliminarControl&control=${idControl}`).then( resp=>resp.json() ).then(resp=>{
-                this.buscarControles();
-            });
+        eliminarControl(idControl){
+            var confirmacion = confirm("¿estas seguro de eliminar el registro?..");
+            if (confirmacion){
+                alert(" El registro se elimino corretamente....");
+                fetch(`../controles/procesos.php?proceso=eliminarControl&control=${idControl}`).then(resp=>resp.json()).then(resp=>{
+                  this.buscarControles();
+              });
+              }
+
         }
     },
-    created:function(){
+    created(){
         this.buscarControles();
     }
 });

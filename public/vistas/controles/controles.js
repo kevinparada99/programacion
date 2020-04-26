@@ -19,7 +19,7 @@ var appcontroles = new Vue({
     },
     methods:{
         guardarControles(){
-            fetch(`private/modulos/controles/procesos.php?proceso=recibirDatos&control=${JSON.stringify(this.control)}`).then( resp=>resp.json() ).then(resp=>{
+            fetch(`../controles/procesos.php?proceso=recibirDatos&control=${JSON.stringify(this.control)}`).then( resp=>resp.json() ).then(resp=>{
                 this.control.msg = resp.msg;
             });
         },
@@ -30,7 +30,7 @@ var appcontroles = new Vue({
         }
     },
     created(){
-        fetch(`private/modulos/controles/procesos.php?proceso=traer_usuarios&control=''`).then( resp=>resp.json() ).then(resp=>{
+        fetch(`../controles/procesos.php?proceso=traer_usuarios&control=''`).then( resp=>resp.json() ).then(resp=>{
             this.usuarios = resp.usuarios;
            
             

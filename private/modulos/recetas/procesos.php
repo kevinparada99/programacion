@@ -24,8 +24,8 @@ class receta{
         if( empty($this->datos['codigo']) ){
             $this->respuesta['msg'] = 'por favor ingrese el codigo de la receta';
         }
-        if( empty($this->datos['nombre']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el nombre de la receta';
+        if( empty($this->datos['nombres']) ){
+            $this->respuesta['msg'] = 'por favor ingrese el nombres de la receta';
         }
         if( empty($this->datos['ingrediente']) ){
             $this->respuesta['msg'] = 'por favor ingrese los ingredientes';
@@ -36,9 +36,9 @@ class receta{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO recetas (codigo,nombre,ingrediente,informacion) VALUES(
+                    INSERT INTO recetas (codigo,nombres,ingrediente,informacion) VALUES(
                         "'. $this->datos['codigo'] .'",
-                        "'. $this->datos['nombre'] .'",
+                        "'. $this->datos['nombres'] .'",
                         "'. $this->datos['ingrediente'] .'",
                         "'. $this->datos['informacion'] .'"
                     )
@@ -48,7 +48,7 @@ class receta{
                 $this->db->consultas('
                     UPDATE recetas SET
                         codigo     = "'. $this->datos['codigo'] .'",
-                        nombre     = "'. $this->datos['nombre'] .'",
+                        nombres     = "'. $this->datos['nombres'] .'",
                         ingrediente  = "'. $this->datos['ingrediente'] .'",
                         informacion   = "'. $this->datos['informacion'] .'"
                     WHERE idReceta = "'. $this->datos['idReceta'] .'"
@@ -59,9 +59,9 @@ class receta{
     }
     public function buscarReceta($valor = ''){
         $this->db->consultas('
-            select recetas.idReceta, recetas.codigo, recetas.nombre, recetas.ingrediente, recetas.informacion
+            select recetas.idReceta, recetas.codigo, recetas.nombres, recetas.ingrediente, recetas.informacion
             from recetas
-            where recetas.codigo like "%'. $valor .'%" or recetas.nombre like "%'. $valor .'%"  or recetas.ingrediente like "%'. $valor .'%"
+            where recetas.codigo like "%'. $valor .'%" or recetas.nombres like "%'. $valor .'%"  or recetas.ingrediente like "%'. $valor .'%"
         ');
         return $this->respuesta = $this->db->obtener_data();
     }

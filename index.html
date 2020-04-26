@@ -1,58 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://unpkg.com/vue-select@3.0.0/dist/vue-select.css">
-    <link rel="stylesheet" href="public/Nutricion-master/css/estilo.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>Control</title>
+    <title>Nutrición</title>
+    <link rel="stylesheet" href="public/Nutricion-master/css/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
-<body class="bg-secondary">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
-        <a class="navbar-brand" href="#">Control Nutricional</a>
-       
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="private/modulos/principal/principal.php">INICIO <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mostrar-recetas" data-modulo="recetas" data-form="recetas" href="#">Recetas</a>
-                </li> 
-                <li class="nav-item">
-                    <a class="nav-link mostrar-productos" data-modulo="productos" data-form="productos" href="#">Productos</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mostrar-usuarios" data-modulo="usuarios" data-form="usuarios" href="#">Usuarios</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mostrar-controles" data-modulo="controles" data-form="controles" href="#">Controles</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link mostrar-enfermedades" data-modulo="enfermedades" data-form="enfermedades" href="#">Enfermedades</a>
-                </li>
-            </ul>
+
+<body>
+    <header>
+        <nav>
+            <section class="contenedor nav">
+                <div class="logo">
+                    <img src="public/Nutricion-master/img/logo.png" alt="">
+                </div>
+                <div class="enlaces-header">
+                    <a href="#">Inicio</a>
+                    <a href="#">Nutricion</a>
+                    <a href="#">Recetas</a>
+                    <a href="#">Información</a>
+                    <a href="private/modulos/index.php">CONTROL</a>
+                </div>
+                <div class="hamburguer">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </section>
+        </nav>
+        <div class="contenedor">
+            <section class="contenido-header">
+                <section class="textos-header">
+                    <h1>Nutrición para adultos mayores</h1>
+                    <p>El software esta enfocado en ayudar a las personas mayores.</p>
+                    <a href="#">Leer más</a>
+                </section>
+                <img src="public/Nutricion-master/img/imagen2.svg" alt="">
+            </section>
         </div>
-    </nav>
-    <div class="container">
-        <div class="modulos" id="vista-recetas"></div>
-        <div class="modulos" id="vista-buscar-recetas"></div>
-        <div class="modulos" id="vista-productos"></div>
-        <div class="modulos" id="vista-buscar-productos"></div>
-        <div class="modulos" id="vista-usuarios"></div>
-        <div class="modulos" id="vista-buscar-usuarios"></div>
-        <div class="modulos" id="vista-controles"></div>
-        <div class="modulos" id="vista-buscar-controles"></div>
-        <div class="modulos" id="vista-enfermedades"></div>
-        <div class="modulos" id="vista-buscar-enfermedades"></div>
-    </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="public/js/jquery-ui.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <script type="module" src="public/js/app.js"></script>
-    <script src="https://unpkg.com/vue-select@3.0.0"></script>
-</form>
+        </header>
+        <section class="about-us">
+            <div class="contenedor1">
+                <h2 class="titulo">¿Con que cuenta el software?</h2>
+                <div class="contenedor-articulo">
+                    <div class="articulo" data-aos="zoom-in-right">
+                        <i class="fas fa-pen-fancy"></i>
+                        <h3>Diseño</h3>
+                        <p>Se hizo un diseño llamativo con el fin de proporcionar interes hacia las personas
+                            tener un sistema simple pero elegante que ayude al proposito estipulado.
+                        </p>
+                    </div>
+                    <div class="articulo" data-aos="zoom-in-right">
+                        <i class="fas fa-code"></i>
+                        <h3>Diseño Web</h3>
+                        <p>Diseño web para la ayuda y control de enfermedades, creacion de recetas y proporcionar ayuda
+                            a los adultos mayores.
+                        </p>
+                    </div>
+                    <div class="articulo" data-aos="zoom-in-right">
+                        <i class="fas fa-cog"></i>
+                        <h3>Desarrollo de Control</h3>
+                        <p>Desarrollo del sistema para un control, ayuda y seguimiento para las personas mayores.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <section class="questions contenedor">
+            <section class="textos-questions">
+                <h1>Debemos de cuidar a nuestros mayores</h1>
+                <p>El cuidado de las personas mayores es muy importante, ellos sirvieron para la sociedad antes
+                    y ahora nos toca cuidar de ellos.
+                </p>
+            </section>
+            <img src="public/Nutricion-master/img/imagen3.svg" alt="" data-aos="zoom-out-up"
+                data-aos-duration="2000">
+        </section>
+
+        <section class="results">
+            <div class="contenedor1 conten-results">
+                <section class="numbers">
+                    <div class="number" data-aos="zoom-in-left">
+                        <h4>+0</h4>
+                        <p>Personas que han visitado el sitio o app.</p>
+                    </div>
+                    <div class="number" data-aos="zoom-in-left">
+                        <h4>+0</h4>
+                        <p>Personas a quienes se le ha brindado el servicio.</p>
+                    </div>
+                    <div class="number" data-aos="zoom-in-left">
+                        <h4>+0</h4>
+                        <p>Personas que han visto recetas de nuestra plataforma.</p>
+                    </div>
+                    <div class="number" data-aos="zoom-in-left">
+                        <h4>+8863</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut, id.</p>
+                    </div>
+                </section>
+                <section class="results-text">
+                    <h4>Personas a quien hemos ayudado.</h4>
+                    <p>Registro de personas que han utilizado el sotfware y que se muestran satisfechas.</p>
+                </section>
+            </div>
+        </section>
+
+
+    <section class="contenedor1 services">
+        <img src="public/Nutricion-master/img/imagen4.svg" alt="">
+        <div class="box-skills">
+            <h4><i class="far fa-check-circle"></i> Web nutricional</h4>
+            <h4><i class="far fa-check-circle"></i> Control alimenticio</h4>
+            <h4><i class="far fa-check-circle"></i> Informacion nutricional</h4>
+            <h4><i class="far fa-check-circle"></i> Marketing</h4>
+            <h4><i class="far fa-check-circle"></i> Soporte Web</h4>
+        </div>
+    </section>
+
+    <footer>
+        <div class="partFooter">
+            <img src="public/Nutricion-master/img/logo.png" alt="">
+        </div>
+        <div class="partFooter">
+            <h4>Servicios</h4>
+            <a href="#">Services 1</a>
+            <a href="#">Services 2</a>
+            <a href="#">Services 3</a>
+        </div>
+        <div class="partFooter">
+            <h4>Acerca de</h4>
+            <a href="#">About 1</a>
+            <a href="#">About 2</a>
+            <a href="#">About 3</a>
+        </div>
+        <div class="partFooter">
+            <h4>Redes sociales</h4>
+            <div class="social-media">
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-youtube"></i>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/c15b744a04.js" crossorigin="anonymous"></script>
+    <script src="public/Nutricion-master/js/main.js"></script>
 </body>
+
 </html>

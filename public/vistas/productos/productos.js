@@ -13,7 +13,7 @@ var appproducto = new Vue({
     },
     methods:{
         guardarProducto:function(){
-            fetch(`private/modulos/productos/procesos.php?proceso=recibirDatos&producto=${JSON.stringify(this.producto)}`).then( resp=>resp.json() ).then(resp=>{
+            fetch(`../productos/procesos.php?proceso=recibirDatos&producto=${JSON.stringify(this.producto)}`).then( resp=>resp.json() ).then(resp=>{
                 this.producto.msg = resp.msg;
                 this.producto.idProducto = 0;
                 this.producto.codigo = '';

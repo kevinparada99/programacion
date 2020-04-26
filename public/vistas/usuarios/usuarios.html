@@ -1,5 +1,5 @@
 <form v-on:submit.prevent="guardarUsuario" data-accion="nuevo" data-idusuario='' id="frm-usuarios" method="post">
-    <div class="card text-white bg-success mb-3" style="max-width: 24rem;">
+    <div class="card text-white bg-success mb-3" style="max-width: 25rem;">
         <div class="card-header">
             REGISTRAR USUARIOS
         
@@ -34,6 +34,38 @@
             </div>
             <div class="row p-2">
                 <div class="col-4">
+                    PESO INICIAL
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="usuario.inicial" placeholder="lb" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    F.PS INICIAL
+                </div>
+                <div class="col">
+                    <input type="date" v-model="usuario.fechaini" class="form-control form-control-sm">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    PESO ACTUAL
+                </div>
+                <div class="col-8">
+                    <input type="text" v-model="usuario.actual" placeholder="lb" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    F.PS ACTUAL
+                </div>
+                <div class="col">
+                    <input type="date" v-model="usuario.fechaac" class="form-control form-control-sm">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
                     OBSERVACION
                 </div>
                 <div class="col-8">
@@ -57,4 +89,4 @@
         </div>
     </div>
 </form>
-<script src="public/vistas/usuarios/usuarios.js"></script>
+<script src="../../../public/vistas/usuarios/usuarios.js"></script>

@@ -19,6 +19,10 @@
                         <th>CODIGO</th>
                         <th>NOMBRE</th>
                         <th>EDAD</th>
+                        <th>PESO INICIAL</th>
+                        <th>fecha de peso inicial</th>
+                        <th>Peso actual</th>
+                        <th>fecha de peso actual</th>
                         <th>OBSERV</th>
                         <th> </th>
                     </tr>
@@ -28,6 +32,10 @@
                         <td>{{ cliente.codigo }}</td>
                         <td>{{ cliente.nombre }}</td>
                         <td>{{ cliente.edad }}</td>
+                        <td>{{ cliente.inicial}}</td>
+                        <td>{{ cliente.fechaini}}</td>
+                        <td>{{ cliente.actual}}</td>
+                        <td>{{ cliente.fechaac}}</td>
                         <td>{{ cliente.observacion }}</td>
                         <td>
                             <input v-on:click="eliminarUsuario(cliente.idUsuario)" type="button" class="btn btn-outline-danger text-white" value="del">
@@ -38,4 +46,4 @@
         </div>
     </div>
 </form>
-<script src="public/vistas/usuarios/buscar-usuarios.js"></script>
+<script src="../../../public/vistas/usuarios/buscar-usuarios.js"></script>

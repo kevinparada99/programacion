@@ -1,7 +1,7 @@
 <form method="post" id="frm-buscar-controles">
     <div class="card text-white bg-success mb-3" style="max-width: 48rem;">
         <div class="card-header">
-            BUSQUEDA DE controles
+            BUSQUEDA DE CONTROLES
 
             <button type="button" id="btn-close-buscar-controles" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -16,17 +16,20 @@
                         </th>
                     </tr>
                     <tr>
-                        <th>CODIGO</th>
-                        <th>NOMBRE</th> 
+                        <th>USUARIO</th>
+                        <th>ENFERMEDAD</th> 
+                        <th>FECHA DE CONTROL</th> 
                         <th> </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="mi_control in mis_controles" :key="mi_control.idControl" v-on:click="modificarcontrol(mi_control)" >
-                        <td>{{ mi_control.codigo }}</td>
-                        <td>{{ mi_control.nombre }}</td>
+                    <tr v-for="mi_control in mis_controles" :key="mi_control.idControl" v-on:click="modificarControl(mi_control)" >
+                        <td>{{ mi_control.usuario.label }}</td>
+                        <td>{{ mi_control.t }}</td>
+                        <td>{{ mi_control.f }}</td>
+
                         <td>
-                            <input v-on:click="eliminarcontrol(mi_control.idcontrol)" type="button" class="btn btn-outline-danger text-white" value="del">
+                            <input v-on:click="eliminarControl(mi_control.idControl)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>
                     </tr>
                 </tbody>
@@ -34,4 +37,4 @@
         </div>
     </div>
 </form>
-<script src="public/vistas/controles/buscar-controles.js"></script>
+<script src="../../../public/vistas/controles/buscar-controles.js"></script>

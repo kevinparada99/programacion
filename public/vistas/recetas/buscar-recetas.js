@@ -6,7 +6,7 @@ var appBuscarRecetas = new Vue({
     },
     methods:{
         buscarReceta:function(){
-            fetch(`private/modulos/recetas/procesos.php?proceso=buscarReceta&receta=${this.valor}`).then(resp=>resp.json()).then(resp=>{
+            fetch(`../recetas/procesos.php?proceso=buscarReceta&receta=${this.valor}`).then(resp=>resp.json()).then(resp=>{
                 this.misrecetas = resp;
             });
         },
@@ -18,7 +18,7 @@ var appBuscarRecetas = new Vue({
                 var confirmacion = confirm("¿estas seguro de eliminar el registro?..");
                 if (confirmacion){
                   alert(" El registro se elimino corretamente....");
-                  fetch(`private/modulos/recetas/procesos.php?proceso=eliminarReceta&receta=${idReceta}`).then(resp=>resp.json()).then(resp=>{
+                  fetch(`../recetas/procesos.php?proceso=eliminarReceta&receta=${idReceta}`).then(resp=>resp.json()).then(resp=>{
                     this.buscarReceta();
                 });
                 }

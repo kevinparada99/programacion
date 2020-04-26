@@ -37,10 +37,14 @@ class usuario{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO usuarios (codigo,nombre,edad,observacion) VALUES(
+                    INSERT INTO usuarios (codigo,nombre,edad,inicial,fechaini,actual,fechaac,observacion) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
                         "'. $this->datos['edad'] .'",
+                        "'. $this->datos['inicial'] .'",
+                        "'. $this->datos['fechaini'] .'",
+                        "'. $this->datos['actual'] .'",
+                        "'. $this->datos['fechaac'] .'",
                         "'. $this->datos['observacion'] .'"
                     )
                 ');
@@ -51,6 +55,10 @@ class usuario{
                         codigo     = "'. $this->datos['codigo'] .'",
                         nombre     = "'. $this->datos['nombre'] .'",
                         edad        = "'. $this->datos['edad'] .'",
+                        inicial     = "'. $this->datos['inicial'] .'",
+                        fechaini     = "'. $this->datos['fechaini'] .'",
+                        actual        = "'. $this->datos['actual'] .'",
+                        fechaac     = "'. $this->datos['fechaac'] .'",
                         observacion   = "'. $this->datos['observacion'] .'"
                     WHERE idUsuario = "'. $this->datos['idUsuario'] .'"
                 ');
@@ -60,7 +68,7 @@ class usuario{
     }
     public function buscarUsuario($valor = ''){
         $this->db->consultas('
-            select usuarios.idUsuario, usuarios.codigo, usuarios.nombre, usuarios.edad, usuarios.observacion
+            select usuarios.idUsuario, usuarios.codigo, usuarios.nombre, usuarios.edad, usuarios.inicial, usuarios.fechaini, usuarios.actual, usuarios.fechaac,usuarios.observacion
             from usuarios
             where usuarios.codigo like "%'. $valor .'%" or usuarios.nombre like "%'. $valor .'%" or usuarios.edad like "%'. $valor .'%"
         ');

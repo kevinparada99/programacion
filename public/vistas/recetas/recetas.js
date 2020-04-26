@@ -5,7 +5,7 @@ var appreceta = new Vue({
             idReceta  : 0,
             accion    : 'nuevo',
             codigo    : '',
-            nombre    : '',
+            nombres    : '',
             ingrediente : '',
             informacion : '',
             msg       : ''
@@ -13,11 +13,11 @@ var appreceta = new Vue({
     },
     methods:{
         guardarReceta:function(){
-            fetch(`private/modulos/recetas/procesos.php?proceso=recibirDatos&receta=${JSON.stringify(this.receta)}`).then( resp=>resp.json() ).then(resp=>{
+            fetch(`../recetas/procesos.php?proceso=recibirDatos&receta=${JSON.stringify(this.receta)}`).then( resp=>resp.json() ).then(resp=>{
                 this.receta.msg = resp.msg;
                 this.receta.idReceta = 0;
                 this.receta.codigo = '';
-                this.receta.nombre = '';
+                this.receta.nombres = '';
                 this.receta.ingrediente = '';
                 this.receta.informacion = '';
                 this.receta.accion = 'nuevo';

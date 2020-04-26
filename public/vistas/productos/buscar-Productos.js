@@ -6,7 +6,7 @@ var appBuscarProducto = new Vue({
     },
     methods:{
         buscarProducto:function(){
-            fetch(`private/modulos/productos/procesos.php?proceso=buscarProducto&producto=${this.valor}`).then(resp=>resp.json()).then(resp=>{
+            fetch(`../productos/procesos.php?proceso=buscarProducto&producto=${this.valor}`).then(resp=>resp.json()).then(resp=>{
                 this.misproductos = resp;
             });
         },
@@ -18,7 +18,7 @@ var appBuscarProducto = new Vue({
                 var comfirmacion = confirm("¿Estas seguro de eliminar el registro?");
                 if(comfirmacion){
                     alert("El reguistro se elimino correctamente");
-                    fetch(`private/modulos/productos/procesos.php?proceso=eliminarProducto&producto=${idProducto}`).then(resp=>resp.json()).then(resp=>{
+                    fetch(`../productos/procesos.php?proceso=eliminarProducto&producto=${idProducto}`).then(resp=>resp.json()).then(resp=>{
                         this.buscarProducto();
                     });
                     }  

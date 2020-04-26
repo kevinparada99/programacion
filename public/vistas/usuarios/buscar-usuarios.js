@@ -6,7 +6,7 @@ var appBuscarUsuarios = new Vue({
     },
     methods:{
         buscarUsuario:function(){
-            fetch(`private/modulos/usuarios/procesos.php?proceso=buscarUsuario&usuario=${this.valor}`).then(resp=>resp.json()).then(resp=>{
+            fetch(`../usuarios/procesos.php?proceso=buscarUsuario&usuario=${this.valor}`).then(resp=>resp.json()).then(resp=>{
                 this.misusuarios = resp;
             });
         },
@@ -18,7 +18,7 @@ var appBuscarUsuarios = new Vue({
                 var comfirmacion = confirm("¿Estas seguro de eliminar el registro?");
                 if(comfirmacion){
                     alert("El reguistro se elimino correctamente");
-                    fetch(`private/modulos/usuarios/procesos.php?proceso=eliminarUsuario&usuario=${idUsuario}`).then(resp=>resp.json()).then(resp=>{
+                    fetch(`../usuarios/procesos.php?proceso=eliminarUsuario&usuario=${idUsuario}`).then(resp=>resp.json()).then(resp=>{
                         this.buscarUsuario();
                     });
                     }  
