@@ -1,0 +1,16 @@
+.modulos{ 
+    position: absolute;
+}
+
+.bg-secondary{
+    background-image: url(../../image/bg4.jpg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.v-select{
+    background: white !important;
+    }
+
+    
