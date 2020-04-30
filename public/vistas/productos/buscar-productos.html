@@ -8,7 +8,7 @@
             </button>
         </div>
         <div class="card-body">
-            <table id="tbl-buscar-productos" class="table-striped table-success table-bordered table-hover">
+            <table id="tbl-buscar-productos" class="table-striped bg-success table-bordered table-hover">
                 <thead>
                     <tr>
                         <th colspan="5">
@@ -19,6 +19,7 @@
                         <th>CODIGO</th>
                         <th>NOMBRE</th>
                         <th>CANTIDAD</th>
+                        <th>TIPO</th>
                         <th>FECHA</th>
                         <th> </th>
                     </tr>
@@ -28,6 +29,7 @@
                         <td>{{ produc.codigo }}</td>
                         <td>{{ produc.nombre }}</td>
                         <td>{{ produc.cantidad }}</td>
+                        <td>{{ produc.tipo }}</td>
                         <td>{{ produc.fecha }}</td>
                         <td>
                             <input v-on:click="eliminarProducto(produc.idProducto)" type="button" class="btn btn-outline-danger text-white" value="del">

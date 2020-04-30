@@ -7,6 +7,7 @@ var appproducto = new Vue({
             codigo    : '',
             nombre    : '',
             cantidad  : '',
+            tipo  : '',
             fecha  : '',
             msg       : ''
         }
@@ -19,6 +20,7 @@ var appproducto = new Vue({
                 this.producto.codigo = '';
                 this.producto.nombre = '';
                 this.producto.cantidad = '';
+                this.producto.tipo = '';
                 this.producto.fecha = '';
                 this.producto.accion = 'nuevo';
                 appBuscarProductos.buscarProducto();

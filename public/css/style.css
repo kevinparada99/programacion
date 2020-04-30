@@ -98,6 +98,11 @@ a {
     font-size: 30px;
     color: #898989;
 }
+.form .welcome-form h4 {
+    font-weight: 200;
+    font-size: 20px;
+    color: #470aee;
+}
 
 .form .welcome-form h2 {
     font-size: 34px;

@@ -1,8 +1,11 @@
 <form v-on:submit.prevent="guardarControles" v-on:reset="limpiarControles" id="frm-controles">
     <div class="card text-white bg-success mb-3" style="max-width: 24rem;">
         <div class="card-header">
-            AGREGAR CONTROLES
+           --------- AGREGAR CONTROLES---------
 
+
+            <img src="https://img.icons8.com/small/30/000000/search.png" class=" mostrar-buscar-controles text-white"
+                data-modulo="controles" data-form="buscar-controles" value="Buscar">
             <button type="button" id="btn-close-controles" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -43,7 +46,7 @@
                     <div class="col">
                         <input id="btnGuardarControles" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
                         <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
-                        <input type="button" class="btn btn-outline-dark mostrar-buscar-controles text-white" data-modulo="controles" data-form="buscar-controles" value="Buscar" >
+                        
                 </div>
             </div>
             <div class="row row-cols-1 p-2">

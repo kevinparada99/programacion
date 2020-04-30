@@ -11,6 +11,7 @@ var appusuario = new Vue({
             fechaini   : '',
             actual     : '',
             fechaac    : '',
+            medicamento : '',
             observacion  : '',
             msg       : ''
         }
@@ -25,6 +26,7 @@ var appusuario = new Vue({
                 this.usuario.edad = '';
                 this.usuario.inicial = '';
                 this.usuario.fechaini = '';
+                this.usuario.medicamento = '';
                 this.usuario.observacion = '';
                 this.usuario.accion = 'nuevo';
                 appBuscarUsuarios.buscarUsuario();

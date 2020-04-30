@@ -1,7 +1,10 @@
 <form v-on:submit.prevent="guardarUsuario" data-accion="nuevo" data-idusuario='' id="frm-usuarios" method="post">
-    <div class="card text-white bg-success mb-3" style="max-width: 25rem;">
+    <div class="card text-white bg-success mb-3" style="max-width: 40rem;">
         <div class="card-header">
-            REGISTRAR USUARIOS
+            ---------REGISTRAR USUARIOS------------
+
+            <img src="https://img.icons8.com/ios-glyphs/30/000000/search.png" class=" mostrar-buscar-usuarios text-white" data-modulo="usuarios"
+                 data-form="buscar-usuarios" >
         
             <button type="button" id="btn-close-usuarios" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -26,15 +29,15 @@
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    EDAD
+                    Fecha de nacimiento
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="usuario.edad" placeholder="00" class="form-control">
+                    <input type="date" v-model="usuario.edad" placeholder="" class="form-control">
                 </div>
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    PESO INICIAL
+                    PESO
                 </div>
                 <div class="col-8">
                     <input type="text" v-model="usuario.inicial" placeholder="lb" class="form-control">
@@ -42,7 +45,7 @@
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    F.PS INICIAL
+                    FECHA DEL PESO
                 </div>
                 <div class="col">
                     <input type="date" v-model="usuario.fechaini" class="form-control form-control-sm">
@@ -50,18 +53,18 @@
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    PESO ACTUAL
+                    Sexo
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="usuario.actual" placeholder="lb" class="form-control">
+                    <input type="text" v-model="usuario.actual" placeholder="M o F" class="form-control">
                 </div>
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    F.PS ACTUAL
+                    Medicamentos
                 </div>
-                <div class="col">
-                    <input type="date" v-model="usuario.fechaac" class="form-control form-control-sm">
+                <div class="col-8">
+                    <input type="text" v-model="usuario.medicamento" placeholder="medicamento que toma" class="form-control">
                 </div>
             </div>
             <div class="row p-2">
@@ -69,14 +72,21 @@
                     OBSERVACION
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="usuario.observacion" placeholder="AAAAAAAA" class="form-control">
+                    <input type="text" v-model="usuario.observacion" placeholder="Alergias a medicamento.etc" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    Fecha de registro
+                </div>
+                <div class="col">
+                    <input type="date" v-model="usuario.fechaac" class="form-control form-control-sm">
                 </div>
             </div>
             <div class="row p-2"> 
                 <div class="col-12 text-center">
                     <input id="btnGuardarUsuarios" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
                     <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
-                    <input type="button" class="btn btn-outline-dark mostrar-buscar-usuarios text-white" data-modulo="usuarios" data-form="buscar-usuarios" value="Buscar">
                 </div>
             </div>
             <div class="row p-2">

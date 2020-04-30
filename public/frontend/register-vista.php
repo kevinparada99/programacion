@@ -15,9 +15,10 @@
     
 <div class="container-form">
         <div class="header">
+        <a href="../../index.html"><img src="https://img.icons8.com/plasticine/50/000000/return.png"/></a>
             <div class="logo-title">
                 <img src="../../public/Nutricion-master/img/logo.png" alt="">
-                <h2>Nutricion</h2>
+                <h2>Nutrición</h2>
             </div>
             <div class="menu">
                 <a href="../modulos/login.php"><li class="module-login">Login</li></a>
@@ -26,7 +27,7 @@
         </div>
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form">
-            <div class="welcome-form"><h1>Bienvenido</h1><h2>Nutricion</h2></div>
+            <div class="welcome-form"><h1>Bienvenido A</h1><h2>5 Tech</h2></div>
             
             <div class="user line-input">
                 <label class="lnr lnr-envelope"></label>

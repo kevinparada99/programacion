@@ -1,7 +1,11 @@
 <form v-on:submit.prevent="guardarNutriciones" v-on:reset="limpiarNutriciones" id="frm-nutriciones">
     <div class="card text-white bg-success mb-3" style="max-width: 24rem;">
         <div class="card-header">
-            AGREGAR NUTRICION
+            --------AGREGAR NUTRICION----------
+
+             <img src="https://img.icons8.com/small/30/000000/search.png" class=" mostrar-buscar-nutriciones
+             text-white"
+                 data-modulo="nutriciones" data-form="buscar-nutriciones" value="Buscar">
 
             <button type="button" id="btn-close-nutriciones" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
@@ -32,7 +36,7 @@
             <div class="row row-cols-1 p-2">
                 <div class="row-col">
                     <div class="col">
-                        Tiempo 
+                        Tiempo   
                     </div>
                     <div class="col">
                         <v-select v-model="nutricion.hora" :options="horas" placeholder="Seleccione un tiempo" />
@@ -54,7 +58,7 @@
                     <div class="col">
                         <input id="btnGuardarNutriciones" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
                         <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
-                        <input type="button" class="btn btn-outline-dark mostrar-buscar-nutriciones text-white" data-modulo="nutriciones" data-form="buscar-nutriciones" value="Buscar" >
+                       
                 </div>
             </div>
             <div class="row row-cols-1 p-2">

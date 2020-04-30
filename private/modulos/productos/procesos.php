@@ -37,10 +37,11 @@ class producto{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO productos (codigo,nombre,cantidad,fecha) VALUES(
+                    INSERT INTO productos (codigo,nombre,cantidad,tipo,fecha) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
                         "'. $this->datos['cantidad'] .'",
+                        "'. $this->datos['tipo'] .'",
                         "'. $this->datos['fecha'] .'"
                     )
                 ');
@@ -51,6 +52,7 @@ class producto{
                         codigo     = "'. $this->datos['codigo'] .'",
                         nombre     = "'. $this->datos['nombre'] .'",
                         cantidad   = "'. $this->datos['cantidad'] .'",
+                        tipo   = "'. $this->datos['tipo'] .'",
                         fecha      = "'. $this->datos['fecha'] .'"
                     WHERE idProducto = "'. $this->datos['idProducto'] .'"
                 ');
@@ -60,7 +62,7 @@ class producto{
     }
     public function buscarProducto($valor = ''){
         $this->db->consultas('
-            select productos.idProducto, productos.codigo, productos.nombre, productos.cantidad, productos.fecha
+            select productos.idProducto, productos.codigo, productos.nombre, productos.cantidad, productos.tipo, productos.fecha
             from productos
             where productos.codigo like "%'. $valor .'%" or productos.nombre like "%'. $valor .'%" or productos.cantidad like "%'. $valor .'%"
         ');
