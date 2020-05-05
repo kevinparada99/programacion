@@ -5,9 +5,6 @@
     <title>Login / Registar Nutricion</title>
     
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    
-    
-    
     <link rel="stylesheet" href="../../public/css/style.css">
     
 </head>
@@ -39,11 +36,11 @@
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
-                <input type="password" placeholder="Contraseña" name="clave">
+                <input type="password" placeholder="Contraseña" required name="clave">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
-                <input type="password" placeholder="Confirmar contraseña" name="clave2">
+                <input type="password" placeholder="Confirmar contraseña"  name="clave2">
             </div>
             
             <?php if(!empty($error)): ?>
@@ -58,7 +55,7 @@
     </div>
 
     
-    <script src="js/jquery.js"></script>
-    <script src="js/script.js"></script>
+    <script src="../../public/js/jquery.js"></script>
+    <script src="../../public/js/script.js"></script>
 </body>
 </html>

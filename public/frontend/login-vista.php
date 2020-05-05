@@ -26,11 +26,11 @@
             <div class="welcome-form"><h1>Bienvenido A </h1><h2>5 Tech</h2></div>
             <div class="user line-input">
                 <label class="lnr lnr-user"></label>
-                <input type="text" placeholder="Nombre Usuario" name="usuario">
+                <input type="text" placeholder="Nombre Usuario" required name="usuario">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
-                <input type="password" placeholder="Contraseña" name="clave">
+                <input type="password" placeholder="Contraseña" required name="clave">
             </div>
             
              <?php if(!empty($error)): ?>
@@ -44,7 +44,7 @@
         </form>
     </div>
     
-    <script src="../js/jquery.js"></script>
-    <script src="../js/script.js"></script>
+    <script src="../../public/js/jquery.js"></script>
+    <script src="../../public/js/script.js"></script>
 </body>
 </html>

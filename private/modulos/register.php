@@ -1,7 +1,7 @@
 <?php session_start();
 
     if(isset($_SESSION['usuario'])) {
-        header('location: ../../../../index.php');
+        header('location: index.php');
     }
 
     
@@ -17,10 +17,34 @@
         $clave2 = hash('sha512', $clave2);
         
         $error = '';
+
         
-        if (empty($correo) or empty($usuario) or empty($clave) or empty($clave2)){
-            
-            $error .= '<i>Favor de rellenar todos los campos</i>';
+        if (empty($correo)){
+            $error .= '<i>Favor de rellenar ingresar el correo</i>';
+        } 
+        else if (strlen($correo) > 30) {
+                $error .= '<i>El Correo Es Demasiado Largo</i>'; 
+            }
+            else if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
+                $error .= '<i>El Correo es incorrecto</i>'; 
+            }
+        
+        else if (empty($usuario)){
+            $error .= '<i>Favor ingresar el usuario</i>';
+        }
+        else if (strlen($usuario) > 20) {
+            $error .= '<i>El Usuario Es Demasiado Largo</i>'; 
+        }
+        else if (empty($clave)){
+            $error .= '<i>Favor ingresar la contraseña</i>';
+        }
+        else if (!strlen($clave) > 4) {
+            $error .= '<i>la  Correo Es Demasiado Corta</i>'; 
+        }
+        else if (empty($clave2)){
+            $error .= '<i>Favor ingresar la contraseña de confirmacion</i>';
+        
+
         }else{
             try{
                 $conexion = new PDO('mysql:host=localhost;dbname=proyec_nutricion', 'root', '');
@@ -57,6 +81,7 @@
             $error .= '<i style="color: green;">Usuario registrado exitosamente</i>';
         }
     }
+
 
 
     require '../../public/frontend/register-vista.php';
