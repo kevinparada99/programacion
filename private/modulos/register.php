@@ -20,7 +20,7 @@
 
         
         if (empty($correo)){
-            $error .= '<i>Favor de rellenar ingresar el correo</i>';
+            $error .= '<i>Favor de ingresar el correo</i>';
         } 
         else if (strlen($correo) > 30) {
                 $error .= '<i>El Correo Es Demasiado Largo</i>'; 
@@ -35,10 +35,13 @@
         else if (strlen($usuario) > 20) {
             $error .= '<i>El Usuario Es Demasiado Largo</i>'; 
         }
+        else if (strlen($usuario) < 4) {
+            $error .= '<i>El Usuario Es Demasiado Corto</i>'; 
+        }
         else if (empty($clave)){
             $error .= '<i>Favor ingresar la contraseña</i>';
         }
-        else if (!strlen($clave) > 4) {
+        else if (strlen($clave) < 4) {
             $error .= '<i>la  Correo Es Demasiado Corta</i>'; 
         }
         else if (empty($clave2)){

@@ -28,15 +28,15 @@
             
             <div class="user line-input">
                 <label class="lnr lnr-envelope"></label>
-                <input type="text" placeholder="Correo" name="correo">
+                <input type="text"  placeholder="Correo" name="correo" >
             </div>
             <div class="user line-input">
                 <label class="lnr lnr-user"></label>
-                <input type="text" placeholder="Nombre Usuario" name="usuario">
+                <input type="text" placeholder="Nombre Usuario" name="usuario" pattern="[a-zA-Z]+">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
-                <input type="password" placeholder="Contraseña" required name="clave">
+                <input type="password" minlength="5" placeholder="Contraseña" name="clave">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
