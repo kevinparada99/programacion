@@ -36,7 +36,7 @@
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
-                <input type="password" minlength="5" placeholder="Contraseña" name="clave">
+                <input type="password" minlength="5" required placeholder="Contraseña" name="clave">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
