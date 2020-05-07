@@ -15,16 +15,18 @@ var appBuscarProducto = new Vue({
             appproducto.producto.accion = 'modificar';
         },
         eliminarProducto:function(idProducto){
-                var comfirmacion = confirm("¿Estas seguro de eliminar el registro?");
-                if(comfirmacion){
-                    alert("El reguistro se elimino correctamente");
-                    fetch(`../productos/procesos.php?proceso=eliminarProducto&producto=${idProducto}`).then(resp=>resp.json()).then(resp=>{
-                        this.buscarProducto();
-                    });
-                    }  
-            
-        }
-    },
+            alertify.confirm("Control De Productos ","Esta seguro de eliminar",
+            ()=>{
+                fetch(`../productos/procesos.php?proceso=eliminarProducto&producto=${idProducto}`).then(resp=>resp.json()).then(resp=>{
+                    this.buscarProducto();
+             });
+                alertify.success('Registro Eliminado correctamente.');
+            },
+            ()=>{
+                alertify.error('Cancelado....');
+            });
+    }
+},
     created:function(){
         this.buscarProducto();
     }

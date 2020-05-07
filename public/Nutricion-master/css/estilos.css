@@ -115,7 +115,7 @@ nav {
 }
 
 .contenido-header>img {
-    width: 550px;
+    width: 450px;
     animation: ease-in animat 1s;
 }
 
@@ -131,12 +131,12 @@ nav {
 
 
 .textos-header {
-    margin: 0 0 0 30px;
+    margin: 0 2 0 50px;
 }
 
-.contenido-header p {
-    font-weight: 100;
-    margin-top: 14px;
+.contenido-header h4 {
+    
+    margin-top: 20px;
     color: #5D6678;
 }
 

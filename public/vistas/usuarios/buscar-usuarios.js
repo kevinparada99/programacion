@@ -15,16 +15,18 @@ var appBuscarUsuarios = new Vue({
             appusuario.usuario.accion = 'modificar';
         },
         eliminarUsuario:function(idUsuario){
-                var comfirmacion = confirm("¿Estas seguro de eliminar el registro?");
-                if(comfirmacion){
-                    alert("El reguistro se elimino correctamente");
-                    fetch(`../usuarios/procesos.php?proceso=eliminarUsuario&usuario=${idUsuario}`).then(resp=>resp.json()).then(resp=>{
-                        this.buscarUsuario();
-                    });
-                    }  
-            
-        }
-    },
+            alertify.confirm("Control De Usuarios ","Esta seguro de eliminar",
+            ()=>{
+                fetch(`../usuarios/procesos.php?proceso=eliminarUsuario&usuario=${idUsuario}`).then(resp=>resp.json()).then(resp=>{
+                    this.buscarUsuario();
+             });
+                alertify.success('Registro Eliminado correctamente.');
+            },
+            ()=>{
+                alertify.error('Cancelado....');
+            });
+    }
+},
     created:function(){
         this.buscarUsuario();
     }

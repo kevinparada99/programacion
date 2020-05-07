@@ -14,7 +14,7 @@
         <div class="card-body">
             <div class="row p-2">
                 <div class="col-4">
-                    CODIGO
+                    Código
                 </div>
                 <div class="col-8">
                     <input type="text" v-model="producto.codigo" placeholder="AAAA000000" class="form-control">
@@ -22,7 +22,7 @@
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    NOMBRE
+                    Nombre
                 </div>
                 <div class="col-8">
                     <input type="text" v-model="producto.nombre" placeholder="AAA AAA" class="form-control">
@@ -30,7 +30,7 @@
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    CANTIDAD
+                    Cantidad
                 </div>
                 <div class="col-8">
                     <input type="text" v-model="producto.cantidad" placeholder="000" class="form-control">
@@ -38,7 +38,7 @@
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    Tipo de producto:
+                    Tipo producto
                 </div>
                 <div class="col-8">
                     <input type="text" v-model="producto.tipo" placeholder="AAAAAAAAA" class="form-control">
@@ -46,7 +46,7 @@
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                CADÚCA
+                Caduca
                 </div>
                 <div class="col-8">
                     <input type="date" v-model="producto.fecha" placeholder="00/00/00" class="form-control">
@@ -54,15 +54,11 @@
             </div>
             <div class="row p-2"> 
                 <div class="col-12 text-center">
-                    <input id="btnGuardarProductos" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
-                    <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
+                    <input id="btnGuardarProductos" type="submit" class="btn btn-primary text-white" value="Guardar">
+                    <input type="reset" class="btn btn-warning text-white" value="Limpiar">
                    
                 </div>
             </div>
-            <div class="row p-2">
-                <div class="col-12 text-center">
-                    <div class="alert alert-success" role="alert">
-                        {{ producto.msg }}
                     </div>
                 </div>
             </div>

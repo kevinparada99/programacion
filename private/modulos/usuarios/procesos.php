@@ -22,14 +22,14 @@ class usuario{
         $this->validar_datos();
     }
     private function validar_datos(){
-        if( empty($this->datos['codigo']) ){
+        if( empty(trim($this->datos['codigo']) )){
             $this->respuesta['msg'] = 'por favor ingrese el codigo del usuario';
         }
-        if( empty($this->datos['nombre']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el nombre del usuario';
+        if( empty(trim($this->datos['nombre']) )){
+            $this->respuesta['msg'] = 'por favor ingrese el nombre del usuario ';
         }
-        if( empty($this->datos['edad']) ){
-            $this->respuesta['msg'] = 'por favor ingrese la edad del usuario';
+        if( empty(trim($this->datos['edad'])) ){
+            $this->respuesta['msg'] = 'por favor ingrese la fecha de naciomiento del usuario';
         }
         $this->almacenar_usuario();
     }
@@ -37,7 +37,7 @@ class usuario{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO usuarios (codigo,nombre,edad,inicial,fechaini,actual,fechaac,medicamento,observacion) VALUES(
+                    INSERT INTO usuarios (codigo,nombre,edad,inicial,fechaini,actual,fechaac,medicamento,enfermedad,observacion) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
                         "'. $this->datos['edad'] .'",
@@ -46,6 +46,7 @@ class usuario{
                         "'. $this->datos['actual'] .'",
                         "'. $this->datos['fechaac'] .'",
                         "'. $this->datos['medicamento'] .'",
+                         "'. $this->datos['enfermedad'] .'",
                         "'. $this->datos['observacion'] .'"
                     )
                 ');
@@ -61,6 +62,7 @@ class usuario{
                         actual        = "'. $this->datos['actual'] .'",
                         fechaac     = "'. $this->datos['fechaac'] .'",
                         medicamento     = "'. $this->datos['medicamento'] .'",
+                        enfermedad     = "'. $this->datos['enfermedad'] .'",
                         observacion   = "'. $this->datos['observacion'] .'"
                     WHERE idUsuario = "'. $this->datos['idUsuario'] .'"
                 ');
@@ -70,9 +72,9 @@ class usuario{
     }
     public function buscarUsuario($valor = ''){
         $this->db->consultas('
-            select usuarios.idUsuario, usuarios.codigo, usuarios.nombre, usuarios.edad, usuarios.inicial, usuarios.fechaini, usuarios.actual, usuarios.fechaac, usuarios.medicamento, usuarios.observacion
+            select usuarios.idUsuario, usuarios.codigo, usuarios.nombre, usuarios.edad, usuarios.inicial, usuarios.fechaini, usuarios.actual, usuarios.fechaac, usuarios.medicamento,  usuarios.enfermedad, usuarios.observacion
             from usuarios
-            where usuarios.codigo like "%'. $valor .'%" or usuarios.nombre like "%'. $valor .'%" or usuarios.edad like "%'. $valor .'%"
+            where usuarios.codigo like "%'. $valor .'%" or usuarios.nombre like "%'. $valor .'%" or usuarios.actual like "%'. $valor .'%"
         ');
         return $this->respuesta = $this->db->obtener_data();
     }

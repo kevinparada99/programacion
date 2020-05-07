@@ -3,13 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Login / Registar Nutricion</title>
-    
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../../public/css/style.css">
-    
 </head>
 <body>
-    
 <div class="container-form">
         <div class="header">
         <a href="../../index.html"><img src="https://img.icons8.com/plasticine/50/000000/return.png"/></a>
@@ -19,20 +16,19 @@
             </div>
             <div class="menu">
                 <a href="../modulos/login.php"><li class="module-login">Login</li></a>
-                <a href="../modulos/register.php"><li class="module-register active">Register</li></a>
+                <a href="../modulos/register.php"><li class="module-register active">Registrar</li></a>
             </div>
         </div>
-        
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form">
-            <div class="welcome-form"><h1>Bienvenido A</h1><h2>5 Tech</h2></div>
+            <div class="welcome-form"><h1>Bienvenidos A</h1><h2>Nutri5Tech</h2></div>
             
             <div class="user line-input">
                 <label class="lnr lnr-envelope"></label>
-                <input type="text"  placeholder="Correo" name="correo" >
+                <input type="text"  placeholder="Correo" name="correo" value="<?php if(isset($correo)) echo $correo?>">
             </div>
             <div class="user line-input">
                 <label class="lnr lnr-user"></label>
-                <input type="text" placeholder="Nombre Usuario" name="usuario" pattern="[a-zA-Z]+">
+                <input type="text" placeholder="Nombre Usuario" name="usuario" pattern="[a-zA-Z]+" value="<?php if(isset($usuario)) echo $usuario?>">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
@@ -42,19 +38,14 @@
                 <label class="lnr lnr-lock"></label>
                 <input type="password" placeholder="Confirmar contraseña"  name="clave2">
             </div>
-            
             <?php if(!empty($error)): ?>
             <div class="mensaje">
                 <?php echo $error; ?>
             </div>
             <?php endif; ?>
-            
             <button type="submit">Registrarse<label class="lnr lnr-chevron-right"></label></button>
-               
     </form>
     </div>
-
-    
     <script src="../../public/js/jquery.js"></script>
     <script src="../../public/js/script.js"></script>
 </body>

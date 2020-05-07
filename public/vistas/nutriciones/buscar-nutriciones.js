@@ -15,16 +15,19 @@ var appbuscar_nutriciones = new Vue({
             appnutriciones.nutricion.accion = 'modificar';
         },
         eliminarNutricion(idNutricion){
-            var confirmacion = confirm("¿estas seguro de eliminar el registro?..");
-                if (confirmacion){
-                  alert(" El registro se elimino corretamente....");
-            fetch(`../nutriciones/procesos.php?proceso=eliminarNutricion&nutricion=${idNutricion}`).then( resp=>resp.json() ).then(resp=>{
-                this.buscarNutriciones();
+            alertify.confirm("Control De Nutricion ","Esta seguro de eliminar",
+            ()=>{
+                fetch(`../nutriciones/procesos.php?proceso=eliminarNutricion&nutricion=${idNutricion}`).then( resp=>resp.json() ).then(resp=>{
+                    this.buscarNutriciones();
+             });
+                alertify.success('Registro Eliminado correctamente.');
+            },
+            ()=>{
+                alertify.error('Cancelado....');
             });
-        }
-
-        }
-    },
+    }
+},
+   
     created(){
         this.buscarNutriciones();
     }

@@ -15,7 +15,15 @@ var appproducto = new Vue({
     methods:{
         guardarProducto:function(){
             fetch(`../productos/procesos.php?proceso=recibirDatos&producto=${JSON.stringify(this.producto)}`).then( resp=>resp.json() ).then(resp=>{
-                this.producto.msg = resp.msg;
+                if( resp.msg.indexOf("correctamente")>=0 ){
+                    alertify.success(resp.msg);
+                }
+                else if(resp.msg.indexOf("ingrese")>=0){
+                    alertify.warning(resp.msg);
+                } 
+            });
+        },
+            limpiarProducto:function(){
                 this.producto.idProducto = 0;
                 this.producto.codigo = '';
                 this.producto.nombre = '';
@@ -24,7 +32,6 @@ var appproducto = new Vue({
                 this.producto.fecha = '';
                 this.producto.accion = 'nuevo';
                 appBuscarProductos.buscarProducto();
-            });
+            }       
         }
-    }
 });

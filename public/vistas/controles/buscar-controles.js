@@ -15,16 +15,18 @@ var appbuscar_controles = new Vue({
             appcontroles.control.accion = 'modificar';
         },
         eliminarControl(idControl){
-            var confirmacion = confirm("¿estas seguro de eliminar el registro?..");
-            if (confirmacion){
-                alert(" El registro se elimino corretamente....");
+            alertify.confirm("Control De Controles ","Esta seguro de eliminar",
+            ()=>{
                 fetch(`../controles/procesos.php?proceso=eliminarControl&control=${idControl}`).then(resp=>resp.json()).then(resp=>{
-                  this.buscarControles();
-              });
-              }
-
-        }
-    },
+                    this.buscarControles();
+             });
+                alertify.success('Registro Eliminado correctamente.');
+            },
+            ()=>{
+                alertify.error('Cancelado....');
+            });
+    }
+},
     created(){
         this.buscarControles();
     }

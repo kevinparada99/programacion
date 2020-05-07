@@ -28,7 +28,12 @@ var appnutriciones = new Vue({
     methods:{
         guardarNutriciones(){
             fetch(`../nutriciones/procesos.php?proceso=recibirDatos&nutricion=${JSON.stringify(this.nutricion)}`).then( resp=>resp.json() ).then(resp=>{
-                this.nutricion.msg = resp.msg;
+                if( resp.msg.indexOf("correctamente")>=0 ){
+                    alertify.success(resp.msg);
+                }
+                else if(resp.msg.indexOf("ingrese")>=0){
+                    alertify.warning(resp.msg);
+                } 
             });
         },
         limpiarNutriciones(){

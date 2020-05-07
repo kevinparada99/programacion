@@ -3,9 +3,6 @@
     if(isset($_SESSION['usuario'])) {
         header('location: index.php');
     }
-
-    
-    
     if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         $correo = $_POST['correo'];
@@ -17,7 +14,6 @@
         $clave2 = hash('sha512', $clave2);
         
         $error = '';
-
         
         if (empty($correo)){
             $error .= '<i>Favor de ingresar el correo</i>';
@@ -47,7 +43,6 @@
         else if (empty($clave2)){
             $error .= '<i>Favor ingresar la contraseña de confirmacion</i>';
         
-
         }else{
             try{
                 $conexion = new PDO('mysql:host=localhost;dbname=proyec_nutricion', 'root', '');
@@ -84,7 +79,6 @@
             $error .= '<i style="color: green;">Usuario registrado exitosamente</i>';
         }
     }
-
 
 
     require '../../public/frontend/register-vista.php';

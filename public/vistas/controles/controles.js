@@ -20,13 +20,17 @@ var appcontroles = new Vue({
     methods:{
         guardarControles(){
             fetch(`../controles/procesos.php?proceso=recibirDatos&control=${JSON.stringify(this.control)}`).then( resp=>resp.json() ).then(resp=>{
-                this.control.msg = resp.msg;
+                if( resp.msg.indexOf("correctamente")>=0 ){
+                    alertify.success(resp.msg);
+                }
+                else if(resp.msg.indexOf("ingrese")>=0){
+                    alertify.warning(resp.msg);
+                } 
             });
         },
         limpiarControles(){
             this.control.idControl=0;
             this.control.accion="nuevo";
-            this.control.msg="";
         }
     },
     created(){

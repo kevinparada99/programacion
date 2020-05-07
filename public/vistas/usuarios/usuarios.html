@@ -1,5 +1,5 @@
 <form v-on:submit.prevent="guardarUsuario" data-accion="nuevo" data-idusuario='' id="frm-usuarios" method="post">
-    <div class="card text-white bg-success mb-3" style="max-width: 40rem;">
+    <div class="card text-white bg-success mb-3" style="max-width: 43rem;">
         <div class="card-header">
             ---------REGISTRAR USUARIOS------------
 
@@ -13,7 +13,7 @@
         <div class="card-body">
             <div class="row p-2">
                 <div class="col-4">
-                    CODIGO
+                    Código
                 </div>
                 <div class="col-8">
                     <input type="text" v-model="usuario.codigo" placeholder="AAAA000000" class="form-control">
@@ -21,7 +21,7 @@
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    NOMBRE
+                    Nombre
                 </div>
                 <div class="col-8">
                     <input type="text" v-model="usuario.nombre" placeholder="AAA AAA" class="form-control">
@@ -32,12 +32,12 @@
                     Fecha de nacimiento
                 </div>
                 <div class="col-8">
-                    <input type="date" v-model="usuario.edad" placeholder="" class="form-control">
+                    <input type="date" v-model="usuario.edad"  min="1900-01-01" max="1970-01-01" placeholder="" class="form-control">
                 </div>
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    PESO
+                    Peso
                 </div>
                 <div class="col-8">
                     <input type="text" v-model="usuario.inicial" placeholder="lb" class="form-control">
@@ -45,7 +45,7 @@
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    FECHA DEL PESO
+                    Fecha Peso
                 </div>
                 <div class="col">
                     <input type="date" v-model="usuario.fechaini" class="form-control form-control-sm">
@@ -56,20 +56,36 @@
                     Sexo
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="usuario.actual" placeholder="M o F" class="form-control">
+                    <select name="transporte" v-model="usuario.actual" class="form-control">
+
+                        <option>Masculino</option>
+                        
+                        <option>Femenino</option>
+                        
+                        <option>Otro</option>
+                        
+                        </select>
                 </div>
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    Medicamentos
+                    Medicamento
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="usuario.medicamento" placeholder="medicamento que toma" class="form-control">
+                    <input type="text" v-model="usuario.medicamento" placeholder="medicamentos que toma" class="form-control">
                 </div>
             </div>
+             <div class="row p-2">
+                 <div class="col-4">
+                     Patología
+                 </div>
+                 <div class="col-8">
+                     <input type="text" v-model="usuario.enfermedad" placeholder="Patología" class="form-control">
+                 </div>
+             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    OBSERVACION
+                    Observación
                 </div>
                 <div class="col-8">
                     <input type="text" v-model="usuario.observacion" placeholder="Alergias a medicamento.etc" class="form-control">
@@ -77,7 +93,7 @@
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    Fecha de registro
+                    Fecha registro
                 </div>
                 <div class="col">
                     <input type="date" v-model="usuario.fechaac" class="form-control form-control-sm">
@@ -85,14 +101,10 @@
             </div>
             <div class="row p-2"> 
                 <div class="col-12 text-center">
-                    <input id="btnGuardarUsuarios" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
-                    <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
+                    <input id="btnGuardarUsuarios" type="submit" class="btn btn-primary text-white" value="Guardar">
+                    <input type="reset" class="btn btn-warning text-white" value="Limpiar">
                 </div>
             </div>
-            <div class="row p-2">
-                <div class="col-12 text-center">
-                    <div class="alert alert-success" role="alert">
-                        {{ usuario.msg }}
                     </div>
                 </div>
             </div>

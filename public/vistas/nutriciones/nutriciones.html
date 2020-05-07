@@ -1,7 +1,7 @@
 <form v-on:submit.prevent="guardarNutriciones" v-on:reset="limpiarNutriciones" id="frm-nutriciones">
     <div class="card text-white bg-success mb-3" style="max-width: 24rem;">
         <div class="card-header">
-            --------AGREGAR NUTRICION----------
+            --------AGREGAR NUTRICIÓN----------
 
              <img src="https://img.icons8.com/small/30/000000/search.png" class=" mostrar-buscar-nutriciones
              text-white"
@@ -15,7 +15,7 @@
             <div class="row row-cols-1 p-2">
                 <div class="row-col">
                     <div class="col">
-                        USUARIO
+                        Usuario
                     </div>
                     <div class="col">
                         <v-select v-model="nutricion.usuario" :options="usuarios" placeholder="Seleccione un usuario" />
@@ -46,7 +46,7 @@
             <div class="row row-cols-1 p-2">
                 <div class="row-col">
                     <div class="col">
-                        FECHA
+                        Fecha
                     </div>
                     <div class="col">
                         <input type="date" v-model="nutricion.fecha" class="form-control form-control-sm">
@@ -56,15 +56,11 @@
             <div class="row row-cols-1 p-2">
                 <div class="row-col text-center">
                     <div class="col">
-                        <input id="btnGuardarNutriciones" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
-                        <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
+                        <input id="btnGuardarNutriciones" type="submit" class="btn btn-primary text-white" value="Guardar">
+                        <input type="reset" class="btn btn-warning text-white" value="Limpiar">
                        
                 </div>
             </div>
-            <div class="row row-cols-1 p-2">
-                <div class="row-col text-center">
-                    <div class="col">
-                        <div class="alert alert-success" role="alert">{{ nutricion.msg }}</div>
                     </div>
                 </div>
             </div>

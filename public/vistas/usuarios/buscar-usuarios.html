@@ -1,5 +1,5 @@
 <form method="POST" id="frm-buscar-usuarios">
-    <div class="card text-white bg-success mb-3" style="max-width: 48rem;">
+    <div class="card text-white bg-success mb-3" style="max-width: 65rem;">
         <div class="car-header">
             BUSCAR USUARIOS
 
@@ -11,20 +11,21 @@
             <table id="tbl-buscar-usuarios" class="table-striped bg-success table-bordered table-hover">
                 <thead>
                     <tr>
-                        <th colspan="5">
-                            <input type="text" v-model="valor" v-on:keyup="buscarUsuario" placeholder="codigo,nombre o edad" class="form-control">
+                        <th colspan="11">
+                            <input type="text" v-model="valor" v-on:keyup="buscarUsuario" placeholder="codigo,nombre o sexo" class="form-control">
                         </th>
                     </tr>
                     <tr>
-                        <th>CODIGO</th>
-                        <th>NOMBRE</th>
-                        <th>fecha nacimiento</th>
-                        <th>PESO </th>
-                        <th>fecha de peso </th>
-                        <th>sexo</th>
-                        <th>medicamentos</th>
-                        <th>observacion</th>
-                        <th>fecha registro</th>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Fecha nacimiento</th>
+                        <th>Peso</th>
+                        <th>Fecha peso </th>
+                        <th>Sexo</th>
+                        <th>Medicamentos</th>
+                        <th>Patología</th>
+                        <th>Observación</th>
+                        <th>Fecha registro</th>
                         <th> </th>
                     </tr>
                 </thead>
@@ -36,9 +37,10 @@
                         <td>{{ cliente.inicial}}</td>
                         <td>{{ cliente.fechaini}}</td>
                         <td>{{ cliente.actual}}</td>
-                        <td>{{ cliente.fechaac}}</td>
                         <td>{{ cliente.medicamento}}</td>
-                        <td>{{ cliente.observacion }}</td>
+                        <td>{{ cliente.enfermedad}}</td>
+                        <td>{{ cliente.observacion}}</td>
+                        <td>{{ cliente.fechaac}}</td>
                         <td>
                             <input v-on:click="eliminarUsuario(cliente.idUsuario)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>

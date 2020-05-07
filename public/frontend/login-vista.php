@@ -18,12 +18,12 @@
             </div>
             <div class="menu">
                 <a href="../../private/modulos/login.php"><li class="module-login active">Login</li></a>
-                <a href="../../private/modulos/register.php"><li class="module-register">Registar</li></a>
+                <a href="../../private/modulos/register.php"><li class="module-register">Registrar</li></a>
             </div>
         </div>
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form">
-            <div class="welcome-form"><h1>Bienvenido A </h1><h2>5 Tech</h2></div>
+            <div class="welcome-form"><h1>Bienvenidos A </h1><h2>Nutri5Tech</h2></div>
             <div class="user line-input">
                 <label class="lnr lnr-user"></label>
                 <input type="text" placeholder="Nombre Usuario" required name="usuario">
@@ -40,10 +40,8 @@
             <?php endif; ?>
             
             <button type="submit">Entrar<label class="lnr lnr-chevron-right"></label></button>
-            <div class="welcome-form"><h4>¿se te olvido la contraseña?</h4></div>
         </form>
     </div>
-    
     <script src="../../public/js/jquery.js"></script>
     <script src="../../public/js/script.js"></script>
 </body>

@@ -14,7 +14,7 @@
             <div class="row row-cols-1 p-2">
                 <div class="row-col">
                     <div class="col">
-                        USUARIO:
+                        Usuario
                     </div>
                     <div class="col">
                         <v-select v-model="control.usuario" :options="usuarios" placeholder="Seleccione un usuario" />
@@ -24,7 +24,7 @@
             <div class="row row-cols-1 p-2">
                 <div class="row-col">
                     <div class="col">
-                        ENFERMEDAD:
+                        Enfermedad
                     </div>
                     <div class="col">
                         <input type="text" v-model="control.tipo" placeholder="AAAAAAA" class="form-control">
@@ -34,7 +34,7 @@
             <div class="row row-cols-1 p-2">
                 <div class="row-col">
                     <div class="col">
-                        FECHA DE CONTROL:
+                        Fecha de control
                     </div>
                     <div class="col">
                         <input type="date" v-model="control.fecha" class="form-control form-control-sm">
@@ -44,16 +44,12 @@
             <div class="row row-cols-1 p-2">
                 <div class="row-col text-center">
                     <div class="col">
-                        <input id="btnGuardarControles" type="submit" class="btn btn-outline-primary text-white" value="Guardar">
-                        <input type="reset" class="btn btn-outline-warning text-white" value="Limpiar">
+                        <input id="btnGuardarControles" type="submit" class="btn btn-primary text-white" value="Guardar">
+                        <input type="reset" class="btn btn-warning text-white" value="Limpiar">
                         
-                </div>
-            </div>
-            <div class="row row-cols-1 p-2">
-                <div class="row-col text-center">
-                    <div class="col">
-                        <div class="alert alert-success" role="alert">{{ control.msg }}</div>
-                    </div>
+                       </div>
+                     </div>
+                   </div>
                 </div>
             </div>
         </div>

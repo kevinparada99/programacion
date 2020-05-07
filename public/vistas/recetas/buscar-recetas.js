@@ -15,15 +15,19 @@ var appBuscarRecetas = new Vue({
             appreceta.receta.accion = 'modificar';
         },
         eliminarReceta:function(idReceta){
-                var confirmacion = confirm("¿estas seguro de eliminar el registro?..");
-                if (confirmacion){
-                  alert(" El registro se elimino corretamente....");
-                  fetch(`../recetas/procesos.php?proceso=eliminarReceta&receta=${idReceta}`).then(resp=>resp.json()).then(resp=>{
+            alertify.confirm("Control De Recetas ","Esta seguro de eliminar",
+            ()=>{
+                fetch(`../recetas/procesos.php?proceso=eliminarReceta&receta=${idReceta}`).then(resp=>resp.json()).then(resp=>{
                     this.buscarReceta();
-                });
-                }
-        }
-    },
+             });
+                alertify.success('Registro Eliminado correctamente.');
+            },
+            ()=>{
+                alertify.error('Cancelado....');
+            });
+    }
+},
+    
     created:function(){
         this.buscarReceta();
     }
