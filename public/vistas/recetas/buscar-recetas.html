@@ -20,6 +20,7 @@
                         <th>Nombre</th>
                         <th>Ingredientes</th>
                         <th>Información</th>
+                        <th>Fecha registro</th>
                         <th> </th>
                     </tr>
                 </thead>
@@ -29,6 +30,7 @@
                         <td>{{ recets.nombres }}</td>
                         <td>{{ recets.ingrediente }}</td>
                         <td>{{ recets.informacion }}</td>
+                        <td>{{ recets.registro }}</td>
                         <td>
                             <input v-on:click="eliminarReceta(recets.idReceta)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>

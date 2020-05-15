@@ -24,7 +24,8 @@
                     Receta
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="receta.nombres" placeholder="AAA AAA" class="form-control">
+                    <input type="text" pattern="[a-zA-Z ]+" v-model="receta.nombres" placeholder="AAA AAA"
+                        class="form-control">
                 </div>
             </div>
             <div class="row p-2">
@@ -32,7 +33,8 @@
                     Ingrediente
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="receta.ingrediente" placeholder="AAA" class="form-control">
+                    <input type="text" v-model="receta.ingrediente" placeholder="AAA"
+                        class="form-control">
                 </div>
             </div>
             <div class="row p-2">
@@ -41,6 +43,14 @@
                 </div>
                 <div class="col-8">
                     <input type="text" v-model="receta.informacion" placeholder="AAAAAAAA-AAAAAA" class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                Fecha regist.
+                </div>
+                <div class="col-8">
+                    <input type="date" v-model="receta.registro" class="form-control">
                 </div>
             </div>
             <div class="row p-2"> 

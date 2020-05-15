@@ -115,7 +115,7 @@ class nutricion{
         select horas.tiempo AS label, horas.idHora AS id
         from horas
     ');
-    $horas = $this->db->obtener_data();
+        $horas = $this->db->obtener_data();
         return $this->respuesta = ['usuarios'=>$usuarios, 'recetas'=>$recetas, 'horas'=>$horas ];//array de php en v7+
     }
     public function eliminarNutricion($idNutricion = 0){

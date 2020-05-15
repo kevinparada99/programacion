@@ -1,0 +1,47 @@
+<form method="POST" id="frm-buscar-medicamentos">
+    <div class="card text-white bg-success mb-3" style="max-width: 48rem;">
+        <div class="car-header">
+            BUSQUEDA DE MEDICAMENTOS
+
+            <button type="button" id="btn-close-buscar-medicamentos" class="close" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="card-body">
+            <table id="tbl-buscar-medicamentos" class="table-striped bg-success table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th colspan="8">
+                            <input type="text" v-model="valor" v-on:keyup="buscarMedicamento" placeholder="codigo,nombre o tipo" class="form-control">
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Cantidad</th>
+                        <th>Tipo</th>
+                        <th>Ingreso</th>
+                        <th>Caducidad</th>
+                        <th>Fecha registro</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="medic in mismedicamentos" :key="medic.idMedicamento" v-on:click="modificarMedicamento(medic)">
+                        <td>{{ medic.codigom }}</td>
+                        <td>{{ medic.nombrem }}</td>
+                        <td>{{ medic.cantidad }}</td>
+                        <td>{{ medic.tipo }}</td>
+                        <td>{{ medic.ingreso }}</td>
+                        <td>{{ medic.fecha }}</td>
+                        <td>{{ medic.registro }}</td>
+                        <td>
+                            <input v-on:click="eliminarMedicamento(medic.idMedicamento)" type="button" class="btn btn-outline-danger text-white" value="del">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>
+<script src="../../../public/vistas/medicamentos/buscar-medicamentos.js"></script>

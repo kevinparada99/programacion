@@ -1,13 +1,13 @@
 var appBuscarUsuarios = new Vue({
     el:'#frm-buscar-usuarios',
     data:{
-        misusuarios:[],
+        mis_cliente:[],
         valor:''
     },
     methods:{
         buscarUsuario:function(){
             fetch(`../usuarios/procesos.php?proceso=buscarUsuario&usuario=${this.valor}`).then(resp=>resp.json()).then(resp=>{
-                this.misusuarios = resp;
+                this.mis_cliente = resp;
             });
         },
         modificarUsuario:function(usuario){

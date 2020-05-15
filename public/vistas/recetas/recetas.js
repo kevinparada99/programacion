@@ -9,6 +9,7 @@ var appreceta = new Vue({
             nombres    : '',
             ingrediente : '',
             informacion : '',
+            registro   :'',
             msg       : ''
         }
     },
@@ -29,6 +30,7 @@ var appreceta = new Vue({
                 this.receta.nombres = '';
                 this.receta.ingrediente = '';
                 this.receta.informacion = '';
+                this.receta.registro = '';
                 this.receta.accion = 'nuevo';
                 appBuscarRecetas.buscarReceta();
         }

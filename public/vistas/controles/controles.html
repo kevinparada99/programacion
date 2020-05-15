@@ -27,7 +27,18 @@
                         Enfermedad
                     </div>
                     <div class="col">
-                        <input type="text" v-model="control.tipo" placeholder="AAAAAAA" class="form-control">
+                        <input type="text" pattern="[a-zA-Z ]+" v-model="control.tipo" placeholder="AAAAAAA"
+                            class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-1 p-2">
+                <div class="row-col">
+                    <div class="col">
+                        Medicamento R
+                    </div>
+                    <div class="col">
+                        <v-select v-model="control.medicamento" :options="medicamentos" placeholder="Medicamento Resetado" />
                     </div>
                 </div>
             </div>
@@ -38,6 +49,16 @@
                     </div>
                     <div class="col">
                         <input type="date" v-model="control.fecha" class="form-control form-control-sm">
+                    </div>
+                </div>
+            </div>
+            <div class="row row-cols-1 p-2">
+                <div class="row-col">
+                    <div class="col">
+                        Proxima consulta
+                    </div>
+                    <div class="col">
+                        <input type="date" v-model="control.siguiente" class="form-control form-control-sm">
                     </div>
                 </div>
             </div>

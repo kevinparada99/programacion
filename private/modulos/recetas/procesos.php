@@ -22,13 +22,19 @@ class receta{
     }
     private function validar_datos(){
         if( empty($this->datos['codigo']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el codigo de la receta';
+            $this->respuesta['msg'] = 'Por favor ingrese el codigo de la receta.';
         }
         if( empty($this->datos['nombres']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el nombres de la receta';
+            $this->respuesta['msg'] = 'Por favor ingrese el nombres de la receta.';
         }
         if( empty($this->datos['ingrediente']) ){
-            $this->respuesta['msg'] = 'por favor ingrese los ingredientes';
+            $this->respuesta['msg'] = 'Por favor ingrese los ingredientes de la receta.';
+        }
+        if( empty(trim($this->datos['informacion'])) ){
+            $this->respuesta['msg'] = 'Por favor ingrese información de la receta.';
+        }
+        if( empty(trim($this->datos['registro'])) ){
+            $this->respuesta['msg'] = 'Por favor ingrese la fecha de registro de la receta.';
         }
         $this->almacenar_receta();
     }
@@ -36,11 +42,12 @@ class receta{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO recetas (codigo,nombres,ingrediente,informacion) VALUES(
+                    INSERT INTO recetas (codigo,nombres,ingrediente,informacion,registro) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombres'] .'",
                         "'. $this->datos['ingrediente'] .'",
-                        "'. $this->datos['informacion'] .'"
+                        "'. $this->datos['informacion'] .'",
+                        "'. $this->datos['registro'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
@@ -50,7 +57,8 @@ class receta{
                         codigo     = "'. $this->datos['codigo'] .'",
                         nombres     = "'. $this->datos['nombres'] .'",
                         ingrediente  = "'. $this->datos['ingrediente'] .'",
-                        informacion   = "'. $this->datos['informacion'] .'"
+                        informacion   = "'. $this->datos['informacion'] .'",
+                        registro   = "'. $this->datos['registro'] .'"
                     WHERE idReceta = "'. $this->datos['idReceta'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
@@ -59,7 +67,7 @@ class receta{
     }
     public function buscarReceta($valor = ''){
         $this->db->consultas('
-            select recetas.idReceta, recetas.codigo, recetas.nombres, recetas.ingrediente, recetas.informacion
+            select recetas.idReceta, recetas.codigo, recetas.nombres, recetas.ingrediente, recetas.informacion,recetas.registro
             from recetas
             where recetas.codigo like "%'. $valor .'%" or recetas.nombres like "%'. $valor .'%"  or recetas.ingrediente like "%'. $valor .'%"
         ');

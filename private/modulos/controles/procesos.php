@@ -22,10 +22,13 @@ class control{
     }
     private function validar_datos(){
         if( empty($this->datos['usuario']['id']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el usuario';
+            $this->respuesta['msg'] = 'Por favor ingrese el usuario.';
         }
         if( empty($this->datos['tipo']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el tipo';
+            $this->respuesta['msg'] = 'Por favor ingrese la enfermedad';
+        }
+        if( empty($this->datos['medicamento']['id']) ){
+            $this->respuesta['msg'] = 'Por favor ingrese el medicamento';
         }
         $this->almacenar_control();
     }
@@ -33,10 +36,12 @@ class control{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO controles (idUsuario,tipo,fecha) VALUES(
+                    INSERT INTO controles (idUsuario,tipo,idMedicamento,fecha,siguiente) VALUES(
                         "'. $this->datos['usuario']['id'] .'",
                         "'. $this->datos['tipo'].'",
-                        "'. $this->datos['fecha'] .'"
+                        "'. $this->datos['medicamento']['id'] .'",
+                        "'. $this->datos['fecha'] .'",
+                        "'. $this->datos['siguiente'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
@@ -45,7 +50,9 @@ class control{
                     UPDATE controles SET
                         idUsuario     = "'. $this->datos['usuario']['id'] .'",
                         tipo      = "'. $this->datos['tipo'] .'",
-                        fecha         = "'. $this->datos['fecha'] .'"
+                        idMedicamento     = "'. $this->datos['medicamento']['id'] .'",
+                        fecha         = "'. $this->datos['fecha'] .'",
+                        siguiente       = "'. $this->datos['siguiente'] .'"
                     WHERE idControl = "'. $this->datos['idControl'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
@@ -57,15 +64,19 @@ class control{
             $valor = implode('-', array_reverse(explode('-',$valor)));
         }
         $this->db->consultas('
-            select controles.idControl, controles.idUsuario, controles.tipo, 
+            select controles.idControl, controles.idUsuario, controles.tipo,controles.siguiente, controles.idMedicamento,
                 date_format(controles.fecha,"%d-%m-%Y") AS fecha, controles.fecha AS f, 
-                usuarios.codigo, usuarios.nombre, 
-                controles.tipo AS t
+                usuarios.codigo, usuarios.nombre,
+                medicamentos.codigom, medicamentos.nombrem, 
+                controles.tipo AS t,
+                controles.siguiente AS s
             from controles
                 inner join usuarios on(usuarios.idUsuario=controles.idUsuario)
+                inner join medicamentos on(medicamentos.idMedicamento=controles.idMedicamento)
             where usuarios.nombre like "%'. $valor .'%" or 
-                controles.tipo like "%'. $valor .'%" or
+                controles.tipo like "%'. $valor .'%" or 
                 controles.fecha like "%'. $valor .'%"
+                order by siguiente
 
         ');
         $controles = $this->respuesta = $this->db->obtener_data();
@@ -78,9 +89,14 @@ class control{
                 ],
                 'tipo'       => $value['t'],
                 't'           => $value['tipo'],
-
+                'medicamento'      => [
+                    'id'      => $value['idMedicamento'],
+                    'label'   => $value['nombrem']
+                ],
                 'fecha'       => $value['f'],
-                'f'           => $value['fecha']
+                'f'           => $value['fecha'],
+                'siguiente'       => $value['s'],
+                's'           => $value['siguiente']
 
             ]; 
         }
@@ -92,7 +108,12 @@ class control{
             from usuarios
         ');
         $usuarios = $this->db->obtener_data();
-        return $this->respuesta = ['usuarios'=>$usuarios];
+        $this->db->consultas('
+            select medicamentos.nombrem AS label, medicamentos.idMedicamento AS id
+            from medicamentos
+        ');
+        $medicamentos = $this->db->obtener_data();
+        return $this->respuesta = ['usuarios'=>$usuarios, 'medicamentos'=>$medicamentos ];
     }
     public function eliminarControl($idControl = 0){
         $this->db->consultas('

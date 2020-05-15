@@ -11,10 +11,17 @@ var appcontroles = new Vue({
                 usuario   : ''
             },
             tipo       : '',
+            medicamento   : {
+                idMedicamento : 0,
+                medicamento   : ''
+            },
             fecha     : '',
+            siguiente : '',
             msg       : ''
         },
-        usuarios : {}
+        usuarios : {},
+        medicamentos : {}
+
        
     },
     methods:{
@@ -36,8 +43,7 @@ var appcontroles = new Vue({
     created(){
         fetch(`../controles/procesos.php?proceso=traer_usuarios&control=''`).then( resp=>resp.json() ).then(resp=>{
             this.usuarios = resp.usuarios;
-           
-            
+            this.medicamentos = resp.medicamentos;
         });
     }
 });

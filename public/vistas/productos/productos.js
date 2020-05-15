@@ -9,6 +9,7 @@ var appproducto = new Vue({
             cantidad  : '',
             tipo  : '',
             fecha  : '',
+            registro  : '',
             msg       : ''
         }
     },
@@ -30,6 +31,7 @@ var appproducto = new Vue({
                 this.producto.cantidad = '';
                 this.producto.tipo = '';
                 this.producto.fecha = '';
+                this.producto.registro = '';
                 this.producto.accion = 'nuevo';
                 appBuscarProductos.buscarProducto();
             }       

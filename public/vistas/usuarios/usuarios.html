@@ -1,7 +1,7 @@
 <form v-on:submit.prevent="guardarUsuario" data-accion="nuevo" data-idusuario='' id="frm-usuarios" method="post">
     <div class="card text-white bg-success mb-3" style="max-width: 43rem;">
         <div class="card-header">
-            ---------REGISTRAR USUARIOS------------
+            --------------------REGISTRAR ADULTOS-------------------
 
             <img src="https://img.icons8.com/ios-glyphs/30/000000/search.png" class=" mostrar-buscar-usuarios text-white" data-modulo="usuarios"
                  data-form="buscar-usuarios" >
@@ -24,7 +24,8 @@
                     Nombre
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="usuario.nombre" placeholder="AAA AAA" class="form-control">
+                    <input type="text" pattern="[a-zA-Z ]+" v-model="usuario.nombre" placeholder="AAA AAA"
+                        class="form-control">
                 </div>
             </div>
             <div class="row p-2">
@@ -33,14 +34,23 @@
                 </div>
                 <div class="col-8">
                     <input type="date" v-model="usuario.edad"  min="1900-01-01" max="1970-01-01" placeholder="" class="form-control">
+                    <div class="col-8">
+                        <input type="text" v-model="usuario.naci" placeholder="" class="form-control" style="display:none"> 
+                    </div>
                 </div>
             </div>
-            <div class="row p-2">
+            <div class="row p-3">
                 <div class="col-4">
                     Peso
                 </div>
-                <div class="col-8">
-                    <input type="text" v-model="usuario.inicial" placeholder="lb" class="form-control">
+                <div class="col-5">
+                    <input type="number" v-model="usuario.inicial" placeholder="000" class="form-control">
+                </div>
+                <div class="col-3">
+                    <select name="transporte" v-model="usuario.libras" class="form-control">
+                        <option>Kilogramos</option>
+                        <option>Libras</option>
+                        </select>
                 </div>
             </div>
             <div class="row p-2">
@@ -72,7 +82,7 @@
                     Medicamento
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="usuario.medicamento" placeholder="medicamentos que toma" class="form-control">
+                    <v-select v-model="usuario.medicamento" :options="medicamentos" placeholder="Seleccione medicamento" />
                 </div>
             </div>
              <div class="row p-2">
@@ -80,8 +90,11 @@
                      Patología
                  </div>
                  <div class="col-8">
-                     <input type="text" v-model="usuario.enfermedad" placeholder="Patología" class="form-control">
-                 </div>
+                     <input type="text" v-model="usuario.enfermedad" placeholder="Patología" class="form-control" list="ninguna">
+                      <datalist id="ninguna">
+                          <option value="Ninguna"></option>
+                      </datalist>
+                    </div>
              </div>
             <div class="row p-2">
                 <div class="col-4">

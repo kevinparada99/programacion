@@ -21,6 +21,7 @@
                         <th>Cantidad</th>
                         <th>Tipo</th>
                         <th>Caducidad</th>
+                        <th>Fecha registro</th>
                         <th> </th>
                     </tr>
                 </thead>
@@ -31,6 +32,7 @@
                         <td>{{ produc.cantidad }}</td>
                         <td>{{ produc.tipo }}</td>
                         <td>{{ produc.fecha }}</td>
+                        <td>{{ produc.registro }}</td>
                         <td>
                             <input v-on:click="eliminarProducto(produc.idProducto)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>

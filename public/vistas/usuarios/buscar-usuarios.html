@@ -24,23 +24,25 @@
                         <th>Sexo</th>
                         <th>Medicamentos</th>
                         <th>Patología</th>
+                        <th>Edad</th>
                         <th>Observación</th>
                         <th>Fecha registro</th>
                         <th> </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="cliente in misusuarios" :key="cliente.idUsuario" v-on:click="modificarUsuario(cliente)">
-                        <td>{{ cliente.codigo }}</td>
-                        <td>{{ cliente.nombre }}</td>
-                        <td>{{ cliente.edad }}</td>
-                        <td>{{ cliente.inicial}}</td>
-                        <td>{{ cliente.fechaini}}</td>
-                        <td>{{ cliente.actual}}</td>
-                        <td>{{ cliente.medicamento}}</td>
-                        <td>{{ cliente.enfermedad}}</td>
-                        <td>{{ cliente.observacion}}</td>
-                        <td>{{ cliente.fechaac}}</td>
+                    <tr v-for="cliente in mis_cliente" :key="cliente.idUsuario" v-on:click="modificarUsuario(cliente)">
+                        <td>{{ cliente.c }}</td>
+                        <td>{{ cliente.n }}</td>
+                        <td>{{ cliente.e }}</td>
+                        <td>{{ cliente.i + cliente.l}}</td>
+                        <td>{{ cliente.f}}</td>
+                        <td>{{ cliente.a}}</td>
+                        <td>{{ cliente.medicamento.label}}</td>
+                        <td>{{ cliente.d}}</td>
+                        <td>{{ cliente.t}}</td>
+                        <td>{{ cliente.o}}</td>
+                        <td>{{ cliente.z}}</td>
                         <td>
                             <input v-on:click="eliminarUsuario(cliente.idUsuario)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>

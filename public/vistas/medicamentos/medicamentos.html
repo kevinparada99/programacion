@@ -1,13 +1,11 @@
-<form v-on:submit.prevent="guardarProducto" data-accion="nuevo" data-idalumno='' id="frm-productos" method="post">
-    <div class="card text-white bg-success mb-3" style="max-width: 24rem;">
+<form v-on:submit.prevent="guardarMedicamento" data-accion="nuevo" id="frm-medicamentos" method="post">
+    <div class="card text-white bg-success mb-3" style="max-width: 34rem;">
         <div class="card-header">
-            ---------AGREGAR PRODUCTOS--------
-             
+            ---------AGREGAR MEDICAMENTOS----
            <img src="https://img.icons8.com/small/30/000000/search.png" 
-           class="mostrar-buscar-productos"
-                 data-modulo="productos" data-form="buscar-productos" >
-           
-            <button type="button" id="btn-close-productos" class="close" aria-label="Close">
+           class="mostrar-buscar-medicamentos"
+                 data-modulo="medicamentos" data-form="buscar-medicamentos" >
+            <button type="button" id="btn-close-medicamentos" class="close" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
@@ -17,7 +15,7 @@
                     Código
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="producto.codigo" placeholder="AAAA000000" class="form-control">
+                    <input type="text"  v-model="medicamento.codigom" placeholder="AAAA000000" class="form-control">
                 </div>
             </div>
             <div class="row p-2">
@@ -25,7 +23,7 @@
                     Nombre
                 </div>
                 <div class="col-8">
-                    <input type="text" pattern="[a-zA-Z ]+" v-model="producto.nombre" placeholder="AAA AAA"
+                    <input type="text" pattern="[a-zA-Z ]+" v-model="medicamento.nombrem" placeholder="AAA AAA"
                         class="form-control">
                 </div>
             </div>
@@ -34,16 +32,25 @@
                     Cantidad
                 </div>
                 <div class="col-8">
-                    <input type="text" pattern="[0-9]+" v-model="producto.cantidad" placeholder="000"
+                    <input type="text" pattern="[0-9]+" v-model="medicamento.cantidad" placeholder="000"
                         class="form-control">
                 </div>
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                    Tipo producto
+                    Enfermedad
                 </div>
                 <div class="col-8">
-                    <input type="text" pattern="[a-zA-Z ]+" v-model="producto.tipo" placeholder="AAAAAAAAA"
+                    <input type="text" pattern="[a-zA-Z ]+" v-model="medicamento.tipo" placeholder="AAAAAAAAA"
+                        class="form-control">
+                </div>
+            </div>
+            <div class="row p-2">
+                <div class="col-4">
+                    Ingreso
+                </div>
+                <div class="col-8">
+                    <input type="text" pattern="[a-zA-Z ]+" v-model="medicamento.ingreso" placeholder="AAAAAAAAA"
                         class="form-control">
                 </div>
             </div>
@@ -52,20 +59,20 @@
                 Caduca
                 </div>
                 <div class="col-8">
-                    <input type="date" v-model="producto.fecha"  class="form-control">
+                    <input type="date" v-model="medicamento.fecha" class="form-control">
                 </div>
             </div>
             <div class="row p-2">
                 <div class="col-4">
-                Fecha regist.
+                fecha de regist.
                 </div>
                 <div class="col-8">
-                    <input type="date" v-model="producto.registro" class="form-control">
+                    <input type="date" v-model="medicamento.registro" class="form-control">
                 </div>
             </div>
             <div class="row p-2"> 
                 <div class="col-12 text-center">
-                    <input id="btnGuardarProductos" type="submit" class="btn btn-primary text-white" value="Guardar">
+                    <input id="btnGuardarMedicamentos" type="submit" class="btn btn-primary text-white" value="Guardar">
                     <input type="reset" class="btn btn-warning text-white" value="Limpiar">
                    
                 </div>
@@ -76,4 +83,4 @@
         </div>
     </div>
 </form>
-<script src="../../../public/vistas/productos/productos.js"></script>
+<script src="../../../public/vistas/medicamentos/medicamentos.js"></script>

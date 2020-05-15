@@ -22,14 +22,23 @@ class producto{
         $this->validar_datos();
     }
     private function validar_datos(){
-        if( empty($this->datos['codigo']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el codigo ';
+        if( empty(trim($this->datos['codigo'])) ){
+            $this->respuesta['msg'] = 'Por favor ingrese el codigo del producto.';
         }
-        if( empty($this->datos['nombre']) ){
-            $this->respuesta['msg'] = 'por favor ingrese el nombre ';
+        if( empty(trim($this->datos['nombre'])) ){
+            $this->respuesta['msg'] = 'Por favor ingrese el nombre del producto.';
         }
-        if( empty($this->datos['cantidad']) ){
-            $this->respuesta['msg'] = 'por favor ingrese la cantidad';
+        if( empty(trim($this->datos['cantidad'])) ){
+            $this->respuesta['msg'] = 'Por favor ingrese la cantidad del producto.';
+        }
+        if( empty(trim($this->datos['tipo'])) ){
+            $this->respuesta['msg'] = 'Por favor ingrese el tipo del producto.';
+        }
+        if( empty(trim($this->datos['fecha'])) ){
+            $this->respuesta['msg'] = 'Por favor ingrese la caducidad del producto.';
+        }
+        if( empty(trim($this->datos['registro'])) ){
+            $this->respuesta['msg'] = 'Por favor ingrese la fecha de registro del producto.';
         }
         $this->almacenar_producto();
     }
@@ -37,12 +46,13 @@ class producto{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO productos (codigo,nombre,cantidad,tipo,fecha) VALUES(
+                    INSERT INTO productos (codigo,nombre,cantidad,tipo,fecha,registro) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
                         "'. $this->datos['cantidad'] .'",
                         "'. $this->datos['tipo'] .'",
-                        "'. $this->datos['fecha'] .'"
+                        "'. $this->datos['fecha'] .'",
+                        "'. $this->datos['registro'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
@@ -54,6 +64,7 @@ class producto{
                         cantidad   = "'. $this->datos['cantidad'] .'",
                         tipo   = "'. $this->datos['tipo'] .'",
                         fecha      = "'. $this->datos['fecha'] .'"
+                        registro    = "'. $this->datos['registro'] .'"
                     WHERE idProducto = "'. $this->datos['idProducto'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
@@ -62,9 +73,10 @@ class producto{
     }
     public function buscarProducto($valor = ''){
         $this->db->consultas('
-            select productos.idProducto, productos.codigo, productos.nombre, productos.cantidad, productos.tipo, productos.fecha
+            select productos.idProducto, productos.codigo, productos.nombre, productos.cantidad, productos.tipo, productos.fecha, productos.registro
             from productos
             where productos.codigo like "%'. $valor .'%" or productos.nombre like "%'. $valor .'%" or productos.tipo like "%'. $valor .'%"
+            order by fecha
         ');
         return $this->respuesta = $this->db->obtener_data();
     }
