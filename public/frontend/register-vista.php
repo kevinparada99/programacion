@@ -28,7 +28,7 @@
             </div>
             <div class="user line-input">
                 <label class="lnr lnr-user"></label>
-                <input type="text" placeholder="Nombre Usuario" name="usuario" pattern="[a-zA-Z]+" value="<?php if(isset($usuario)) echo $usuario?>">
+                <input type="text" placeholder="Nombre Usuario" name="usuario" pattern="[a-zA-Z ]+" value="<?php if(isset($usuario)) echo $usuario?>">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
