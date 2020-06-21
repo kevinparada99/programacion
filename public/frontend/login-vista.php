@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Login / Register Nutricion</title>
-    
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../../public/css/style.css">
 </head>
@@ -26,11 +25,12 @@
             <div class="welcome-form"><h1>Bienvenidos A </h1><h2>Nutri5Tech</h2></div>
             <div class="user line-input">
                 <label class="lnr lnr-user"></label>
-                <input type="text" placeholder="Nombre Usuario" required name="usuario">
+                <input type="text" placeholder="Nombre Usuario" autofocus name="usuario">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
-                <input type="password" placeholder="Contraseña" required name="clave">
+                <input type="password" placeholder="Contraseña" id="contraseña" name="clave">
+                <img class="img-responsive" id="btnojo" src="../../public/image/ojo.jpg" style="width: 10%;">
             </div>
             
              <?php if(!empty($error)): ?>

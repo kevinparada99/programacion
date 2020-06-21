@@ -24,7 +24,7 @@
             
             <div class="user line-input">
                 <label class="lnr lnr-envelope"></label>
-                <input type="text"  placeholder="Correo" name="correo" value="<?php if(isset($correo)) echo $correo?>">
+                <input type="text"  placeholder="Correo" autofocus name="correo" value="<?php if(isset($correo)) echo $correo?>">
             </div>
             <div class="user line-input">
                 <label class="lnr lnr-user"></label>
@@ -32,7 +32,7 @@
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
-                <input type="password" minlength="5" required placeholder="Contraseña" name="clave">
+                <input type="password" placeholder="Contraseña" name="clave">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>

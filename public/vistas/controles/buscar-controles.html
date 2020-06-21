@@ -18,7 +18,8 @@
                     <tr>
                         <th>Usuario</th>
                         <th>Enfermedad</th> 
-                        <th>Medicamentos resetados</th> 
+                        <th>Medicamentos resetados</th>
+                        <th>Observaciones</th>
                         <th>Fecha de control</th> 
                         <th>proximo control</th>
                         <th> </th>
@@ -28,7 +29,8 @@
                     <tr v-for="mi_control in mis_controles" :key="mi_control.idControl" v-on:click="modificarControl(mi_control)" >
                         <td>{{ mi_control.usuario.label }}</td>
                         <td>{{ mi_control.t }}</td>
-                        <td>{{ mi_control.medicamento.label }}</td>
+                        <td>{{ mi_control.medicamento.label +', '+ mi_control.k }}</td>
+                        <td>{{ mi_control.o }}</td>
                         <td>{{ mi_control.f }}</td>
                         <td>{{ mi_control.s }}</td>
 

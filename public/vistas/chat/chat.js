@@ -1,4 +1,3 @@
-
 var socket = io.connect("http://localhost:3001",{'forceNew':true}),
 listaMsgs =[],
     appchat = new Vue({
@@ -39,7 +38,9 @@ listaMsgs =[],
     });
     
     socket.on('recibirMensaje',msg=>{
-     //   appchat.msgs.push(msg);
+      appchat.msgs.push(msg);
+      console.log(msg);
+     $.notification("Nuevo mensajes",msg, '../../../public/Nutricion-master/img/logonoti.png');
     });
     socket.on('chatHistory',msgs=>{
         appchat.msgs = [];

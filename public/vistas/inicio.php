@@ -21,8 +21,9 @@
     <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
    </label>    
-    <label class="logo"> Nutri5Tech</label>
-        <ul>
+
+   <img src="../../../public/Nutricion-master/img/logo1.png" alt=""></img>
+        <ul id="barra">
         <li> <a class="active" href="../cerrar.php">INICIO <span class="sr-only">(current)</span></a></li>
         <li> <a class="nav-link mostrar-usuarios" data-modulo="usuarios" data-form="usuarios" href="#">Usuarios</a></li>
         <li> <a class="nav-link mostrar-productos" data-modulo="productos" data-form="productos" href="#">Productos</a></li>
@@ -59,7 +60,6 @@
         </header>
         <div class="container-scroll" id="chatt">
         <div class="card-body">
-            
             <section id="messenger">
             <ul v-for="mensajes in msgs" id="messages"> 
                  <li> {{ mensajes.user }}: {{ mensajes.msg }}</li>
@@ -89,8 +89,8 @@
                 <button class="chatbox-panel-close"><i class="fa fa-close" aria-hidden="true"></i></button>
             </aside>
         </header>
+        <main id="contenedorChat"  style="overflow-y:scroll; height: 400px; width: 350px; color: #888; ">
         <div class="card-body">
-            <main id="contenedorChat"  style="overflow-y:scroll; height: 400px; width: 350px; color: #888; ">
                 <section id="messenger">
                 <input type="text" value="<?php echo $_SESSION['usuario']; ?>" id="inputusuario"  style="display:none">
                 <ul v-for="mensajes in msgs" id="messages"> 
@@ -130,11 +130,15 @@
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
     <script src="https://unpkg.com/vue-select@3.0.0"></script>
     <script src="../../../public/alertifyjs/alertify.min.js"></script>
+    <script src="../../../public/js/jquery-ui.js"></script>
+    <script src="../../../public/js/notificaciones.js"></script>
+    <script src="../../../public/js/push.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
-      <script src="../../../public/js/chat.js"></script>
+    <script src="../../../public/js/chat.js"></script>
       <script src="../../../public/vistas/chat/chat.js"></script>
-    <script type="module" src="../../../public/js/app.js"></script>
+    <script src="../../../public/js/app.js"></script>
+    
 </form>
 </body>
 </html>

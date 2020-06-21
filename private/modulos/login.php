@@ -12,6 +12,12 @@
         $clave = $_POST['clave'];
         $clave = hash('sha512', $clave);
         
+        if (empty($usuario)){
+            $error .= '<i>Favor de ingresar el usuario</i>';
+        } 
+        else if (empty(trim ($_POST['clave']))){
+            $error .= '<i>Favor de ingresar la clave</i>';
+        }else{
         try{
             $conexion = new PDO('mysql:host=localhost;dbname=proyec_nutricion', 'root', '');
             }catch(PDOException $prueba_error){
@@ -36,7 +42,7 @@
             $error .= '<i>Este usuario no existe</i>';
         }
     }
-    
+}
 require '../../public/frontend/login-vista.php';
 
 

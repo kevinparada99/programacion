@@ -15,6 +15,8 @@ var appcontroles = new Vue({
                 idMedicamento : 0,
                 medicamento   : ''
             },
+            otro : '',
+            observaciones:  '',
             fecha     : '',
             siguiente : '',
             msg       : ''
@@ -47,3 +49,20 @@ var appcontroles = new Vue({
         });
     }
 });
+document.getElementById('mostrarocultar');
+var btn = document.getElementById('botonde'),
+ contador=0;
+
+function mostrar() {
+    if(contador == 0){
+    mostrarocultar.style="display: block;";
+    btn.value="ocultar";
+    contador=1;
+    }else if(contador == 1){
+        mostrarocultar.style="display: none;";
+        contador=0;
+        btn.value="Otro";
+    }
+}
+btn.addEventListener('click',mostrar,true)
+

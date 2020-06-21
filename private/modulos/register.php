@@ -34,13 +34,16 @@
         else if (strlen($usuario) < 4) {
             $error .= '<i>El Usuario Es Demasiado Corto</i>'; 
         }
-        else if (empty($clave)){
+        else if (empty($_POST['clave'])){
             $error .= '<i>Favor ingresar la contraseña</i>';
         }
-        else if (strlen($clave) < 4) {
-            $error .= '<i>la  Correo Es Demasiado Corta</i>'; 
+        else if (strlen($_POST['clave']) < 8) {
+            $error .= '<i>la contraseña Es Demasiada Corta</i>'; 
+        } 
+        else if (strlen($_POST['clave']) > 12) {
+            $error .= '<i>la contraseña Es Demasiada larga</i>'; 
         }
-        else if (empty($clave2)){
+        else if (empty($_POST['clave2'])){
             $error .= '<i>Favor ingresar la contraseña de confirmacion</i>';
         
         }else{

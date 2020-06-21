@@ -36,10 +36,12 @@ class control{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO controles (idUsuario,tipo,idMedicamento,fecha,siguiente) VALUES(
+                    INSERT INTO controles (idUsuario,tipo,idMedicamento,otro,observaciones,fecha,siguiente) VALUES(
                         "'. $this->datos['usuario']['id'] .'",
                         "'. $this->datos['tipo'].'",
                         "'. $this->datos['medicamento']['id'] .'",
+                        "'. $this->datos['otro'] .'",
+                        "'. $this->datos['observaciones'] .'",
                         "'. $this->datos['fecha'] .'",
                         "'. $this->datos['siguiente'] .'"
                     )
@@ -51,6 +53,8 @@ class control{
                         idUsuario     = "'. $this->datos['usuario']['id'] .'",
                         tipo      = "'. $this->datos['tipo'] .'",
                         idMedicamento     = "'. $this->datos['medicamento']['id'] .'",
+                        otro         = "'. $this->datos['otro'] .'",
+                        observaciones         = "'. $this->datos['observaciones'] .'",
                         fecha         = "'. $this->datos['fecha'] .'",
                         siguiente       = "'. $this->datos['siguiente'] .'"
                     WHERE idControl = "'. $this->datos['idControl'] .'"
@@ -64,11 +68,13 @@ class control{
             $valor = implode('-', array_reverse(explode('-',$valor)));
         }
         $this->db->consultas('
-            select controles.idControl, controles.idUsuario, controles.tipo,controles.siguiente, controles.idMedicamento,
+            select controles.idControl, controles.idUsuario, controles.tipo,controles.siguiente, controles.idMedicamento, controles.otro, controles.observaciones,
                 date_format(controles.fecha,"%d-%m-%Y") AS fecha, controles.fecha AS f, 
                 usuarios.codigo, usuarios.nombre,
-                medicamentos.codigom, medicamentos.nombrem, 
+                medicamentos.codigom, medicamentos.nombrem,
                 controles.tipo AS t,
+                controles.otro AS k,
+                controles.observaciones AS o,
                 controles.siguiente AS s
             from controles
                 inner join usuarios on(usuarios.idUsuario=controles.idUsuario)
@@ -93,6 +99,10 @@ class control{
                     'id'      => $value['idMedicamento'],
                     'label'   => $value['nombrem']
                 ],
+                'otro'       => $value['k'],
+                'k'           => $value['otro'],
+                'observaciones'       => $value['o'],
+                'o'           => $value['observaciones'],
                 'fecha'       => $value['f'],
                 'f'           => $value['fecha'],
                 'siguiente'       => $value['s'],
