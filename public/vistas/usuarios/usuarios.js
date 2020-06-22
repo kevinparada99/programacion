@@ -1,6 +1,12 @@
+/**
+ * @author 5 tech <usis003118@ugb.edu.sv>
+ * @file  usuario.js < donde se hace la consulta a procesos.php para llamar los datos
+ */
+
 Vue.component('v-select', VueSelect.VueSelect);
 var appusuario = new Vue({
-    el:'#frm-usuarios',
+    el: '#frm-usuarios', /**conexion al html para saber donde se mostrara */
+    /**data hace la conexion de todos los input por medio de Vue */
     data:{
         usuario:{
             idUsuario  : 0,
@@ -13,15 +19,15 @@ var appusuario = new Vue({
             nombre     : '',
             edad       : '',
             inicial    : '',
-            libras     :'',
+            libras     : '',
             fechaini   : '',
             actual     : '',
             fechaac    : '',
-            medicamento : '',
-            enfermedad: '',
-            naci        :'',
-            observacion  : '',
-            msg       : ''
+            medicamento: '',
+            enfermedad : '',
+            naci       : '',
+            observacion: '',
+            msg        : ''
         },
         medicamentos : {}
     },
@@ -58,11 +64,9 @@ var appusuario = new Vue({
             
         }
     },
-    created(){
+    created() {/**asignacion de funcion */
         fetch(`../usuarios/procesos.php?proceso=traer_medicamentos&usuario=''`).then( resp=>resp.json() ).then(resp=>{
             this.medicamentos = resp.medicamentos;
-           
-            
         });
     }
 });

@@ -1,4 +1,12 @@
 <?php 
+/**
+ * @author 5 tech <usis003118@ugb.edu.sv>
+    *prosesos registrar en la base de datos de controles
+ */
+
+/**
+ * conexion a la base de datos desde config
+ */
 include('../../Config/Config.php');
 $nutricion = new nutricion($conexion);
 
@@ -8,6 +16,9 @@ if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 }
 $nutricion->$proceso( $_GET['nutricion'] );
 print_r(json_encode($nutricion->respuesta));
+/**
+ * @class control
+ */
 
 class nutricion{
     private $datos = array(), $db;
@@ -16,10 +27,17 @@ class nutricion{
     public function __construct($db){
         $this->db=$db;
     }
+    /**
+     * @function recibirDatos recibe los datos del control
+     * @param object $control representa los datos en si
+     */
     public function recibirDatos($nutricion){
         $this->datos = json_decode($nutricion, true);
         $this->validar_datos();
     }
+    /**
+     * funcion para validar que todos los campos no esten vacios
+     */
     private function validar_datos(){
         if( empty($this->datos['usuario']['id']) ){
             $this->respuesta['msg'] = 'por favor ingrese el usuario';
@@ -32,6 +50,10 @@ class nutricion{
         }
         $this->almacenar_nutricion();
     }
+    /**
+     * funcion para almacenar en la tabla de nutriciones
+     * se introducen los datos obtenidos a los campos de la tabla en myqsl 
+     */
     private function almacenar_nutricion(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
@@ -43,7 +65,10 @@ class nutricion{
                         "'. $this->datos['fecha'] .'"
                     )
                 ');
-                $this->respuesta['msg'] = 'Registro insertado correctamente';
+                $this->respuesta['msg'] = 'Registro insertado correctamente';//mensaje de registrado
+                /**
+                 * se obtienen los datos que se actualizan y los actualiza los campos de la tabla
+                 */
             } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
                     UPDATE nutriciones SET
@@ -53,10 +78,14 @@ class nutricion{
                         fecha         = "'. $this->datos['fecha'] .'"
                     WHERE idNutricion = "'. $this->datos['idNutricion'] .'"
                 ');
-                $this->respuesta['msg'] = 'Registro actualizado correctamente';
+                $this->respuesta['msg'] = 'Registro actualizado correctamente';//mensaje que se actualizo
             }
         }
     }
+    /**
+     * funcion de buscar los datos de de la tabla medicamentos y se realiza la consuta para que muetre 
+     * todos los campos
+     */
     public function buscarNutricion($valor = ''){
         if( substr_count($valor, '-')===2 ){
             $valor = implode('-', array_reverse(explode('-',$valor)));
@@ -77,6 +106,10 @@ class nutricion{
                 nutriciones.fecha like "%'. $valor .'%"
 
         ');
+        /**
+         * se obtiene el nombre de los  nutriciones de otras tablas por el id 
+         * y los campos de la tabla controles
+         */
         $nutriciones = $this->respuesta = $this->db->obtener_data();
         foreach ($nutriciones as $key => $value) {
             $datos[] = [
@@ -100,12 +133,18 @@ class nutricion{
         }
         return $this->respuesta = $datos;
     }
+    /**
+     * funcion para traer el nombre de usuario de la tabla de usuario
+     */
     public function traer_nutri(){
         $this->db->consultas('
             select usuarios.nombre AS label, usuarios.idUsuario AS id
             from usuarios
         ');
         $usuarios = $this->db->obtener_data();
+        /**
+         * funcion para traer el nombre del medicamento de la tabla medicamento
+         */
         $this->db->consultas('
             select recetas.nombres AS label, recetas.idReceta AS id
             from recetas
@@ -118,13 +157,16 @@ class nutricion{
         $horas = $this->db->obtener_data();
         return $this->respuesta = ['usuarios'=>$usuarios, 'recetas'=>$recetas, 'horas'=>$horas ];//array de php en v7+
     }
+    /**
+     * funcion para eliminar un registro de la tabla control
+     */
     public function eliminarNutricion($idNutricion = 0){
         $this->db->consultas('
             DELETE nutriciones
             FROM nutriciones
             WHERE nutriciones.idNutricion="'.$idNutricion.'"
         ');
-        return $this->respuesta['msg'] = 'Registro eliminado correctamente';;
+        return $this->respuesta['msg'] = 'Registro eliminado correctamente';;/** mensaje que se elimino*/ 
     }
 }
 ?>

@@ -1,14 +1,18 @@
 <?php 
+/**
+ * conexion a la base de datos desde config
+ */
 include('../../Config/Config.php');
 $control = new control($conexion);
-
 $proceso = '';
 if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 	$proceso = $_GET['proceso'];
 }
 $control->$proceso( $_GET['control'] );
 print_r(json_encode($control->respuesta));
-
+/**
+ * @class control
+ */
 class control{
     private $datos = array(), $db;
     public $respuesta = ['msg'=>'correcto'];
@@ -16,10 +20,17 @@ class control{
     public function __construct($db){
         $this->db=$db;
     }
+    /**
+     * @function recibirDatos recibe los datos del control
+     * @param object $control representa los datos en si
+     */
     public function recibirDatos($control){
         $this->datos = json_decode($control, true);
         $this->validar_datos();
     }
+    /**
+     * funcion para validar que todos los campos no esten vacios
+     */
     private function validar_datos(){
         if( empty($this->datos['usuario']['id']) ){
             $this->respuesta['msg'] = 'Por favor ingrese el usuario.';
@@ -32,6 +43,10 @@ class control{
         }
         $this->almacenar_control();
     }
+    /**
+     * funcion para almacenar en la tabla de controles
+     * se introducen los datos obtenidos a los campos de la tabla en myqsl 
+     */
     private function almacenar_control(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
@@ -46,7 +61,10 @@ class control{
                         "'. $this->datos['siguiente'] .'"
                     )
                 ');
-                $this->respuesta['msg'] = 'Registro insertado correctamente';
+                $this->respuesta['msg'] = 'Registro insertado correctamente';//mensaje de registrado
+                /**
+                 * se obtienen los datos que se actualizan y los actualiza los campos de la tabla
+                 */
             } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
                     UPDATE controles SET
@@ -59,10 +77,14 @@ class control{
                         siguiente       = "'. $this->datos['siguiente'] .'"
                     WHERE idControl = "'. $this->datos['idControl'] .'"
                 ');
-                $this->respuesta['msg'] = 'Registro actualizado correctamente';
+                $this->respuesta['msg'] = 'Registro actualizado correctamente';//mensaje que se actualizo
             }
         }
     }
+    /**
+     * funcion de buscar los datos de de la tabla controles y se realiza la consuta para que muetre 
+     * todos los campos
+     */
     public function buscarControl($valor = ''){
         if( substr_count($valor, '-')===2 ){
             $valor = implode('-', array_reverse(explode('-',$valor)));
@@ -85,6 +107,10 @@ class control{
                 order by siguiente
 
         ');
+        /**
+         * se obtiene el nombre de los productos de otras tablas por el id 
+         * y los campos de la tabla controles
+         */
         $controles = $this->respuesta = $this->db->obtener_data();
         foreach ($controles as $key => $value) {
             $datos[] = [
@@ -112,12 +138,18 @@ class control{
         }
         return $this->respuesta = $datos;
     }
+    /**
+     * funcion para traer el nombre de usuario de la tabla de usuario
+     */
     public function traer_usuarios(){
         $this->db->consultas('
             select usuarios.nombre AS label, usuarios.idUsuario AS id
             from usuarios
         ');
         $usuarios = $this->db->obtener_data();
+        /**
+         * funcion para traer el nombre del medicamento de la tabla medicamento
+         */
         $this->db->consultas('
             select medicamentos.nombrem AS label, medicamentos.idMedicamento AS id
             from medicamentos
@@ -125,13 +157,16 @@ class control{
         $medicamentos = $this->db->obtener_data();
         return $this->respuesta = ['usuarios'=>$usuarios, 'medicamentos'=>$medicamentos ];
     }
+    /**
+     * funcion para eliminar un registro de la tabla control
+     */
     public function eliminarControl($idControl = 0){
         $this->db->consultas('
             DELETE controles
             FROM controles
             WHERE controles.idControl="'.$idControl.'"
         ');
-        return $this->respuesta['msg'] = 'Registro eliminado correctamente';;
+        return $this->respuesta['msg'] = 'Registro eliminado correctamente'; /** mensaje que se elimino*/ 
     }
 }
 ?>

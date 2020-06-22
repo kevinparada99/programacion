@@ -1,5 +1,12 @@
+<?php
+/**
+ * @author 5 tech <usis003118@ugb.edu.sv>
+    *prosesos registrar en la base de datos de controles
+ */
 
-<?php 
+/**
+ * conexion a la base de datos desde config
+ */
 include('../../config/config.php');
 $producto = new producto($conexion);
 
@@ -9,7 +16,9 @@ if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 }
 $producto->$proceso( $_GET['producto'] );
 print_r(json_encode($producto->respuesta));
-
+/**
+ * @class control
+ */
 class producto{
     private $datos = array(), $db;
     public $respuesta = ['msg'=>'correcto'];
@@ -17,10 +26,17 @@ class producto{
     public function __construct($db){
         $this->db=$db;
     }
+    /**
+     * @function recibirDatos recibe los datos del control
+     * @param object $control representa los datos en si
+     */
     public function recibirDatos($producto){
         $this->datos = json_decode($producto, true);
         $this->validar_datos();
     }
+    /**
+     * funcion para validar que todos los campos no esten vacios
+     */
     private function validar_datos(){
         if( empty(trim($this->datos['codigo'])) ){
             $this->respuesta['msg'] = 'Por favor ingrese el codigo del producto.';
@@ -42,6 +58,10 @@ class producto{
         }
         $this->almacenar_producto();
     }
+    /**
+     * funcion para almacenar en la tabla de productos
+     * se introducen los datos obtenidos a los campos de la tabla en myqsl 
+     */
     private function almacenar_producto(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
@@ -56,6 +76,9 @@ class producto{
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
+                /**
+                 * se obtienen los datos que se actualizan y los actualiza los campos de la tabla
+                 */
             } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
                     UPDATE productos SET
@@ -71,6 +94,10 @@ class producto{
             }
         }
     }
+    /**
+     * funcion de buscar los datos de de la tabla producto y se realiza la consuta para que muetre 
+     * todos los campos
+     */
     public function buscarProducto($valor = ''){
         $this->db->consultas('
             select productos.idProducto, productos.codigo, productos.nombre, productos.cantidad, productos.tipo, productos.fecha, productos.registro
@@ -78,12 +105,16 @@ class producto{
             where productos.codigo like "%'. $valor .'%" or productos.nombre like "%'. $valor .'%" or productos.tipo like "%'. $valor .'%"
             order by fecha
         ');
+        /**
+         * se obtiene el nombre de los productos de otras tablas por el id 
+         * y los campos de la tabla controles
+         */
         return $this->respuesta = $this->db->obtener_data();
     }
-
-
+    /**
+     * funcion para eliminar un registro de la tabla control
+     */
     public function eliminarProducto($idProducto = 0){
-
         $this->db->consultas('
             DELETE productos
             FROM productos

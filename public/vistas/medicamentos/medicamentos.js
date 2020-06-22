@@ -1,5 +1,12 @@
+/**
+ * @author 5 tech <usis003118@ugb.edu.sv>
+ * @file  medicamentos.js < donde se hace la consulta a procesos.php para llamar los datos
+ */
+
+
 var appmedicamento = new Vue({
-    el:'#frm-medicamentos',
+    el: '#frm-medicamentos', /**conexion al html para saber donde se mostrara */
+    /**data hace la conexion de todos los input por medio de Vue */
     data:{
         medicamento:{
             idMedicamento  : 0,
@@ -15,17 +22,17 @@ var appmedicamento = new Vue({
         }
     },
     methods:{
-        guardarMedicamento:function(){
+        guardarMedicamento: function () {/**Guarda los datos  */
             fetch(`../medicamentos/procesos.php?proceso=recibirDatos&medicamento=${JSON.stringify(this.medicamento)}`).then( resp=>resp.json() ).then(resp=>{
-                if( resp.msg.indexOf("correctamente")>=0 ){
+                if (resp.msg.indexOf("correctamente") >= 0) {/**mensaje de satisfaccion */
                     alertify.success(resp.msg);
                 }
-                else if(resp.msg.indexOf("ingrese")>=0){
+                else if (resp.msg.indexOf("ingrese") >= 0) {/**mensaje de advertencia */
                     alertify.warning(resp.msg);
                 } 
             });
         },
-            limpiarMedicamento:function(){
+            limpiarMedicamento: function () {/**deja en blanco los campos del imput */
                 this.medicamento.idProducto = 0;
                 this.medicamento.codigo = '';
                 this.medicamento.nombre = '';

@@ -1,5 +1,12 @@
-
 <?php 
+/**
+ * @author 5 tech <usis003118@ugb.edu.sv>
+    *prosesos registrar en la base de datos de controles
+ */
+
+/**
+ * conexion a la base de datos desde config
+ */
 include('../../config/config.php');
 $usuario = new usuario($conexion);
 
@@ -9,6 +16,9 @@ if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 }
 $usuario->$proceso( $_GET['usuario'] );
 print_r(json_encode($usuario->respuesta));
+/**
+ * @class control
+ */
 
 class usuario{
     private $datos = array(), $db;
@@ -17,10 +27,17 @@ class usuario{
     public function __construct($db){
         $this->db=$db;
     }
+    /**
+     * @function recibirDatos recibe los datos del control
+     * @param object $control representa los datos en si
+     */
     public function recibirDatos($usuario){
         $this->datos = json_decode($usuario, true);
         $this->validar_datos();
     }
+    /**
+     * funcion para validar que todos los campos no esten vacios
+     */
     private function validar_datos(){
         if( empty(trim($this->datos['codigo']) )){
             $this->respuesta['msg'] = 'Por favor ingrese el codigo del usuario.';
@@ -51,6 +68,10 @@ class usuario{
         }
         $this->almacenar_usuario();
     }
+    /**
+     * funcion para almacenar en la tabla de productos
+     * se introducen los datos obtenidos a los campos de la tabla en myqsl 
+     */
     private function almacenar_usuario(){
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
@@ -65,12 +86,15 @@ class usuario{
                         "'. $this->datos['actual'] .'",
                         "'. $this->datos['fechaac'] .'",
                         "'. $this->datos['medicamento']['id'] .'",
-                         "'. $this->datos['enfermedad'] .'",
-                         "'. $this->datos['naci'] .'",
+                        "'. $this->datos['enfermedad'] .'",
+                        "'. $this->datos['naci'] .'",
                         "'. $this->datos['observacion'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
+                /**
+                 * se obtienen los datos que se actualizan y los actualiza los campos de la tabla
+                 */
             } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
                     UPDATE usuarios SET
@@ -92,29 +116,38 @@ class usuario{
             }
         }
     }
+    /**
+     * funcion de buscar los datos de de la tabla usuario y se realiza la consuta para que muetre 
+     * todos los campos
+     */
     public function buscarUsuario($valor = ''){
         $this->db->consultas('
-             select usuarios.idUsuario, usuarios.codigo, usuarios.nombre, usuarios.edad, usuarios.inicial,usuarios.libras, usuarios.fechaini, usuarios.actual, usuarios.fechaac, usuarios.idMedicamento,  usuarios.enfermedad, usuarios.nacimiento, usuarios.observacion,
-                     medicamentos.codigom, medicamentos.nombrem,
-                     usuarios.codigo AS c,
-                     usuarios.nombre AS n,
-                     usuarios.edad AS e,
-                     usuarios.inicial AS i,
-                     usuarios.libras AS l,
-                     usuarios.fechaini AS f,
-                     usuarios.actual AS a,
-                     usuarios.fechaac AS z,
-                     usuarios.enfermedad AS d,
-                     usuarios.nacimiento AS t,
-                     usuarios.observacion AS o
-             from usuarios
-                  inner join medicamentos on(medicamentos.idMedicamento=usuarios.idMedicamento)
-             where 
-             usuarios.codigo like "%'. $valor .'%" or
-             usuarios.nombre like "%'. $valor .'%" or 
-             usuarios.actual like "%'. $valor .'%"
+            select usuarios.idUsuario, usuarios.codigo, usuarios.nombre, usuarios.edad, usuarios.inicial,usuarios.libras, usuarios.fechaini, usuarios.actual, usuarios.fechaac, usuarios.idMedicamento,  usuarios.enfermedad, usuarios.nacimiento, usuarios.observacion,
+                    medicamentos.codigom, medicamentos.nombrem,
+                    usuarios.codigo AS c,
+                    usuarios.nombre AS n,
+                    usuarios.edad AS e,
+                    usuarios.inicial AS i,
+                    usuarios.libras AS l,
+                    usuarios.fechaini AS f,
+                    usuarios.actual AS a,
+                    usuarios.fechaac AS z,
+                    usuarios.enfermedad AS d,
+                    usuarios.nacimiento AS t,
+                    usuarios.observacion AS o
+            from usuarios
+                    inner join medicamentos on(medicamentos.idMedicamento=usuarios.idMedicamento)
+            where 
+            usuarios.codigo like "%'. $valor .'%" or
+            usuarios.nombre like "%'. $valor .'%" or 
+            usuarios.actual like "%'. $valor .'%"
         
-            '); $usuarios = $this->respuesta = $this->db->obtener_data();
+            ');
+            /**
+         * se obtiene el nombre de los usuarios de otras tablas por el id 
+         * y los campos de la tabla controles
+         */ 
+        $usuarios = $this->respuesta = $this->db->obtener_data();
         foreach ($usuarios as $key => $value) {
             $datos[] = [
                 'idUsuario' => $value['idUsuario'],
@@ -159,15 +192,21 @@ class usuario{
         }
         return $this->respuesta = $datos;
     }
+    /**
+     * funcion para traer el nombre de usuario de la tabla de usuario
+     */
     public function traer_medicamentos(){
         $this->db->consultas('
             select medicamentos.nombrem AS label, medicamentos.idMedicamento AS id
             from medicamentos
         ');
         $medicamentos = $this->db->obtener_data();
+        
         return $this->respuesta = ['medicamentos'=>$medicamentos];
     }
-
+/**
+         * funcion para traer el nombre del medicamento de la tabla medicamento
+         */
 
     public function eliminarUsuario($idUsuario = 0){
 
@@ -176,7 +215,7 @@ class usuario{
             FROM usuarios
             WHERE usuarios.idUsuario="'.$idUsuario.'"
         ');
-        return $this->respuesta['msg'] = 'Registro eliminado correctamente';
+        return $this->respuesta['msg'] = 'Registro eliminado correctamente';/** mensaje que se elimino*/ 
     }
 }
 ?>

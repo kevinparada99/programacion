@@ -1,6 +1,14 @@
+/**
+ * @author 5 tech <usis003118@ugb.edu.sv>
+ * @file  nutricion.js < donde se hace la consulta a procesos.php para llamar los datos
+ */
+
+
 Vue.component('v-select', VueSelect.VueSelect);
 
 var appnutriciones = new Vue({
+    /**conexion al html para saber donde se mostrara */
+    /**data hace la conexion de todos los input por medio de Vue */
     el:'#frm-nutriciones',
     data:{
         nutricion:{
@@ -26,23 +34,23 @@ var appnutriciones = new Vue({
         horas  : {}
     },
     methods:{
-        guardarNutriciones(){
+        guardarNutriciones() {/**Guarda los datos  */
             fetch(`../nutriciones/procesos.php?proceso=recibirDatos&nutricion=${JSON.stringify(this.nutricion)}`).then( resp=>resp.json() ).then(resp=>{
-                if( resp.msg.indexOf("correctamente")>=0 ){
+                if (resp.msg.indexOf("correctamente") >= 0) {/**mensaje de satisfaccion */
                     alertify.success(resp.msg);
                 }
-                else if(resp.msg.indexOf("ingrese")>=0){
+                else if (resp.msg.indexOf("ingrese") >= 0) {/**mensaje de advertencia */
                     alertify.warning(resp.msg);
                 } 
             });
         },
-        limpiarNutriciones(){
+        limpiarNutriciones() {/**deja en blanco los campos del imput */
             this.nutricion.idNutricion=0;
             this.nutricion.accion="nuevo";
             this.nutricion.msg="";
         }
     },
-    created(){
+    created() {/**asignacion de funcion */
         fetch(`../nutriciones/procesos.php?proceso=traer_nutri&nutricion=''`).then( resp=>resp.json() ).then(resp=>{
             this.usuarios = resp.usuarios;
             this.recetas = resp.recetas;

@@ -1,5 +1,12 @@
 <?php
 /** Clase principal de conexion a la base de datos desde PHP -> MySQ */
+/**
+ * @author 5 tech <usis003118@ugb.edu.sv>
+ * se ase la conecion a la bd de controles
+ */
+/**
+ * se realiza la conecion ala base de datos de mysql
+ */
 class DB{
     private $conexion, $result;
 

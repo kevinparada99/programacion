@@ -1,5 +1,17 @@
+/**
+ * @author 5 tech <usis003118@ugb.edu.sv>
+ * @file push.js -> sirve para las notificaciones de parte del servidor.
+ */
 
-const public_key = "BAAyqRUSzvdxf9JGj54QY_wFCDVpsOxNCxsaNN_4JkpMGujBo9Bbj9B3rgBwgdL5hlexKZ3RurRoag9ZKtXPhrQ";
+  /**
+     * @param {const} public_key esta es la lleve publica del cliente
+     */
+
+const public_key = "BInAgjWIOy-mWoOXLo0Nnwlx5AGmwUK6zf1V1d_jJTbzgCSg7-1ZRL7HCcsTG42FqJocgt4SErG-nJADa2qedp0";
+/**
+ * comprobamos si tiene instalado el servio de notificacionedes y si no lo instalamos en segundo plano
+ * y comprobamos si su navegador soporta la ejecucion en segundo plano
+ */
 
 if( 'serviceWorker' in navigator ){
     navigator.serviceWorker.register('../../../public/js/sw.js').then( reg=>{
@@ -19,7 +31,9 @@ if( 'serviceWorker' in navigator ){
 }else{
     alert("Su navegador no soporta ejecucion de procesos en segundo plano, por lo tanto no recibira Notificaciones.");
 }
-
+ /**
+     * @function suscribirse se envia la suscripcion para poder mandarle notificaciones  
+     */
 function suscribirse(reg){
     reg.pushManager.subscribe({
         userVisibleOnly:true,
@@ -27,7 +41,8 @@ function suscribirse(reg){
     }).then(subscription=>{
         console.log( "enviando la subcripcion: ", JSON.stringify(subscription) );
         socket.emit('suscribirse',JSON.stringify(subscription));//enviando a node la suscripcion para lamacenar en la BD
-    }).catch(error=>{
+    
+    }).catch(error=>{/** se comprueva si fue aseptada y no  */
         if( Notification.permission==='denied' ){
             console.log("NO me autorizo para enviarle notificaciones");
         } else{
@@ -35,7 +50,9 @@ function suscribirse(reg){
         }
     });
 }
-
+ /**
+     * @function urlBase64ToUint8Array para el envio de notificaciones
+     */
 function urlBase64ToUint8Array(base64String) {
     const padding = '='.repeat((4 - base64String.length % 4) % 4);
     const base64 = (base64String + padding)

@@ -1,11 +1,11 @@
 /**
- * @author Luis Hernandez <luishernandez@ugb.edu.sv>
+ * @author 5 tech <usis003118@ugb.edu.sv>
  * @file notificaciones.js -> sirve para el uso de la API de Notificaciones.
  */
 
 
 
- /**
+/**
   * Compruebo que el navegador soporte la API de Notificaciones
   */
 if ( !window.Notification ) {

@@ -10,19 +10,19 @@
     <link rel="stylesheet" href="../../../public/alertifyjs/css/alertify.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>Control</title>
-       <meta name="viewport" content="width=device-width, initial-scale=1">
-       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-       <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-       <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato'>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato'>
 </head>
 <body class="bg-secondary">
     <nav>
     <input type="checkbox" id="check">
     <label for="check" class="checkbtn">
         <i class="fas fa-bars"></i>
-   </label>    
+    </label>    
 
-   <img src="../../../public/Nutricion-master/img/logo1.png" alt=""></img>
+    <img src="../../../public/Nutricion-master/img/logo1.png" alt=""></img>
         <ul id="barra">
         <li> <a class="active" href="../cerrar.php">INICIO <span class="sr-only">(current)</span></a></li>
         <li> <a class="nav-link mostrar-usuarios" data-modulo="usuarios" data-form="usuarios" href="#">Usuarios</a></li>
@@ -62,7 +62,7 @@
         <div class="card-body">
             <section id="messenger">
             <ul v-for="mensajes in msgs" id="messages"> 
-                 <li> {{ mensajes.user }}: {{ mensajes.msg }}</li>
+                <li> {{ mensajes.user }}: {{ mensajes.msg }}</li>
                 </ul>
             </section>
         </div>
@@ -72,7 +72,7 @@
                 <input type="text" v-model="msg"  required placeholder="Escribe tu Mensaje" class="form-control ">
             </aside>
             <aside style="flex:1;color:#888;text-align:center;">
-               <input type="submit" id="enviar" class="btn btn-success ">
+                <input type="submit" id="enviar" class="btn btn-success ">
             </aside>
         </footer>
     </section>
@@ -136,7 +136,7 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
     <script src="../../../public/js/chat.js"></script>
-      <script src="../../../public/vistas/chat/chat.js"></script>
+    <script src="../../../public/vistas/chat/chat.js"></script>
     <script src="../../../public/js/app.js"></script>
     
 </form>

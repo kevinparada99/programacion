@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login / Register Nutricion</title>
+    <title>Login / Register Nutrición</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../../public/css/style.css">
 </head>
@@ -33,7 +33,7 @@
                 <img class="img-responsive" id="btnojo" src="../../public/image/ojo.jpg" style="width: 10%;">
             </div>
             
-             <?php if(!empty($error)): ?>
+            <?php if(!empty($error)): ?>
             <div class="mensaje">
                 <?php echo $error; ?>
             </div>

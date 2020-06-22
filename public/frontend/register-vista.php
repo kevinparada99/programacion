@@ -32,11 +32,13 @@
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
-                <input type="password" placeholder="Contraseña" name="clave">
+                <input type="password" id="contraseña" placeholder="Contraseña" name="clave">
+                <img class="img-responsive" id="btnojo" src="../../public/image/ojo.jpg" style="width: 10%;">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>
-                <input type="password" placeholder="Confirmar contraseña"  name="clave2">
+                <input type="password" id="contraseña2" placeholder="Confirmar contraseña"  name="clave2">
+                <img class="img-responsive" id="btnojo2" src="../../public/image/ojo.jpg" style="width: 10%;">
             </div>
             <?php if(!empty($error)): ?>
             <div class="mensaje">
