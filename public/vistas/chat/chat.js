@@ -1,3 +1,4 @@
+
 /**
  * @author 5 tech <usis003118@ugb.edu.sv>
  * @file chat.js -> sirve para el uso de la API de Notificaciones.
@@ -6,8 +7,9 @@
  /**
   * conexion a socket.io en el puerto 3001
   * @appchat se obtienen enlacan los input y botones al js por vue
-  * 
+  *  
   */
+
 var socket = io.connect("http://localhost:3001",{'forceNew':true}),
 listaMsgs =[],
     appchat = new Vue({
@@ -22,7 +24,6 @@ listaMsgs =[],
             enviarMensaje(){
             let   mensaje =document.querySelector('#inputmsg');
             let  usuario = document.querySelector("#inputusuario");
-
                 var datos = 
                 {
                     msg: mensaje.value.trim(),
@@ -40,6 +41,7 @@ listaMsgs =[],
                     this.msg='';
 
             },
+            
             /**limpiar los input */
             limpiarChat(){
                 this.msg = '';
@@ -52,6 +54,7 @@ listaMsgs =[],
 
         }
     });
+   
     /**se recive el mensaje */
     socket.on('recibirMensaje',msg=>{
     appchat.msgs.push(msg);
@@ -75,4 +78,4 @@ listaMsgs =[],
         });
         appchat.msgs = listaMsgs;
     });
-    
+   

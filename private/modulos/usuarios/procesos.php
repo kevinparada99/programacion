@@ -1,4 +1,5 @@
 <?php 
+ 
 /**
  * @author 5 tech <usis003118@ugb.edu.sv>
     *prosesos registrar en la base de datos de controles
@@ -35,10 +36,14 @@ class usuario{
         $this->datos = json_decode($usuario, true);
         $this->validar_datos();
     }
+
     /**
      * funcion para validar que todos los campos no esten vacios
      */
     private function validar_datos(){
+         date_default_timezone_set('America/El_salvador');
+         $fecha_actual = date("d/m/y H:i:s A");
+ 
         if( empty(trim($this->datos['codigo']) )){
             $this->respuesta['msg'] = 'Por favor ingrese el codigo del usuario.';
         }
@@ -65,6 +70,9 @@ class usuario{
         }
         if( empty(trim($this->datos['observacion'])) ){
             $this->respuesta['msg'] = 'Por favor ingrese alguna observación del usuario.';
+        }
+        if( empty(trim($this->datos['fechaac']))){
+            $this->datos['fechaac'] = $fecha_actual;
         }
         $this->almacenar_usuario();
     }

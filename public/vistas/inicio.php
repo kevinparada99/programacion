@@ -22,16 +22,16 @@
         <i class="fas fa-bars"></i>
     </label>    
 
-    <img src="../../../public/Nutricion-master/img/logo1.png" alt=""></img>
+    <img src="../../../public/Nutricion-master/img/logo1.png" href="../../../public/recetas/admin/index.php" alt=""></img>
         <ul id="barra">
-        <li> <a class="active" href="../cerrar.php">INICIO <span class="sr-only">(current)</span></a></li>
+        <li> <a class="active" href="../cerrar.php">Cerrar <span class="sr-only">(current)</span></a></li>
         <li> <a class="nav-link mostrar-usuarios" data-modulo="usuarios" data-form="usuarios" href="#">Usuarios</a></li>
         <li> <a class="nav-link mostrar-productos" data-modulo="productos" data-form="productos" href="#">Productos</a></li>
         <li> <a class="nav-link mostrar-medicamentos" data-modulo="medicamentos" data-form="medicamentos" href="#">Medicamentos</a></li>
         <li> <a class="nav-link mostrar-recetas" data-modulo="recetas" data-form="recetas" href="#">Recetas</a></li>
         <li> <a class="nav-link mostrar-controles" data-modulo="controles" data-form="controles" href="#">Controles</a></li>
         <li> <a class="nav-link mostrar-nutriciones" data-modulo="nutriciones" data-form="nutriciones" href="#">Nutriciones</a></li>
-            
+        <li> <a class="active" href="../../../public/recetas/admin/res.php">Agregar R <span class="sr-only">(current)</span></a></li>
         </ul>
     </nav>
     
