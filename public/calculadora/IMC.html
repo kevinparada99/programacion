@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>Calculadora | IMC</title>
+	
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style_calcs.css">
+		
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+	</head>
+
+<body>
+	<div id="site-content">
+
+		<header class="site-header">
+			<div class="container">
+				<a href="index.html" id="branding" class="pull-left">
+					<i class="icon-watermelon logo"></i>
+					<h1 class="site-title">Sanisimo</h1>
+				</a>
+				<!-- Default snippet for navigation -->
+					<div class="main-navigation pull-right">
+						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item"><a href="dietas.html">Dietas</a></li>
+							<li class="menu-item"><a href="recetas.html">Recetas</a></li>
+							<li class="dropdown">
+						    <a class="dropbtn">Calculadoras</a>
+						    <div class="dropdown-content">
+						    	<div class="dropmenuitem"><a href="Metabolismo.html" style="color: #9d9879;">Metabolismo</a></div>
+						    	<div class="dropmenuitem"><a href="Peso_Ideal.html" style="color: #9d9879;">Peso Ideal</a></div>
+						    	<div class="dropmenuitem"><a href="IMC.html" style="color: #9d9879;">Indice Masa Corporal</a></div>
+						    	<div class="dropmenuitem"><a href="ICC.html" style="color: #9d9879;">Indice Cintura-Cadera</a></div>
+						    	<div class="dropmenuitem"><a href="ICT.html" style="color: #9d9879;">Indice Cintura-Talla</a></div>		      
+						    </div>
+							</li>
+							<li class="menu-item"><a href="contacto.html">Contacto</a></li>
+						</ul> <!-- .menu -->
+					</div> <!-- .main-navigation -->
+				<div class="mobile-navigation"></div>
+			</div>
+		</header>
+
+		<main class="main-content">				
+			<div class="content">
+				<div class="container">
+					<div class="recipes-list">
+						<article class="recipe">
+							<figure class="recipe-image"><img class="imagen" src="images/imc.jpg"></figure>
+							<div class="recipe-detail">
+								<h2 class="recipe-title"><a href="single.html">Indice de Masa Corporal</a></h2>
+								<p>Es una razón matemática que asocia la masa y la talla de un individuo, ideada por el estadístico belga Adolphe Quetelet; por lo que también se conoce como índice de Quetelet. Es un indicador de la gordura bastante confiable para la mayoría de las personas.</p>
+								<p>El IMC no mide la grasa corporal directamente, pero las investigaciones han mostrado que tiene una correlación con mediciones directas de la grasa corporal, tales como el pesaje bajo el agua y la absorciometría dual de rayos X. El IMC se puede considerar una alternativa para mediciones directas de la grasa corporal.</p>
+								<img src="images/imc_formula.svg" style="width: 50%; float: right; padding-right: 33%;">
+							</div>
+						</article>						
+					</div>
+				</div>
+			</div>
+
+			<div class="fullwidth-block cooking-section category-block" style="background-image: url('images/calc_background1.jpg'); background-size: 100% 100%;">
+				<div class="container">
+					<div class="category-content">
+						<h1 class="category-title" style="text-align: center;"><b>Indice de Masa Corporal</b></h1>
+						<form class="form">
+							<h3 style="color: white;">Peso(kg): <input id="imc_peso" type="text" name="peso" size= "5" maxlength="4">
+							Altura(m): <input id="imc_altura" type="text" name="altura" size= "5" maxlength="4"></h3>
+						</form><br>
+						<p id="resultado_imc"></p>
+						<p id="recomendacion_imc""></p>
+						<p><a id="calcular" onClick="imc()">Calcular</a></p>
+					</div>
+				</div>
+			</div>
+		</main>
+			
+		<footer class="site-footer">
+				<div class="container">
+					<i class="icon-watermelon logo"></i>
+					<nav class="footer-navigation">
+					<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item"><a href="dietas.html">Dietas</a></li>
+							<li class="menu-item"><a href="recetas.html">Recetas</a></li>
+							<li class="dropdown">
+						    <a class="dropbtn" style="color: #9d9879;">Calculadoras</a>
+						    <div class="dropdown-content">
+						    	<div class="dropmenuitem"><a href="Metabolismo.html" style="color: #9d9879;">Metabolismo</a></div>
+						    	<div class="dropmenuitem"><a href="Peso_Ideal.html" style="color: #9d9879;">Peso Ideal</a></div>
+						    	<div class="dropmenuitem"><a href="IMC.html" style="color: #9d9879;">Indice Masa Corporal</a></div>
+						    	<div class="dropmenuitem"><a href="ICC.html" style="color: #9d9879;">Indice Cintura-Cadera</a></div>
+						    	<div class="dropmenuitem"><a href="ICT.html" style="color: #9d9879;">Indice Cintura-Talla</a></div>		      
+						    </div></li>
+							<li class="menu-item"><a href="contacto.html">Contacto</a></li>
+						</ul> 
+					</nav>
+
+					<div class="social-links">
+						<a href="https://facebook.com" class="facebook"><i class="fa fa-facebook"></i></a>
+						<a href="https://twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+						<a href="https://plus.google.com" class="google-plus"><i class="fa fa-google-plus"></i></a>
+						<a href="https://pinterest.com" class="pinterest"><i class="fa fa-pinterest"></i></a>
+					</div>
+					<div class="colophon">
+						<p>Diseñado por Adrian, Alejandra, Nelson, Verónica. Todos los derechos reservados</p>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+		<script src="js/calculadoras.js"> </script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/app.js"></script>
+
+</body>

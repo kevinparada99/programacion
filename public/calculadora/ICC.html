@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
+		
+		<title>Calculadora | ICC</title>
+		<!-- Loading third party fonts -->
+		<!-- Loading main css file -->
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="style_calcs.css">
+		
+		<!--[if lt IE 9]>
+		<script src="js/ie-support/html5.js"></script>
+		<script src="js/ie-support/respond.js"></script>
+		<![endif]-->
+	</head>
+
+<body>
+	<div id="site-content">
+
+		<header class="site-header">
+			<div class="container">
+				<a href="index.html" id="branding" class="pull-left">
+					<i class="icon-watermelon logo"></i>
+					<h1 class="site-title">Sanisimo</h1>
+				</a>
+				<!-- Default snippet for navigation -->
+					<div class="main-navigation pull-right">
+						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item"><a href="dietas.html">Dietas</a></li>
+							<li class="menu-item"><a href="recetas.html">Recetas</a></li>
+							<li class="dropdown">
+						    <a class="dropbtn">Calculadoras</a>
+						    <div class="dropdown-content">
+						    	<div class="dropmenuitem"><a href="Metabolismo.html" style="color: #9d9879;">Metabolismo</a></div>
+						    	<div class="dropmenuitem"><a href="Peso_Ideal.html" style="color: #9d9879;">Peso Ideal</a></div>
+						    	<div class="dropmenuitem"><a href="IMC.html" style="color: #9d9879;">Indice Masa Corporal</a></div>
+						    	<div class="dropmenuitem"><a href="ICC.html" style="color: #9d9879;">Indice Cintura-Cadera</a></div>
+						    	<div class="dropmenuitem"><a href="ICT.html" style="color: #9d9879;">Indice Cintura-Talla</a></div>		      
+						    </div>
+							</li>
+							<li class="menu-item"><a href="contacto.html">Contacto</a></li>
+						</ul> <!-- .menu -->
+					</div> <!-- .main-navigation -->
+				<div class="mobile-navigation"></div>
+			</div>
+		</header>
+
+		<main class="main-content">				
+			<div class="content">
+				<div class="container">
+					<div class="recipes-list">
+						<article class="recipe">
+							<figure class="recipe-image"><img class="imagen" src="images/icc.png"></figure>
+							<div class="recipe-detail">
+								<h2 class="recipe-title"><a href="single.html">Indice Cintura Cadera</a></h2>
+								<p>El índice se obtiene midiendo el perímetro de la cintura a la altura de la última costilla flotante (aproximadamente dos dedos por encima del ombligo), y el perímetro máximo de la cadera, a nivel de los glúteos. Es un método indirecto que sirve para determinar la distribución de la grasa abdominal. Esta característica varía según se avanza en edad y difiere entre hombres y mujeres como consecuencia del dimorfismo sexual.</p>
+								<p>Los estudios indican que una relación entre cintura y cadera superior a 1.5 varones y a 1 en mujeres, está asociada a un aumento en la probabilidad de contraer diversas enfermedades (diabetes mellitus, enfermedades coronarias, tensión arterial, entre otras).</p>
+								<img src="images/icc_formula.svg" style="width: 50%; float: right; padding-right: 30%;">
+							</div>
+						</article>
+					</div>
+				</div>
+			</div>
+
+			<div class="fullwidth-block cooking-section category-block" style="background-image: url('images/calc_background1.jpg'); background-size: 100% 100%;">
+				<div class="container">
+					<div class="category-content">
+						<h1 class="category-title" style="text-align: center;"><b>Indice Cintura Cadera</b></h1>
+						<form class="form">
+							<h3 style="color: white;">Cintura(cm): <input id="icc_cintura" type="text" name="cintura" size= "6" maxlength="5">
+							Cadera(cm): <input id="icc_cadera" type="text" name="cadera" size= "6" maxlength="5"></h3>
+						</form><br>
+						<p id="resultado_icc"></p>
+						<p><a id="calcular" onClick="icc()">Calcular</a></p>
+					</div>
+				</div>
+			</div>
+		</main>
+			
+		<footer class="site-footer">
+				<div class="container">
+					<i class="icon-watermelon logo"></i>
+					<nav class="footer-navigation">
+					<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
+						<ul class="menu">
+							<li class="menu-item"><a href="dietas.html">Dietas</a></li>
+							<li class="menu-item"><a href="recetas.html">Recetas</a></li>
+							<li class="dropdown">
+						    <a class="dropbtn" style="color: #9d9879;">Calculadoras</a>
+						    <div class="dropdown-content">
+						    	<div class="dropmenuitem"><a href="Metabolismo.html" style="color: #9d9879;">Metabolismo</a></div>
+						    	<div class="dropmenuitem"><a href="Peso_Ideal.html" style="color: #9d9879;">Peso Ideal</a></div>
+						    	<div class="dropmenuitem"><a href="IMC.html" style="color: #9d9879;">Indice Masa Corporal</a></div>
+						    	<div class="dropmenuitem"><a href="ICC.html" style="color: #9d9879;">Indice Cintura-Cadera</a></div>
+						    	<div class="dropmenuitem"><a href="ICT.html" style="color: #9d9879;">Indice Cintura-Talla</a></div>		      
+						    </div></li>
+							<li class="menu-item"><a href="contacto.html">Contacto</a></li>
+						</ul> 
+					</nav>
+
+					<div class="social-links">
+						<a href="https://facebook.com" class="facebook"><i class="fa fa-facebook"></i></a>
+						<a href="https://twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+						<a href="https://plus.google.com" class="google-plus"><i class="fa fa-google-plus"></i></a>
+						<a href="https://pinterest.com" class="pinterest"><i class="fa fa-pinterest"></i></a>
+					</div>
+					<div class="colophon">
+						<p>Diseñado por Adrian, Alejandra, Nelson, Verónica. Todos los derechos reservados</p>
+				</div>
+			</div>
+		</footer>
+
+	</div>
+
+		<script src="js/calculadoras.js"> </script>
+		<script src="js/jquery-1.11.1.min.js"></script>
+		<script src="js/plugins.js"></script>
+		<script src="js/app.js"></script>
+
+</body>
