@@ -1,3 +1,5 @@
+
+
 .container1 {
   margin-top:30px;
 }
@@ -320,20 +322,7 @@ nav {
   margin-left: 20px;
 }
 
-.hamburguer {
-  width: 80px;
-  height: 80px;
-  display: none;
-  text-align: center;
-  z-index: 100;
-  cursor: pointer;
-  transition: color 0.5s ease-in;
-}
 
-.hamburguer>i {
-  font-size: 25px;
-  line-height: 80px;
-}
 
 .contenido-header {
   width: 100%;
@@ -453,7 +442,20 @@ nav {
 }
 
 /* Questions */
+.hamburguer {
+  width: 80px;
+  height: 80px;
+  display: none;
+  text-align: center;
+  z-index: 100;
+  cursor: pointer;
+  transition: color 0.5s ease-in;
+}
 
+.hamburguer>i {
+  font-size: 25px;
+  line-height: 80px;
+}
 
 .questions {
   height: 600px;
@@ -835,4 +837,55 @@ footer {
     width: 95%;
     margin-bottom: 40px;
   }
+}
+
+/*calcu*/
+
+
+.dropdown a{
+  font-size: 1.275rem;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(255,255,255,0.93);
+  backface-visibility: 80%;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #1FDE82;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.site-header .main-navigation .dropdown { display: inline-block; padding: 30px 0; margin: 0; }
+.site-header .main-navigation .dropdown a { display: inline-block; padding: 0 20px; line-height: 1; color: #9d9879; font-weight: 400; font-size: 14px; font-size: 0.875rem; border-bottom: 2px solid transparent; -webkit-transition: .3s ease; transition: .3s ease;}
+.dropbtn{border-right: 1px solid #9d9879;}
+.site-header .main-navigation .dropdown:last-child a { border-right: none; }
+.site-header .main-navigation .dropdown.current-dropdown, .site-header .main-navigation .dropdown:hover { color: #1FDE82; border-bottom: 2px solid #1FDE82; }
+.site-header .main-navigation .dropdown.current-dropdown a, .site-header .main-navigation .dropdown:hover a { color: #1FDE82; }
+.mobile-navigation .menu .current-dropdown a { color: #1FDE82; }
+.dropdown-content{z-index: 3;}
+
+.dropmenuitem {
+  color: black;
+}
+
+.dropmenuitem:hover, .dropmenuitem:hover a{
+  color: #1FDE82 !important; 
+  border-bottom: 1px solid #1FDE82; 
 }

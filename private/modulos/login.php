@@ -23,10 +23,11 @@
          * que no esten vacias 
          */
         if (empty($usuario)){
-            $error .= '<i>Favor de ingresar el usuario</i>';
+            $error .= "'Favor de ingresar el usuario'";
+
         } 
         else if (empty(trim ($_POST['clave']))){
-            $error .= '<i>Favor de ingresar la clave</i>';
+            $error .= "'Favor de ingresar la clave'";
         }else{
             /**
             * conexion a la bd */        
@@ -46,11 +47,10 @@
          */
         $statement->execute(array(
             ':usuario' => $usuario,
-            ':clave' => $clave
+            ':clave' => $clave,
         ));
-            
+
         $resultado = $statement->fetch();
-        
         /**
          * si el usuario es correcto lo manda a prinsipal.php
          * y sino muestra en mensaje 
@@ -59,7 +59,7 @@
             $_SESSION['usuario'] = $usuario;
             header('location: principal/principal.php');
         }else{
-            $error .= '<i>Este usuario no existe</i>';
+            $error .= "'Este usuario no existe'";
         }
     }
 }
@@ -67,3 +67,4 @@ require '../../public/frontend/login-vista.php';//vista del login
 
 
 ?>
+

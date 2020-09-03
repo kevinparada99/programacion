@@ -10,23 +10,34 @@
 </head> 
 
 <body>
-    <nav>
-        <sectioon class="contenedor nav">
-        <div class="logo">
-            <img src="public/Nutricion-master/img/logo.png" alt="">
-            </div>
-            <div class="enlaces-header">
-                <a href="index.html">Inicio</a>
-                <a href="public/recetas/admin/index.php">Recetas</a>
-                <a href="informacion.html">Información</a>
-                <a href="#">FAQ</a>
-                <a href="private/modulos/index.php">CONTROL</a>
-            </div>
-            <div class="hamburguer">
-                <i class="fas fa-bars"></i>
-            </div>
-        </sectioon>
-    </nav>
+    <header>
+        <nav>
+            <sectioon class="contenedor nav">
+                <div class="logo">
+                    <img src="public/Nutricion-master/img/logo.png" alt="">
+                </div>
+                <div class="enlaces-header">
+                    <a href="index.html">Inicio</a>
+                    <li class="dropdown">
+                        <a class="dropbtn">Calculadoras</a>
+                        <div class="dropdown-content">
+                            <div class="dropmenuitem"><a href="public/calculadora/Metabolismo.html"
+                                    style="color: #9d9879;">Metabolismo</a></div>
+                            <div class="dropmenuitem"><a href="public/calculadora/Peso_Ideal.html"
+                                    style="color: #9d9879;">Peso Ideal</a></div>
+                            <div class="dropmenuitem"><a href="public/calculadora/IMC.html"
+                                    style="color: #9d9879;">Indice Masa Corporal</a></div>
+                    </li>
+                    <a href="public/recetas/admin/mostrar.php">Recetas</a>
+                    <a href="informacion.html">Información</a>
+                    <a href="FAQ.html">FAQ</a>
+                    <a href="private/modulos/index.php">CONTROL</a>
+                </div>
+                <div class="hamburguer">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </sectioon>
+        </nav></header>
     <section>
         <div class="container">
             <div class="accordion">
@@ -107,7 +118,11 @@
             </div>
         </div>
     </section>
-
+    <div class="go-top-container">
+        <div class="go-top-button">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+    </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/c15b744a04.js" crossorigin="anonymous"></script>

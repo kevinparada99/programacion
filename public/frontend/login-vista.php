@@ -5,6 +5,7 @@
     <title>Login / Register Nutrición</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
 <body>
 <div class="container-form">
@@ -33,16 +34,27 @@
                 <img class="img-responsive" id="btnojo" src="../../public/image/ojo.jpg" style="width: 10%;">
             </div>
             
-            <?php if(!empty($error)): ?>
-            <div class="mensaje">
-                <?php echo $error; ?>
-            </div>
-            <?php endif; ?>
+        
             
             <button type="submit">Entrar<label class="lnr lnr-chevron-right"></label></button>
         </form>
     </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
     <script src="../../public/js/jquery.js"></script>
     <script src="../../public/js/script.js"></script>
+    <?php if(!empty($error)): ?>
+                <script>
+               if(<?php echo $error;?>.indexOf("Favor")>=0 ){/**mensaje de satisfaccion */
+                    toastr.warning(<?php echo $error;?>);
+                }
+                else if(<?php echo $error;?>.indexOf("existe")>=0){/**mensaje de advertencia */
+                    toastr.error(<?php echo $error;?>);
+                } 
+               </script>
+            <?php endif; ?>
+
 </body>
 </html>

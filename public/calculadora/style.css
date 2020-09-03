@@ -1,8 +1,5 @@
 /*!
- * Project_Name: Themezy Diatecian Template
- * Author: Themezy
- * Email: info@themezy.com
- * URL: http://themezy.com
+
  */
 /*===========================================  Importing CSS Libraries ===========================================*/
 article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary { display: block; }
@@ -94,9 +91,20 @@ table { border-collapse: collapse; border-spacing: 0; }
 *, *:before, *:after { -moz-box-sizing: border-box; box-sizing: border-box; }
 
 /* Global Styles */
-body { font-family: "Open Sans", Arial, sans-serif; font-size: 16px; font-weight: 300; line-height: 1.7; background-color: #f2efdc; color: #898670; }
+body {
+  font-family: "Open Sans", Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.7;
+  background-color: #e9e4e6;
+  color: #000000;
+}
 
-a { text-decoration: none; color: #f16a54; font-weight: 400; }
+a {
+  text-decoration: none;
+  color: #1FDE82;
+  font-weight: 400;
+}
 
 address { font-style: normal; }
 
@@ -120,11 +128,11 @@ p { margin-top: 0; }
 .feature .feature-icon [class^="icon-"] { font-size: 100px; font-size: 6.25rem; color: #f2efdc; }
 .feature .feature-title { font-size: 24px; font-size: 1.5rem; margin: 0 0 10px; }
 .feature.color-purple .feature-icon { background-color: #48172d; }
-.feature.color-purple .feature-title { color: #f16a54; }
+.feature.color-purple .feature-title { color: #1FDE82; }
 .feature.color-green .feature-icon { background-color: #889c29; }
 .feature.color-green .feature-title { color: #0A2A22; }
-.feature.color-pink .feature-icon { background-color: #f16a54; }
-.feature.color-pink .feature-title { color: #f16a54; }
+.feature.color-pink .feature-icon { background-color: #1FDE82; }
+.feature.color-pink .feature-title { color: #1FDE82; }
 .feature.color-orange .feature-icon { background-color: #fbab18; }
 .feature.color-orange .feature-title { color: #0A2A22; }
 
@@ -151,24 +159,27 @@ Separar de la de Nelson*/
 .category-block2:after { content: " "; clear: both; display: block; overflow: hidden; height: 0; }
 .category-block2 figure { width: 370px; text-align: center; float: left; margin-right: 130px; }
 @media screen and (max-width: 990px) { .category-block2 figure { width: 100%; float: none; } }
-.category-block2 figure img { max-width: 100%; overflow: hidden; border-radius: 50%;}
+.category-block2 figure img { max-width: 100%; overflow: hidden; border-radius: 0%;}
 .category-block2 .category-content { overflow: hidden; }
 .category-block2 .category-title { font-weight: 300; margin-top: 30px; margin-bottom: 30px; }
 .category-block2 p { margin-bottom: 30px; }
 
 .dieta1-section { background-color: #FFFFFF; color: #000000; }
 .dieta1-section .category-title { color: #fbab18; }
-.dieta1-section .boton1 { background-color: #f16a54; color: #1C1C1C; -webkit-transition: .3s ease; transition: .3s ease; }
+.dieta1-section .boton1 { background-color: #1FDE82; color: #1C1C1C; -webkit-transition: .3s ease; transition: .3s ease; }
 .dieta1-section .boton1:hover { background-color: #E4DDE6;}
 
-.dieta2-section { background-color: #E1DECE; color: #1C1C1C;}
+.dieta2-section {
+  background-color: #f2f2f2;
+  color: #1C1C1C;
+}
 .dieta2-section .category-title { color: #48172d; }
-.dieta2-section .boton2 { background-color: #f16a54; color: #1C1C1C; -webkit-transition: .3s ease; transition: .3s ease; }
+.dieta2-section .boton2 { background-color: #1FDE82; color: #1C1C1C; -webkit-transition: .3s ease; transition: .3s ease; }
 .dieta2-section .boton2:hover { background-color: #E4DDE6; }
 
 .dieta3-section { background-color: #FFFFFF; color: #000000; }
 .dieta3-section .category-title { color: #fbab18; }
-.dieta3-section .boton3 { background-color: #f16a54; color: #1C1C1C; -webkit-transition: .3s ease; transition: .3s ease; }
+.dieta3-section .boton3 { background-color: #1FDE82; color: #1C1C1C; -webkit-transition: .3s ease; transition: .3s ease; }
 .dieta3-section .boton3:hover { background-color: #E4DDE6; }
 /*Aqui termina*/
 
@@ -197,16 +208,44 @@ Separar de la de Nelson*/
 .contact-detail span { margin-right: 10px; display: inline-block; }
 
 .contact-form input:not([type="submit"]), .contact-form textarea { width: 100%; padding: 20px; border-radius: 20px; background-color: white; font-size: 14px; font-size: 0.875rem; border: 2px solid white; margin-bottom: 20px; outline: none; -webkit-transition: .3s ease; transition: .3s ease; }
-.contact-form input:not([type="submit"]):hover, .contact-form input:not([type="submit"]):focus, .contact-form textarea:hover, .contact-form textarea:focus { border-color: #f16a54; }
+.contact-form input:not([type="submit"]):hover,
+.contact-form input:not([type="submit"]):focus,
+.contact-form textarea:hover,
+.contact-form textarea:focus {
+  border-color: #1FDE82;
+}
 .contact-form textarea { height: 220px; }
-.contact-form input[type="submit"] { float: right; background-color: #f16a54; color: #f2efdc; padding: 15px 30px; border-radius: 30px; border: none; outline: none; -webkit-transition: .3s ease; transition: .3s ease; }
-.contact-form input[type="submit"]:hover, .contact-form input[type="submit"]:focus { background-color: #f59383; }
+.contact-form input[type="submit"] {
+  float: right;
+  background-color: #1FDE82;
+  color: #f2efdc;
+  padding: 15px 30px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  -webkit-transition: .3s ease;
+  transition: .3s ease;
+}
+.contact-form input[type="submit"]:hover,
+.contact-form input[type="submit"]:focus {
+  background-color: #1FDE82;
+}
 
 .container { margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; *zoom: 1; }
 .container:after { content: " "; clear: both; display: block; overflow: hidden; height: 0; }
 @media (min-width: 768px) { .container { width: 750px; } }
 @media (min-width: 992px) { .container { width: 970px; } }
 @media (min-width: 1200px) { .container { width: 1170px; } }
+
+.logo {
+  height: 80px;
+
+}
+
+.logo img {
+  height: 80%;
+  vertical-align: top;
+}
 
 .container-fluid { margin-right: auto; margin-left: auto; padding-left: 15px; padding-right: 15px; *zoom: 1; }
 .container-fluid:after { content: " "; clear: both; display: block; overflow: hidden; height: 0; }
@@ -544,20 +583,34 @@ Separar de la de Nelson*/
 /* Header Styles */
 .site-header { text-align: center; background: white; }
 .homepage .site-header .main-navigation { float: none; margin: 0 auto; }
-@media screen and (max-width: 990px) { .homepage .site-header .main-navigation { float: right; } }
+@media screen and (max-width: 90px) { .homepage .site-header .main-navigation { float: right; } }
 .site-header .main-navigation .menu { list-style: none; padding-left: 0; margin: 0; display: inline-block; }
-@media screen and (max-width: 990px) { .site-header .main-navigation .menu { display: none; } }
-@media screen and (min-width: 991px) { .site-header .main-navigation .menu { display: inline-block; } }
-.site-header .main-navigation .menu-item { display: inline-block; padding: 30px 0; margin: 0; }
-.site-header .main-navigation .menu-item a { display: inline-block; padding: 0 20px; line-height: 1; color: #9d9879; font-weight: 400; font-size: 14px; font-size: 0.875rem; border-bottom: 2px solid transparent; -webkit-transition: .3s ease; transition: .3s ease; border-right: 1px solid #9d9879; }
+@media screen and (max-width: 90px) { .site-header .main-navigation .menu { display: none; } }
+@media screen and (min-width: 91px) { .site-header .main-navigation .menu { display: inline-block; } }
+.site-header .main-navigation .menu-item { display: inline-block; padding: 10px 0; margin: 0; }
+.site-header .main-navigation .menu-item a {
+  display: inline-block;
+  padding: 0 20px;
+  line-height: 1;
+  color: #048998;
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 0.875rem;
+  
+}
 .site-header .main-navigation .menu-item:last-child a { border-right: none; }
-.site-header .main-navigation .menu-item.current-menu-item, .site-header .main-navigation .menu-item:hover { color: #f16a54; border-bottom: 2px solid #f16a54; }
-.site-header .main-navigation .menu-item.current-menu-item a, .site-header .main-navigation .menu-item:hover a { color: #f16a54; }
+.site-header .main-navigation .menu-item.current-menu-item,
+.site-header .main-navigation .menu-item:hover {
+  color: #1FDE82;
+  border-bottom: 1px solid #1FDE82;
+}
+.site-header .main-navigation .menu-item.current-menu-item a, .site-header .main-navigation .menu-item:hover a { color: #1FDE82; }
 
-#branding { padding: 20px 0; }
+#branding { padding: 1px 0px;
+            margin-top: 70px;}
 /*.homepage #branding { display: none; }*/
-@media screen and (max-width: 990px) { .homepage #branding { display: block; } }
-#branding .logo { color: #f16a54; font-size: 32px; font-size: 2rem; vertical-align: middle; margin-right: 10px; }
+@media screen and (max-width: 90px) { .homepage #branding { display: block; } }
+#branding .logo { color: #1FDE82; font-size: 32px; font-size: 2rem; vertical-align: middle; margin-right: 10px; }
 #branding .site-title { display: inline-block; font-size: 14px; font-size: 0.875rem; vertical-align: middle; }
 #branding .site-title a { color: #9d9879; }
 
@@ -569,11 +622,11 @@ Separar de la de Nelson*/
 @media screen and (min-width: 991px) { .mobile-navigation { display: none !important; } }
 .mobile-navigation .menu { list-style: none; }
 .mobile-navigation .menu a { display: block; padding: 10px 0; color: #898670; }
-.mobile-navigation .menu a:hover { color: #f16a54; }
-.mobile-navigation .menu .current-menu-item a { color: #f16a54; }
+.mobile-navigation .menu a:hover { color: #1FDE82; }
+.mobile-navigation .menu .current-menu-item a { color: #1FDE82; }
 
 .hero { text-align: center; padding: 90px 0; }
-.hero .logo { font-size: 60px; font-size: 3.75rem; color: #f16a54; }
+.hero .logo { font-size: 60px; font-size: 3.75rem; color: #1FDE82; }
 .hero .site-title { font-size: 60px; font-size: 3.75rem; color: #736f5c; font-weight: 300; position: relative; padding: 30px 0; }
 .hero .site-title:before, .hero .site-title:after { content: " "; width: 40px; height: 5px; background-color: #e2dfce; position: absolute; left: 0; right: 0; margin: auto; }
 .hero .site-title:before { top: 0; }
@@ -590,7 +643,9 @@ Separar de la de Nelson*/
 .category-block p { margin-bottom: 30px; }
 
 .cooking-section { background-color: #48172d; color: #c09ead; }
-.cooking-section .category-title { color: #fbab18; }
+.cooking-section .category-title {
+  color: #1FDE82;
+}
 .cooking-section .button { background-color: #fbab18; color: #48172d; -webkit-transition: .3s ease; transition: .3s ease; }
 .cooking-section .button:hover { background-color: #fcbd4a; }
 
@@ -614,7 +669,7 @@ Separar de la de Nelson*/
 .author-bio h2 { font-weight: 100; font-size: 48px; font-size: 3rem; margin: 0 0 30px; line-height: 1; color: #736f5c; }
 .author-bio .person-detail { list-style: none; margin: 30px 0; padding: 0; }
 .author-bio .person-detail li { margin-bottom: 20px; }
-.author-bio .person-detail .icon { width: 40px; height: 40px; background-color: #f16a54; border-radius: 50%; text-align: center; display: inline-block; vertical-align: middle; margin-right: 20px; padding-top: 10px; }
+.author-bio .person-detail .icon { width: 40px; height: 40px; background-color: #1FDE82; border-radius: 50%; text-align: center; display: inline-block; vertical-align: middle; margin-right: 20px; padding-top: 10px; }
 .author-bio .person-detail strong { font-weight: 400; }
 
 .content { padding: 100px 0; }
@@ -640,7 +695,7 @@ Separar de la de Nelson*/
 .ingredient table tr { border-bottom: 1px solid #e1dece; }
 .ingredient table tr:last-child { border-bottom: none; }
 .ingredient table td { padding: 5px; }
-.ingredient table strong { color: #f16a54; }
+.ingredient table strong { color: #1FDE82; }
 
 .comments { background-color: white; padding: 30px; border-radius: 20px; }
 .comments h3 { font-weight: 300; margin-top: 0; }
@@ -659,40 +714,67 @@ Separar de la de Nelson*/
 #respond form:after { content: " "; clear: both; display: block; overflow: hidden; height: 0; }
 #respond input:not([type="submit"]), #respond textarea { display: block; width: 100%; margin-bottom: 20px; padding: 10px 20px; border-radius: 20px; border: 2px solid #e1dece; font-size: 14px; font-size: 0.875rem; }
 #respond textarea { min-height: 150px; }
-#respond input[type="submit"] { float: right; background-color: #f16a54; font-weight: 400; border-radius: 20px; border: none; color: white; padding: 10px 20px; font-size: 14px; font-size: 0.875rem; }
+#respond input[type="submit"] { float: right; background-color: #1FDE82; font-weight: 400; border-radius: 20px; border: none; color: white; padding: 10px 20px; font-size: 14px; font-size: 0.875rem; }
 
 /* Footer Styles */
-.site-footer { text-align: center; padding: 50px 0; background-color: white; color: #9d9879; }
-.site-footer .logo { font-size: 60px; font-size: 3.75rem; color: #e1dece; }
-.site-footer { text-align: center; background: white; }
-.homepage .site-footer .footer-navigation { float: none; margin: 0 auto; }
-@media screen and (max-width: 990px) { .homepage .site-footer .footer-navigation { float: right; } }
-.site-footer .footer-navigation .menu { list-style: none; padding-left: 0; margin: 0; display: inline-block; }
-@media screen and (max-width: 990px) { .site-footer .footer-navigation .menu { display: none; } }
-@media screen and (min-width: 991px) { .site-footer .footer-navigation .menu { display: inline-block; } }
-.site-footer .footer-navigation .menu-item { display: inline-block; padding: 30px 0; margin: 0; }
-.site-footer .footer-navigation .menu-item a { display: inline-block; padding: 0 20px; line-height: 1; color: #9d9879; font-weight: 400; font-size: 14px; font-size: 0.875rem; border-bottom: 2px solid transparent; -webkit-transition: .3s ease; transition: .3s ease; border-right: 1px solid #9d9879; }
-.site-footer .footer-navigation .menu-item:last-child a { border-right: none; }
-.site-footer .footer-navigation .menu-item.current-menu-item, .site-footer .footer-navigation .menu-item:hover { color: #f16a54; border-bottom: 2px solid #f16a54; }
-.site-footer .footer-navigation .menu-item.current-menu-item a, .site-footer .footer-navigation .menu-item:hover a { color: #f16a54; }
+footer {
+  background: #f2f2f2;
+  padding: 60px 0;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin: auto;
+}
 
-.site-footer .subscribe { position: relative; display: inline-block; width: 50%; }
-@media screen and (max-width: 990px) { .site-footer .subscribe { width: 100%; } }
-.site-footer .subscribe input { outline: none; }
-.site-footer .subscribe input[type="text"] { width: 100%; padding: 15px 20px; border-radius: 25px; border: 3px solid #e1dece; font-size: 14px; font-size: 0.875rem; -webkit-transition: .3s ease; transition: .3s ease; }
-.site-footer .subscribe input[type="text"]:focus, .site-footer .subscribe input[type="text"]:active { border-color: #f16a54; }
-.site-footer .subscribe input[type="submit"] { position: absolute; right: 6px; top: 6px; background-color: #f16a54; color: #f2efdc; padding: 12px 20px; border-radius: 20px; border: none; font-size: 14px; font-size: 0.875rem; -webkit-transition: .3s ease; transition: .3s ease; }
-.site-footer .subscribe input[type="submit"]:focus, .site-footer .subscribe input[type="submit"]:active { background-color: #f59383; }
-.site-footer .social-links { padding: 30px 0; }
-.site-footer .social-links a { color: white; text-align: center; line-height: 1.9; width: 50px; height: 50px; border-radius: 50%; display: inline-block; margin: 0 5px; -webkit-transition: .3s ease; transition: .3s ease; font-size: 26px; font-size: 1.625rem; }
-.site-footer .social-links .facebook { background-color: #3b5a9b; }
-.site-footer .social-links .facebook:hover { background-color: #4e71bb; }
-.site-footer .social-links .twitter { background-color: #1c9ac7; }
-.site-footer .social-links .twitter:hover { background-color: #34b4e2; }
-.site-footer .social-links .google-plus { background-color: #dd4b39; }
-.site-footer .social-links .google-plus:hover { background-color: #e47365; }
-.site-footer .social-links .pinterest { background-color: #d11e2e; }
-.site-footer .social-links .pinterest:hover { background-color: #e33f4d; }
-.site-footer .colophon { font-size: 14px; font-size: 0.875rem; }
+.partFooter {
+  width: 20%;
+  text-align: center;
+}
 
-/*# sourceMappingURL=style.css.map */
+.partFooter h4 {
+  color: #1d273b;
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.partFooter a {
+  display: block;
+  text-decoration: none;
+  color: #5D6678;
+  font-weight: 300;
+  transition: color .3s ease-in-out;
+  margin-bottom: 10px;
+}
+
+
+.partFooter a:hover {
+  color: #1FDE82;
+}
+
+.partFooter img {
+  width: 70%;
+}
+
+.social-media i {
+  font-size: 20px;
+  display: inline-block;
+  color: #adb6c7;
+  border: 1px solid #adb6c7;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  line-height: 36px;
+  cursor: pointer;
+  margin-top: 20px;
+  text-align: center;
+  transition: all ease-in-out .3s;
+  margin-right: 5px;
+}
+
+.social-media i:hover {
+  color: #fff;
+  background-color: #1FDE82;
+  border-color: #1FDE82;
+}

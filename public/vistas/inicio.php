@@ -34,11 +34,8 @@
         <li> <a class="active" href="../../../public/recetas/admin/res.php">Agregar R <span class="sr-only">(current)</span></a></li>
         </ul>
     </nav>
-    
-
-    <!-- partial:index.partial.html -->
-    <form class="form-inline" v-on:submit.prevent="enviarMensaje" v-on:reset="limpiarChat" id="frm-chat1">
-    
+     <!-- partial:index.partial.html -->
+     <form class="form-inline" v-on:submit.prevent="enviarMensaje" v-on:reset="limpiarChat" id="frm-chat1">
     <button class="chatbox-open">
         <i class="fa fa-comments fa-2x" aria-hidden="true"></i>
     </button>
@@ -58,15 +55,13 @@
                         aria-hidden="true"></i></button>
             </aside>
         </header>
-        <div class="container-scroll" id="chatt">
-        <div class="card-body">
-            <section id="messenger">
-            <ul v-for="mensajes in msgs" id="messages"> 
-                <li> {{ mensajes.user }}: {{ mensajes.msg }}</li>
-                </ul>
-            </section>
+        <div style="height: 35vh; overflow-y: scroll; background-image: url('../../../public/image/fondochat.jpg');" id="contenidoChat" >
+        <div class="msj-rta macro" style="margin:auto">                        
+                    <div class="text text-r" style="background:whitesmoke !important">
+                        
+                    </div> 
+                </div>
         </div>
-            </div>
         <footer class="chatbox-popup__footer">
             <aside style="flex:10">
                 <input type="text" v-model="msg"  required placeholder="Escribe tu Mensaje" class="form-control ">
@@ -84,21 +79,18 @@
             <aside style="flex:6">
                 <h1>Nutri5tech</h1> Personal (Online)
             </aside>
+            <input type="text" value="<?php echo $_SESSION['usuario']; ?>" id="inputusuario"  style="display:none">
             <aside style="flex:3;text-align:right;">
                 <button class="chatbox-minimize" ><i class="fa fa-window-restore" aria-hidden="true"></i></button>
                 <button class="chatbox-panel-close"><i class="fa fa-close" aria-hidden="true"></i></button>
             </aside>
         </header>
-        <main id="contenedorChat"  style="overflow-y:scroll; height: 400px; width: 350px; color: #888; ">
-        <div class="card-body">
-                <section id="messenger">
-                <input type="text" value="<?php echo $_SESSION['usuario']; ?>" id="inputusuario"  style="display:none">
-                <ul v-for="mensajes in msgs" id="messages"> 
-                        <li> {{ mensajes.user }}:   {{ mensajes.msg }}</li>
-                </ul>
-                </section>
-            </main>
-        </div>
+        <main  style="height: 65vh; overflow-y: scroll;overflow-x: scroll;background-image: url('../../../public/image/fondochat.jpg');" id="contenidoCha" >
+       
+            
+
+
+        </main>
         <footer class="chatbox-panel__footer">
             <aside style="flex:10">
                 <input type="text" v-model="msg" id='inputmsg' required placeholder="Escribe tu Mensaje" class="form-control">

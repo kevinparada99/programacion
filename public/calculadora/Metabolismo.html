@@ -6,9 +6,24 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 		
 		<title>Calculadora | Metabolismo</title>
-		<!-- Loading third party fonts -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/assets/owl.carousel.min.css">
 		
-		<!-- Loading main css file -->
+		<link rel="stylesheet" href="http://themes.audemedia.com/html/goodgrowth/css/owl.theme.default.min.css">
+		<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap" rel="stylesheet">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+		<!----  Ion icons  -->
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+		<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+		
+		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap" rel="stylesheet">
+		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="style_calcs.css">
 		
@@ -22,32 +37,31 @@
 	<div id="site-content">
 
 		<header class="site-header">
-			<div class="container">
-				<a href="index.html" id="branding" class="pull-left">
-					<i class="icon-watermelon logo"></i>
-					<h1 class="site-title">Sanisimo</h1>
-				</a>
-				<!-- Default snippet for navigation -->
-					<div class="main-navigation pull-right">
-						<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
-						<ul class="menu">
-							<li class="menu-item"><a href="dietas.html">Dietas</a></li>
-							<li class="menu-item"><a href="recetas.html">Recetas</a></li>
-							<li class="dropdown">
-						    <a class="dropbtn">Calculadoras</a>
-						    <div class="dropdown-content">
-						    	<div class="dropmenuitem"><a href="Metabolismo.html" style="color: #9d9879;">Metabolismo</a></div>
-						    	<div class="dropmenuitem"><a href="Peso_Ideal.html" style="color: #9d9879;">Peso Ideal</a></div>
-						    	<div class="dropmenuitem"><a href="IMC.html" style="color: #9d9879;">Indice Masa Corporal</a></div>
-						    	<div class="dropmenuitem"><a href="ICC.html" style="color: #9d9879;">Indice Cintura-Cadera</a></div>
-						    	<div class="dropmenuitem"><a href="ICT.html" style="color: #9d9879;">Indice Cintura-Talla</a></div>		      
-						    </div>
+			<nav>
+				<sectioon class="contenedor nav">
+					<div class="logo">
+						<img src="../Nutricion-master/img/logo.png" alt="">
+					</div>
+					<div class="enlaces-header">
+						<a href="../../index.html">Inicio</a>
+						<li class="dropdown">
+							<a class="dropbtn">Calculadoras</a>
+							<div class="dropdown-content">
+								<div class="dropmenuitem"><a href="Metabolismo.html" style="color: #9d9879;">Metabolismo</a></div>
+								<div class="dropmenuitem"><a href="Peso_Ideal.html" style="color: #9d9879;">Peso Ideal</a></div>
+								<div class="dropmenuitem"><a href="IMC.html" style="color: #9d9879;">Indice Masa Corporal</a></div>
+							</div>
 							</li>
-							<li class="menu-item"><a href="contacto.html">Contacto</a></li>
-						</ul> <!-- .menu -->
-					</div> <!-- .main-navigation -->
-				<div class="mobile-navigation"></div>
-			</div>
+						<a href="../../public/recetas/admin/mostrar.php">Recetas</a>
+						<a href="../../informacion.html">Información</a>
+						<a href="../../FAQ.html">FAQ</a>
+						<a href="../../private/modulos/index.php">CONTROL</a>
+					</div>
+					<div class="hamburguer">
+						<i class="fas fa-bars"></i>
+					</div>
+				</sectioon>
+			</nav>
 		</header>
 
 		<main class="main-content">				
@@ -57,7 +71,7 @@
 						<article class="recipe">
 							<figure class="recipe-image"><img class="imagen" src="images/metabolismo.jpg" alt="Food 1"></figure>
 							<div class="recipe-detail">
-								<h2 class="recipe-title"><a href="single.html">Metabolismo</a></h2>
+								<h2 class="recipe-title" style="color:#1FDE82;">Metabolismo</h2>
 								<p>Es un conjunto de procesos físicos y químicos que ocurren en las células, que convierten a los nutrientes de los alimentos en la energía necesaria para que el cuerpo cumpla con todas sus funciones vitales. Esta energia no sólo se utiliza para moverse y pensar, sino también cuando se esta en reposo.</p>
 								<p>Las enzimas del sistema digestivo descomponen las proteínas en aminoácidos, las grasas en ácidos grasos y los carbohidratos en azúcares simples. Estos compuestos son absorbidos por la sangre, que los lleva a las células en donde otras enzimas aceleran o regulan las reacciones químicas necesarias para “que se metabolicen”</p>
 							</div>
@@ -84,41 +98,40 @@
 			</div>
 		</main>
 			
-		<footer class="site-footer">
-				<div class="container">
-					<i class="icon-watermelon logo"></i>
-					<nav class="footer-navigation">
-					<button type="button" class="menu-toggle"><i class="fa fa-bars"></i></button>
-						<ul class="menu">
-							<li class="menu-item"><a href="dietas.html">Dietas</a></li>
-							<li class="menu-item"><a href="recetas.html">Recetas</a></li>
-							<li class="dropdown">
-						    <a class="dropbtn" style="color: #9d9879;">Calculadoras</a>
-						    <div class="dropdown-content">
-						    	<div class="dropmenuitem"><a href="Metabolismo.html" style="color: #9d9879;">Metabolismo</a></div>
-						    	<div class="dropmenuitem"><a href="Peso_Ideal.html" style="color: #9d9879;">Peso Ideal</a></div>
-						    	<div class="dropmenuitem"><a href="IMC.html" style="color: #9d9879;">Indice Masa Corporal</a></div>
-						    	<div class="dropmenuitem"><a href="ICC.html" style="color: #9d9879;">Indice Cintura-Cadera</a></div>
-						    	<div class="dropmenuitem"><a href="ICT.html" style="color: #9d9879;">Indice Cintura-Talla</a></div>		      
-						    </div></li>
-							<li class="menu-item"><a href="contacto.html">Contacto</a></li>
-						</ul> 
-					</nav>
+		<footer>
+        <div class="partFooter">
+            <img src="../../public/Nutricion-master/img/logo.png" alt="">
 
-					<div class="social-links">
-						<a href="https://facebook.com" class="facebook"><i class="fa fa-facebook"></i></a>
-						<a href="https://twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
-						<a href="https://plus.google.com" class="google-plus"><i class="fa fa-google-plus"></i></a>
-						<a href="https://pinterest.com" class="pinterest"><i class="fa fa-pinterest"></i></a>
-					</div>
-					<div class="colophon">
-						<p>Diseñado por Adrian, Alejandra, Nelson, Verónica. Todos los derechos reservados</p>
-				</div>
-			</div>
-		</footer>
+        </div>
+        <div class="partFooter">
+            <h4>Servicios</h4>
+            <a href="#">Asilo +503 1234-4578</a>
+            <a href="#">Hospital +503 1245-7845</a>
+            <a href="#">Emergencia +503 1548-4875 </a>
+        </div>
+        <div class="partFooter">
+            <h4>FAQ</h4>
+            <a href="FAQ.html">Preguntas frecuentes</a>
 
+        </div>
+        <div class="partFooter">
+            <h4>Contáctanos</h4>
+            <div class="social-media">
+                <i class="fab fa-facebook-f"></i>
+                <i class="fab fa-twitter"></i>
+                <i class="fab fa-instagram"></i>
+                <i class="fab fa-youtube"></i>
+                <h5>Derechos reservados 2020 ©</h5>
+            </div>
+        </div>
+    </footer>
+	<div class="go-top-container">
+        <div class="go-top-button">
+            <i class="fas fa-chevron-up"></i>
+        </div>
+    </div>
 	</div>
-
+	    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script src="js/calculadoras.js"> </script>
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/plugins.js"></script>

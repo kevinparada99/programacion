@@ -23,35 +23,35 @@
          * que no esten vacias y que cumplan con lo pedido
          */
         if (empty($correo)){
-            $error .= '<i>Favor de ingresar el correo</i>';
+            $error .= "'Favor ingresar el Correo'";
         } 
         else if (strlen($correo) > 30) {
-                $error .= '<i>El Correo Es Demasiado Largo</i>'; 
+                $error .= "'El Correo Es Demasiado Largo'"; 
             }
             else if (!filter_var($correo, FILTER_VALIDATE_EMAIL)) {
-                $error .= '<i>El Correo es incorrecto</i>'; 
+                $error .= "'El Correo es incorrecto'"; 
             }
         
         else if (empty($usuario)){
-            $error .= '<i>Favor ingresar el usuario</i>';
+            $error .= "'Favor ingresar el Usuario'";
         }
         else if (strlen($usuario) > 20) {
-            $error .= '<i>El Usuario Es Demasiado Largo</i>'; 
+            $error .= "'El Usuario Es Demasiado Largo'"; 
         }
         else if (strlen($usuario) < 4) {
-            $error .= '<i>El Usuario Es Demasiado Corto</i>'; 
+            $error .= "'El Usuario Es Demasiado Corto'"; 
         }
         else if (empty($_POST['clave'])){
-            $error .= '<i>Favor ingresar la contraseña</i>';
+            $error .= "'Favor ingresar la contraseña'";
         }
         else if (strlen($_POST['clave']) < 8) {
-            $error .= '<i>La contraseña Es Demasiada Corta</i>'; 
+            $error .= "'La contraseña Es Demasiada Corta tiene que ser mayor a 8 caracteres'"; 
         } 
         else if (strlen($_POST['clave']) > 12) {
-            $error .= '<i>La contraseña Es Demasiada larga</i>'; 
+            $error .= "'La contraseña Es Demasiada larga tiene que ser menor a 12 caracteres'"; 
         }
         else if (empty($_POST['clave2'])){
-            $error .= '<i>Favor ingresar la contraseña de confirmacion</i>';
+            $error .= "'Favor ingresar la contraseña de confirmacion'";
         
         }else{//si todo esta bien ase la consulta a la bd
             try{
@@ -67,13 +67,13 @@
             /**
                * si se encuentra uno manda un mensaje */          
             if ($resultado != false){
-                $error .= '<i>Este usuario ya existe</i>';
+                $error .= "'Este usuario ya existe'";
             }
             /**
              * conprueva que las contraseñas sean iguales
              */
             if ($clave != $clave2){
-                $error .= '<i> Las contraseñas no coinciden</i>';
+                $error .= "' Las contraseñas no coinciden'";
             }
             
             
@@ -91,7 +91,7 @@
                 
             ));
             
-            $error .= '<i style="color: green;">Usuario registrado exitosamente</i>';//mensaje que se registro
+            $error .= "'Sea registrado exitosamente'";//mensaje que se registro
         }
     }
 

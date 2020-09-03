@@ -5,7 +5,7 @@
     *y si el usuario no esta no esta iniciado lo deja en login
  */
     if(isset($_SESSION['usuario'])){
-        require 'index.php';
+        require 'mostrar.php';
     }else{
         header ('location: ../login.php');
     }

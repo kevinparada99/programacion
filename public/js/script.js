@@ -41,25 +41,3 @@ var contra = document.getElementById("contraseña"),
 /**se asigna la funcion al boton de el ojo */
 btn.addEventListener('click',mostrar,true)
 
-/** crear variables con el boton de mostrar contraseña y el input de la contraceña */
-var contra2 = document.getElementById("contraseña2"),
-    btn2 = document.getElementById("btnojo2"),
-    contador2 = 0;
-/**@function mostrar funcion para cambiar de type el input de contraseña de type passaword a type text
- * tambien cambiar la imagen y el estilo
- */
-function mostrar2() {
-    if (contador2 == 0) {
-        contra2.type = "text";
-        btn2.src = "../../public/image/cerrado.png";
-        btn2.style = "width: 7%;";
-        contador2 = 1;
-    } else if (contador2 == 1) {
-        contra2.type = "password";
-        btn2.src = "../../public/image/ojo.jpg";
-        btn2.style = "width: 10%;";
-        contador2 = 0;
-    }
-}
-/**se asigna la funcion al boton de el ojo */
-btn2.addEventListener('click', mostrar2, true)
