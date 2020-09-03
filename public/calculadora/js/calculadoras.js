@@ -11,6 +11,20 @@ var metabolismo = function(){
 	var peso = document.getElementById("metabolismo_peso").value;
 	var altura = document.getElementById("metabolismo_altura").value;
 
+	if(edad == ''){
+		alertify.error("Por favor colocar su edad.. ");
+	return false;
+	}
+	if(peso == ''){
+		alertify.error("Por favor colocar su peso.. ");
+		return false;
+		}
+		if(altura == ''){
+			alertify.error("Por favor colocar su altura.. ");
+			return false;
+			}
+			
+
 //-------------ASIGNA DIFERENTES DATOS DEPENDIENDO DEL SEXO-----------------------
 	//DATOS PARA METABOLISMO BASAL - HOMBRE
 	//MB hombres = a + (b * peso) + (c * altura) – (d * edad)
@@ -67,6 +81,20 @@ var pesoIdeal = function(){
 	var altura = document.getElementById("peso_ideal_altura").value;
 	var peso = document.getElementById("peso_ideal_peso").value;
 
+	if(edad == ''){
+		alertify.error("Por favor colocar su edad.. ");
+	return false;
+	}
+		if(altura == ''){
+			alertify.error("Por favor colocar su altura.. ");
+			return false;
+			}
+			if(peso == ''){
+				alertify.error("Por favor colocar su peso.. ");
+				return false;
+				}
+			
+
 //----------------------------CALCULO DE LA FORMULA----------------------------------------
 	if(sexo == "hombre" ){var k=4;} else if(sexo == "mujer" ){var k=2.5} //Hombres -> k = 4, Mujeres -> 2,5
 	var pI = altura -100 - ((altura - 150) / 4) + ((edad - 20) / k)
@@ -92,6 +120,16 @@ var imc = function(){
 //----------------------------RECOGIDA DE DATOS PARA LA FÓRMULA---------------------------------
 	var peso = document.getElementById("imc_peso").value;
 	var altura = document.getElementById("imc_altura").value;
+
+	if(peso == ''){
+		alertify.error("Por favor colocar su peso.. ");
+		return false;
+		}
+		if(altura == ''){
+			alertify.error("Por favor colocar su altura.. ");
+			return false;
+			}
+			
 	
 //----------------------------CALCULO DE LA FORMULA----------------------------------------
 	var tuIMC = peso / (altura*altura)
@@ -112,7 +150,7 @@ var imc = function(){
 	else if(tuIMC>=35 && tuIMC<=39.9){resultadoIMC = " tiene Obesidad Tipo II: 35-39.9 (valores normales: 18,5-24.9)";}
 	else if(tuIMC>40){resultadoIMC = "tiene Obesidad Tipo III(mórbida): +40 (valores normales: 18,5-24.9)";}
 	//si el resultado no es un valor de la lista, avisa del error
-	else {alert("La altura debe de ser introducida en METROS! Acuerdate de separar los decimales con un PUNTO no con una coma.")}
+	else {alertify.error("La altura debe de ser introducida en METROS! Acuerdate de separar los decimales con un PUNTO no con una coma.")}
 	
 	//Informa del resultado, toFixed(2) -> lo da en 2 decimales
 	var desplegar_resultado = "Su IMC es de "+tuIMC.toFixed(2)+ resultadoIMC;
