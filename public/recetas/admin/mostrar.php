@@ -169,7 +169,7 @@
         </div>
 	</section>
 	<br>
-	<a href="agregar.php" id="btns" style="color : #1FDE82; margin: 15px 1099px 15px;">		
+	<a href="agregar.php" id="btns" style="display: none;">		
 	  <svg href="./form.php" width="4em" height="4em" viewBox="0 0 16 16" class="bi bi-plus-square" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
       <path fill-rule="evenodd" d="M8 3.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.5.5H4a.5.5 0 0 1 0-1h3.5V4a.5.5 0 0 1 .5-.5z"/>
       <path fill-rule="evenodd" d="M7.5 8a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0V8z"/>
@@ -395,9 +395,10 @@
    
   var btns = document.querySelector("#btns");
   var user = document.querySelector("#user");
-  if(user.value !== "admin"){
-  btns.style = "display: none;";
+  if(user.value == "admin"){
+  btns.style = "display: block; color : #1FDE82; margin: 15px 1099px 15px;";
+  ol.href = "";
   }else{
-      ol.href = "";
+     
   }
      </script>
