@@ -12,9 +12,17 @@ $query = "INSERT INTO tabla_imagen(nombre,informacion,link,imagen) VALUES('$nomb
 $resultado = $conexion->query($query);
 
 if($resultado){
-    header("location: res.php");
+    echo'
+       <script type="text/javascript">
+        alert("Reseta Guardada");
+        window.location.href="res.php";
+        </script>';
 }else{
-     echo "no";
+    echo'
+    <script type="text/javascript">
+     alert("No se pudo Guardar");
+     window.location.href="res.php";
+     </script>';
 }
 
 

@@ -11,9 +11,17 @@ $query = "UPDATE tabla_imagen SET nombre='$nombre',informacion='$informacion',li
 $resultado = $conexion->query($query);
 
 if($resultado){
- header("location: res.php");
+     echo'
+     <script type="text/javascript">
+      alert(" La Reseta ha sido modificada");
+      window.location.href="res.php";
+      </script>';
 }else{
-     echo "no";
+     echo'
+       <script type="text/javascript">
+        alert("No se pudo modificar Reseta Guardada");
+        window.location.href="res.php";
+        </script>';
 }
 
 

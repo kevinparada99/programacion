@@ -23,7 +23,6 @@ var metabolismo = function(){
 			alertify.error("Por favor colocar su altura.. ");
 			return false;
 			}
-			
 
 //-------------ASIGNA DIFERENTES DATOS DEPENDIENDO DEL SEXO-----------------------
 	//DATOS PARA METABOLISMO BASAL - HOMBRE

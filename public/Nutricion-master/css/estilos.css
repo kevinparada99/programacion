@@ -481,9 +481,7 @@ footer {
     .results-text {
         width: 100%;
     }
-
-    /* Services */
-
+    /*services*/
     .services {
         flex-direction: column-reverse;
         align-items: center;
