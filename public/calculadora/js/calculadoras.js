@@ -78,7 +78,7 @@ var pesoIdeal = function(){
 	var sexo = peso_ideal_genero();
 	var edad = document.getElementById("peso_ideal_edad").value;
 	var altura = document.getElementById("peso_ideal_altura").value;
-	var peso = document.getElementById("peso_ideal_peso").value;
+	var peso = document.getElementById("peso_ideal_peso").value / 2.2046;
 
 	if(edad == ''){
 		alertify.error("Por favor colocar su edad.. ");
@@ -99,7 +99,7 @@ var pesoIdeal = function(){
 	var pI = altura -100 - ((altura - 150) / 4) + ((edad - 20) / k)
 	
 	//Despliega el resultado
-	var desplegar_resultado = "Su peso ideal sería estar en "+Math.floor(pI)+" kg.";
+	var desplegar_resultado = "Su peso ideal sería estar en "+Math.floor(pI*2.2046)+" LB.";
 	var recomendacion;
 	if (pI > peso) { 
 		recomendacion = "<a href='dietas.html#bajo_peso'>Ver dieta recomendada</a>";
