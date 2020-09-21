@@ -12,10 +12,12 @@ $resultado = $conexion->query($query);
 
 if($resultado){
      echo'
-     <script type="text/javascript">
-      alert(" La Reseta ha sido modificada");
-      window.location.href="res.php";
-      </script>';
+
+     <script>
+     alert("receta guardada");
+     window.location.href="res.php";
+     </script>
+     ';
 }else{
      echo'
        <script type="text/javascript">

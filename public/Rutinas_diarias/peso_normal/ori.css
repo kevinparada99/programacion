@@ -1,0 +1,368 @@
+*,
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+.unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.unstyled a {
+  text-decoration: none;
+}
+
+.list-inline {
+  overflow: hidden;
+}
+.list-inline li {
+  float: left;
+}
+
+.header {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 17.5em;
+  background:  #1FDE82;
+}
+
+.logo {
+
+  font: 300 2em "Times New Roman", Times, serif;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+.logo a {
+  display: block;
+  padding: 1em 0;
+  color: #080808;
+  text-decoration: none;
+  transition: 0.15s linear color;
+}
+.logo a:hover {
+  color: #fff;
+}
+.logo a:hover span {
+  color:  #074b16;
+}
+.logo span {
+  font-weight: 700;
+  transition: 0.15s linear color;
+}
+
+.main-nav ul {
+  border-top: solid 1px  #1FDE82;
+}
+.main-nav li {
+  border-bottom: solid 1px  #1FDE82;
+}
+.main-nav a {
+  padding: 1.1em 0;
+  color: #0e0c0b;
+  font: 400 1.125em "Source Sans Pro", Helvetica, Arial, sans-serif;
+  text-align: center;
+ 
+}
+.main-nav a:hover {
+  color: #fff;
+}
+
+.social-links {
+  border-bottom: solid 1px  #1FDE82;
+}
+.social-links li {
+  width: 25%;
+  border-left: solid 1px  #1FDE82;
+}
+.social-links li:first-child {
+  border: none;
+}
+.social-links a {
+  display: block;
+  height: 5.5em;
+  text-align: center;
+  color: #3c3735;
+  font: 0.75em/5.5em "Source Sans Pro", Helvetica, Arial, sans-serif;
+}
+.social-links a:hover {
+  color: #dfdbd9;
+}
+
+.list-hover-slide li {
+  position: relative;
+  overflow: hidden;
+}
+.list-hover-slide a {
+  display: block;
+  position: relative;
+  z-index: 1;
+  transition: 0.35s ease color;
+}
+.list-hover-slide a:before {
+  content: "";
+  display: block;
+  z-index: -1;
+  position: absolute;
+  left: -100%;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-right: solid 5px #fff;
+  background:  #1FDE82;
+  transition: 0.35s ease left;
+}
+.list-hover-slide a.is-current:before, .list-hover-slide a:hover:before {
+  left: 0;
+}
+
+
+
+
+
+
+
+/*card css*/
+
+:root{
+	/* == Layout == */
+	--bg-color: #eee;
+	--universal-radius: 2px;
+	--container-height: 350px;
+	
+	/* == Font Style == */
+	--title-size: 28px;
+	--fonts: Helvetica, sans-serif;
+	--color-primary: #1FDE82;
+
+	/* == box-shadow propriedade == */
+	--shadow: 0 0 2px 0 rgba(0,0,0,.15), 0 2px 2px 0 rgba(0,0,0,.25);
+	--shadow-hover: 0 0 8px 0 rgba(0,0,0,.15), 0 8px 8px 0 rgba(0,0,0,.25);
+	--bg-white-95: rgba(255,255,255,.9);
+}
+
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  
+}
+
+.container{
+  margin-top: 10px;
+   margin-left: 375px;
+   margin-bottom: 5%;
+}
+
+
+/* # Card Noticias com Imagens */
+/*=============================*/
+
+.card-noticia{
+	display: flex;
+	position: relative;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	background: #fff;
+	overflow: hidden;
+	will-change: box-shadow;
+	box-shadow: var(--shadow);
+	border-radius: var(--universal-radius);
+	transition: box-shadow .3s ease;
+}
+
+.card_md{
+  max-width: 380px;
+}
+
+.card-noticia:hover{
+	box-shadow: var(--shadow-hover);
+}
+
+.card-noticia:hover .info{
+	bottom: 0;
+  background: var(--bg-white-95);
+}
+
+.card-noticia:hover .data{
+  background: transparent;
+  color: #333;
+  will-change: background, color;
+  transform: background .6s, color .3s ease-in-out;
+}
+
+.card-noticia .data{
+	display: flex;
+	position: absolute;
+	height: 60px;
+  width: 60px;
+	top: 5px;
+  right: 5px;
+	padding: 0 10px;
+  flex-direction: column;
+  color: #fff;
+	background: var(--color-primary);
+	border-radius: 50%;
+	z-index: 11;
+}
+
+.data_day{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+  padding: 5px 0 0;
+}
+
+.data_moth{
+  font-size: 11px;
+  text-align: center;
+  line-height: .85em;
+}
+
+.card-noticia .wrap-img{
+	display: flex;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+	justify-content: center;
+}
+
+.card-noticia .wrap-img img{
+	height: 250px;
+	width: auto;
+}
+
+.card-noticia .info{
+	display: flex;
+	position: absolute;
+	height: 250px;
+	width: 100%;
+	flex-direction: column;
+	bottom: -200px;
+	left: 0;
+	background: #FFF;
+	will-change: bottom;
+	transition: bottom .3s ease;
+	z-index: 10;
+}
+
+.card-noticia .info .title{
+	display: flex;
+	min-height: 50px;
+	width: 100%;
+	align-items: center;
+	padding: 0 20px 0 10px;
+}
+
+.card-noticia .info .title .icon{
+	display: flex;
+	position: relative;
+	height: 100%;
+	width: 50px;
+	min-width: 50px;
+	color: var(--color-primary);
+	align-items: center;
+	justify-content: center;
+}
+
+.card-noticia .info .title .icon::before{
+	position: absolute;
+	content: '';
+	width: 2px;
+	height: 40px;
+	right: 5px;
+	border-right: 1px solid #e3e3e3;
+	opacity: .8;
+}
+
+.card-noticia .info .title h4{
+	font-size: 18px;
+	font-weight: 400;
+	font-family: Helvetica;
+	margin: 0;
+	padding: 0;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.card-noticia .info .description{
+	display: flex;
+	height: 100px;
+	width: 100%;
+	justify-content: flex-end;
+	padding: 10px;
+}
+
+.card-noticia .info .description p{
+	position: relative;
+	width: 85%;
+	font-size: 12px;	
+	margin: 0;
+	padding: 0;
+}
+
+.card-noticia .info .description p::before{
+	position: absolute;
+	content: '';
+	width: 2px;
+	height: 80px;
+	border-left: 1px solid #eee;
+	left: -7px;
+}
+
+.card-noticia .info .action{
+	height: 50px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	position: absolute;
+	bottom: -5px;
+}
+
+.card-noticia .info .action .btn-noticias{
+	border: none;
+  border-radius: 0;
+  background: transparent;
+  font-weight: 500;
+  font-size: 16px;
+  font-family: Helvetica;
+	height: 50px;
+  width: 100%;
+	color: #333;
+  cursor: pointer;
+	opacity: .8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+	will-change: opacity, background;
+	transition: opacity, background .3s ease;
+}
+
+.card-noticia .info .action .btn-noticias:hover{
+	background: var(--color-primary);
+  color: #fff;
+	opacity: 1;
+}
+
+@media screen and (max-width:800px) {
+
+	.header{
+      display: none;
+	}
+
+	.container{
+		margin-top: 10px;
+		margin-left: 15px;
+	 
+        width: 250px;   
+	  }
+}
+
