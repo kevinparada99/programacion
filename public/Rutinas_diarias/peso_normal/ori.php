@@ -5,31 +5,90 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Peso Normal</title>
     <link rel="stylesheet" href="ori.css">
 </head>
-<header class="header" role="banner">
-        <h1 class="logo">
-          <a href="#">Nutri5 <span>tech</span></a>
-        </h1>
-        <div class="nav-wrap">
-          <nav class="main-nav" role="navigation">
-            <ul class="unstyled list-hover-slide">
-              <li><a href="../../../index.html">Inicio</a></li>
-              <li><a href="../sobre_peso/ori.php">Sobre Peso</a></li>
-              <li><a href="../bajo_peso/ori.php">Bajo Peso</a></li>
-              <li><a href="dietas/dist/pesonormal.html">Ver todas P.Normal</a></li>
-            </ul>
-          </nav>
-          <ul class="social-links list-inline unstyled list-hover-slide">
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">Google+</a></li>
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">CodePen</a></li>
-          </ul>
-        </div>
-      </header>
 <body>
+<div class="area"></div><nav class="main-menu">
+        <ul>
+        <li>
+                <a href="#">
+                    <i class="fa fa-bars"></i>
+                    <span class="nav-text">
+                        Ver
+                    </span>
+                </a>
+              
+            </li><br>
+            <li>
+                <a href="../../../index.html">
+                    <i class="fa fa-home fa-2x"></i>
+                    <span class="nav-text">
+                        Inicio
+                    </span>
+                </a>
+              
+            </li><br>
+            <li class="has-subnav">
+                <a href="../bajo_peso/ori.php">
+                    <i class="fa fa-street-view"></i>
+                    <span class="nav-text">
+                        bajo Peso
+                    </span>
+                </a>
+                
+            </li><br>
+            <li class="has-subnav">
+                <a href="../sobre_peso/ori.php">
+                   <i class="fa fa-child"></i>
+                    <span class="nav-text">
+                        SobrePeso
+                    </span>
+                </a>
+                
+            </li><br>
+            <li class="has-subnav">
+                <a href="../../Recetas/admin/mostrar.php">
+                   <i class="fa fa-user-md"></i>
+                    <span class="nav-text">
+                        Resetas saludables
+                    </span>
+                </a>
+               
+            </li><br>
+            <li>
+                <a href="../../../informacion.html">
+                    <i class="fa fa-globe"></i>
+                    <span class="nav-text">
+                        Informacion
+                    </span>
+                </a>
+            </li><br>
+           
+            <li>
+                <a href="dietas/dist/pesonormal.html">
+                   <i class="fa fa-exclamation-circle"></i>
+                    <span class="nav-text">
+                        Todas Las recetas
+                    </span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="logout">
+            <li>
+               <a href="../../../private/modulos/index.php">
+                     <i class="fa fa-user-circle"></i>
+                    <span class="nav-text">
+                        Control de Pacientes
+                    </span>
+                </a>
+            </li>  
+        </ul>
+    </nav>
+
+
      <input type="text" id="fname" style="display:none;"><br><br>
     <div class="container">
         <div class="row">
