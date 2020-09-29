@@ -234,548 +234,129 @@ function contador3(){
 
 ?>
    <script>
+        var reseta1 =`<div class="card-noticia card_md">
+        <div class="data">
+                              <p class="data_day" id="cont"></p>
+                   <p class="data_moth">Descargas</p>
+                          </div>
+                          <div class="wrap-img">
+                              <img src="img/bajopeso.jpg" alt="Background">
+                          </div>
+                          <div class="info">
+                              <div class="title">
+                                  <div class="icon">
+                                      <i class="material-icons">Nut5Tec</i>
+                                  </div>
+                                  <h4>Lunes/Jueves!!</h4>
+                              </div>
+                              <div class="description">
+                                  <p>
+                                ¿Te encuentras muy bajo de peso? Si quieres subir de peso a un peso equilibrado 
+                                esta rutina diaria te ayudara!!
+                                ¿Que deberia comer para subir de peso?
+                                DESAYUNO:Taza de yogut. MERIENDA:1 pieza de galleta maria. ALMUERZO:100 gramos de carne de cerdo
+                                .CENA:1 taza de leche. ETC
+                                  </p>
+                              </div>
+                              <div class="action">
+                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#nosotros'">Continuar Lendo</button>
+                                  <a class="btn btn-noticias" href="dietaspdf/BajoPeso.pdf" download="5tech_bajopeso1.pdf" onclick="e();">Descargar</a>
+                              </div>
+                          </div> `;
+
+           var reseta2 = `<div class="card-noticia card_md">
+                             <div class="data">
+                              <p class="data_day" id="contador2"></p>
+                   <p class="data_moth">Descargas</p>
+                          </div>
+                          <div class="wrap-img">
+                              <img src="img/bajopesoii.jpg" alt="Background">
+                          </div>
+                          <div class="info">
+                              <div class="title">
+                                  <div class="icon">
+                                      <i class="material-icons">Nut5tec</i>
+                                  </div>
+                                  <h4>Martes/Viernes!!</h4>
+                              </div>
+                              <div class="description">
+                                  <p>
+                                      ¿Estas desnutrido o muy bajo de peso? ¿Quieres subir de peso?
+                                      ¿Que deberia comer para subir de peso?  DESAYUNO:ostada integral con tomate y yogur con manzana.
+
+                                      MERIENDA:Naranja, ALMUERZO:Berenjenas rellenas de pollo y verduras.Etc.
+                                  </p>
+                              </div>
+                              <div class="action">
+                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#menu'">Continuar Lendo</button>
+                                  <a class="btn btn-noticias" href="dietaspdf/bajopeso2.pdf" download="5tech_bajopeso2.pdf" onclick="contador2();">Descargar</a>
+                              </div>
+                          </div> `;
+
+                  var reseta3 = ` <div class="card-noticia card_md">
+                           <div class="data">
+                          <p class="data_day" id="contador3"></p>
+                          <p class="data_moth">Descargas</p>
+                          </div>
+                          <div class="wrap-img">
+                              <img src="img/bajopesoIII.jpg" alt="Background">
+                          </div>
+                          <div class="info">
+                              <div class="title">
+                                  <div class="icon">
+                                      <i class="material-icons">Nut5tec</i>
+                                  </div>
+                                  <h4>Miercoles/Sabados</h4>
+                              </div>
+                              <div class="description">
+                                  <p>
+                                    Para estar bien de salud debes de terner un peso normal no muy bajo.
+                                    ¿Quieres subir de peso? Esto es lo que deberias comer para subir de peso!!
+                                    DESAYUNO:Gachas de avena con leche y canela y trocitos de plátano,
+                                    ALMUERZO:Lomos de trucha al horno con tomate y cebolla. 1 Taza de Arroz.ETC
+                                  </p>
+                              </div>
+                              <div class="action">
+                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#tercera'">Continuar Lendo</button>
+                                  <a class="btn btn-noticias" href="dietaspdf/bajopeso3.pdf" download="5tech_bajopeso3.pdf" onclick="contador3();">Descargar</a>
+                              </div>
+                          </div>  `;
+
 
  function ordenar(a,dos,tres){ 
 if(a >= dos && a>= tres){
 
       if(dos>tres){
-        conten1.innerHTML += `<div class="card-noticia card_md">
-        <div class="data">
-                              <p class="data_day" id="cont"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopeso.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5Tec</i>
-                                  </div>
-                                  <h4>Lunes/Jueves!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                ¿Te encuentras muy bajo de peso? Si quieres subir de peso a un peso equilibrado 
-                                esta rutina diaria te ayudara!!
-                                ¿Que deberia comer para subir de peso?
-                                DESAYUNO:Tostada integral con tomate, aceite y kiwi, ALMUERSO:Ensalada de canónigos con nueces y parmesano 
-                                1 Taza de Brocoli 1 Taza de Lechuga, ETC.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#nosotros'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="e();">Descargar</a>
-                              </div>
-                          </div> `
-                          
-                          conten2.innerHTML += `<div class="card-noticia card_md">
-                             <div class="data">
-                              <p class="data_day" id="contador2"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopesoii.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Martes/Viernes!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                      ¿Estas desnutrido o muy bajo de peso? ¿Quieres subir de peso?
-                                      ¿Que deberia comer para subir de peso?  DESAYUNO:ostada integral con tomate y yogur con manzana.
+        conten1.innerHTML += reseta1;              
+        conten2.innerHTML += reseta2;
+        conten3.innerHTML += reseta3;
 
-                                      MERIENDA:Naranja, ALMUERZO:Berenjenas rellenas de pollo y verduras.Etc.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#menu'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador2();">Descargar</a>
-                              </div>
-                          </div> `
-
-                         conten3.innerHTML += ` <div class="card-noticia card_md">
-                           <div class="data">
-                          <p class="data_day" id="contador3"></p>
-                          <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopesoIII.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Miercoles/Sabados</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                    Para estar bien de salud debes de terner un peso normal no muy bajo.
-                                    ¿Quieres subir de peso? Esto es lo que deberias comer para subir de peso!!
-                                    DESAYUNO:Gachas de avena con leche y canela y trocitos de plátano,
-                                    ALMUERZO:Lomos de trucha al horno con tomate y cebolla. 1 Taza de Arroz.ETC
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#tercera'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador3();">Descargar</a>
-                              </div>
-                          </div>  `
-
-
-
-                          }else{
-                            conten1.innerHTML += `<div class="card-noticia card_md">
-                              <div class="data">
-                              <p class="data_day" id="cont"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopeso.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5Tec</i>
-                                  </div>
-                                  <h4>Lunes/Jueves!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                ¿Te encuentras muy bajo de peso? Si quieres subir de peso a un peso equilibrado 
-                                esta rutina diaria te ayudara!!
-                                ¿Que deberia comer para subir de peso?
-                                DESAYUNO:Tostada integral con tomate, aceite y kiwi, ALMUERSO:Ensalada de canónigos con nueces y parmesano 
-                                1 Taza de Brocoli 1 Taza de Lechuga, ETC.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#nosotros'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="e();">Descargar</a>
-                              </div>
-                          </div>`
-                          conten2.innerHTML += `<div class="card-noticia card_md">
-                           <div class="data">
-                          <p class="data_day" id="contador3"></p>
-                          <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopesoIII.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Miercoles/Sabados</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                    Para estar bien de salud debes de terner un peso normal no muy bajo.
-                                    ¿Quieres subir de peso? Esto es lo que deberias comer para subir de peso!!
-                                    DESAYUNO:Gachas de avena con leche y canela y trocitos de plátano,
-                                    ALMUERZO:Lomos de trucha al horno con tomate y cebolla. 1 Taza de Arroz.ETC
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#tercera'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador3();">Descargar</a>
-                              </div>
-                          </div>   `
-              
-                          conten3.innerHTML += `<div class="card-noticia card_md">
-                             <div class="data">
-                              <p class="data_day" id="contador2"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopesoii.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Martes/Viernes!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                      ¿Estas desnutrido o muy bajo de peso? ¿Quieres subir de peso?
-                                      ¿Que deberia comer para subir de peso?  DESAYUNO:ostada integral con tomate y yogur con manzana.
-
-                                      MERIENDA:Naranja, ALMUERZO:Berenjenas rellenas de pollo y verduras.Etc.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#menu'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador2();">Descargar</a>
-                              </div>
-                          </div> ` 
+      }else{
+     conten1.innerHTML += reseta1;
+      conten2.innerHTML += reseta3;
+     conten3.innerHTML += reseta2;
 
   }                   
 }else if(dos>=a && dos>=tres){
  if(a>tres){
-    conten1.innerHTML +=`<div class="card-noticia card_md">
-                             <div class="data">
-                              <p class="data_day" id="contador2"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopesoii.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Martes/Viernes!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                      ¿Estas desnutrido o muy bajo de peso? ¿Quieres subir de peso?
-                                      ¿Que deberia comer para subir de peso?  DESAYUNO:ostada integral con tomate y yogur con manzana.
-
-                                      MERIENDA:Naranja, ALMUERZO:Berenjenas rellenas de pollo y verduras.Etc.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#menu'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador2();">Descargar</a>
-                              </div>
-                          </div>  `
-
-    conten2.innerHTML +=`<div class="card-noticia card_md">
-        <div class="data">
-                              <p class="data_day" id="cont"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopeso.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5Tec</i>
-                                  </div>
-                                  <h4>Lunes/Jueves!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                ¿Te encuentras muy bajo de peso? Si quieres subir de peso a un peso equilibrado 
-                                esta rutina diaria te ayudara!!
-                                ¿Que deberia comer para subir de peso?
-                                DESAYUNO:Tostada integral con tomate, aceite y kiwi, ALMUERSO:Ensalada de canónigos con nueces y parmesano 
-                                1 Taza de Brocoli 1 Taza de Lechuga, ETC.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#nosotros'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="e();">Descargar</a>
-                              </div>
-                          </div>`
-
-    conten3.innerHTML +=`<div class="card-noticia card_md">
-                           <div class="data">
-                          <p class="data_day" id="contador3"></p>
-                          <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopesoIII.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Miercoles/Sabados</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                    Para estar bien de salud debes de terner un peso normal no muy bajo.
-                                    ¿Quieres subir de peso? Esto es lo que deberias comer para subir de peso!!
-                                    DESAYUNO:Gachas de avena con leche y canela y trocitos de plátano,
-                                    ALMUERZO:Lomos de trucha al horno con tomate y cebolla. 1 Taza de Arroz.ETC
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#tercera'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador3();">Descargar</a>
-                              </div>
-                          </div>  `
+    conten1.innerHTML += reseta2;
+    conten2.innerHTML += reseta1;
+    conten3.innerHTML += reseta3;
 
  }else{
-    conten1.innerHTML +=`<div class="card-noticia card_md">
-                             <div class="data">
-                              <p class="data_day" id="contador2"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopesoii.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Martes/Viernes!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                      ¿Estas desnutrido o muy bajo de peso? ¿Quieres subir de peso?
-                                      ¿Que deberia comer para subir de peso?  DESAYUNO:ostada integral con tomate y yogur con manzana.
-
-                                      MERIENDA:Naranja, ALMUERZO:Berenjenas rellenas de pollo y verduras.Etc.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#menu'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador2();">Descargar</a>
-                              </div>
-                          </div> `
-
-                          conten2.innerHTML +=`<div class="card-noticia card_md">
-                           <div class="data">
-                          <p class="data_day" id="contador3"></p>
-                          <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopesoIII.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Miercoles/Sabados</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                    Para estar bien de salud debes de terner un peso normal no muy bajo.
-                                    ¿Quieres subir de peso? Esto es lo que deberias comer para subir de peso!!
-                                    DESAYUNO:Gachas de avena con leche y canela y trocitos de plátano,
-                                    ALMUERZO:Lomos de trucha al horno con tomate y cebolla. 1 Taza de Arroz.ETC
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#tercera'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador3();">Descargar</a>
-                              </div>
-                          </div>  `
-
-                          conten3.innerHTML += `<div class="card-noticia card_md">
-        <div class="data">
-                              <p class="data_day" id="cont"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopeso.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5Tec</i>
-                                  </div>
-                                  <h4>Lunes/Jueves!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                ¿Te encuentras muy bajo de peso? Si quieres subir de peso a un peso equilibrado 
-                                esta rutina diaria te ayudara!!
-                                ¿Que deberia comer para subir de peso?
-                                DESAYUNO:Tostada integral con tomate, aceite y kiwi, ALMUERSO:Ensalada de canónigos con nueces y parmesano 
-                                1 Taza de Brocoli 1 Taza de Lechuga, ETC.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#nosotros'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="e();">Descargar</a>
-                              </div>
-                          </div>`
+    conten1.innerHTML += reseta2;
+    conten2.innerHTML += reseta3;
+    conten3.innerHTML +=reseta1;
  }
   }else if(tres>=a && tres>=dos){
    if(a>dos){
-     conten1.innerHTML += `<div class="card-noticia card_md">
-                           <div class="data">
-                          <p class="data_day" id="contador3"></p>
-                          <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopesoIII.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Miercoles/Sabados</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                    Para estar bien de salud debes de terner un peso normal no muy bajo.
-                                    ¿Quieres subir de peso? Esto es lo que deberias comer para subir de peso!!
-                                    DESAYUNO:Gachas de avena con leche y canela y trocitos de plátano,
-                                    ALMUERZO:Lomos de trucha al horno con tomate y cebolla. 1 Taza de Arroz.ETC
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#tercera'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador3();">Descargar</a>
-                              </div>
-                          </div>  `
-
-     conten2.innerHTML += `<div class="card-noticia card_md">
-        <div class="data">
-                              <p class="data_day" id="cont"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopeso.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5Tec</i>
-                                  </div>
-                                  <h4>Lunes/Jueves!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                ¿Te encuentras muy bajo de peso? Si quieres subir de peso a un peso equilibrado 
-                                esta rutina diaria te ayudara!!
-                                ¿Que deberia comer para subir de peso?
-                                DESAYUNO:Tostada integral con tomate, aceite y kiwi, ALMUERSO:Ensalada de canónigos con nueces y parmesano 
-                                1 Taza de Brocoli 1 Taza de Lechuga, ETC.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#nosotros'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="e();">Descargar</a>
-                              </div>
-                          </div>`
-
-
-     conten3.innerHTML += `<div class="card-noticia card_md">
-                             <div class="data">
-                              <p class="data_day" id="contador2"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopesoii.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Martes/Viernes!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                      ¿Estas desnutrido o muy bajo de peso? ¿Quieres subir de peso?
-                                      ¿Que deberia comer para subir de peso?  DESAYUNO:ostada integral con tomate y yogur con manzana.
-
-                                      MERIENDA:Naranja, ALMUERZO:Berenjenas rellenas de pollo y verduras.Etc.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#menu'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador2();">Descargar</a>
-                              </div>
-                          </div> `
+     conten1.innerHTML += reseta3;
+     conten2.innerHTML += reseta1;
+     conten3.innerHTML +=reseta2;
    }else{
-       conten1.innerHTML += `<div class="card-noticia card_md">
-                           <div class="data">
-                          <p class="data_day" id="contador3"></p>
-                          <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopesoIII.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Miercoles/Sabados</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                    Para estar bien de salud debes de terner un peso normal no muy bajo.
-                                    ¿Quieres subir de peso? Esto es lo que deberias comer para subir de peso!!
-                                    DESAYUNO:Gachas de avena con leche y canela y trocitos de plátano,
-                                    ALMUERZO:Lomos de trucha al horno con tomate y cebolla. 1 Taza de Arroz.ETC
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#tercera'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador3();">Descargar</a>
-                              </div>
-                          </div>   `
-
-
-       conten2.innerHTML += `<div class="card-noticia card_md">
-                             <div class="data">
-                              <p class="data_day" id="contador2"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopesoii.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Martes/Viernes!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                      ¿Estas desnutrido o muy bajo de peso? ¿Quieres subir de peso?
-                                      ¿Que deberia comer para subir de peso?  DESAYUNO:ostada integral con tomate y yogur con manzana.
-
-                                      MERIENDA:Naranja, ALMUERZO:Berenjenas rellenas de pollo y verduras.Etc.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#menu'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador2();">Descargar</a>
-                              </div>
-                          </div> `
-
-       conten3.innerHTML += `<div class="card-noticia card_md">
-        <div class="data">
-                              <p class="data_day" id="cont"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/bajopeso.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5Tec</i>
-                                  </div>
-                                  <h4>Lunes/Jueves!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                ¿Te encuentras muy bajo de peso? Si quieres subir de peso a un peso equilibrado 
-                                esta rutina diaria te ayudara!!
-                                ¿Que deberia comer para subir de peso?
-                                DESAYUNO:Tostada integral con tomate, aceite y kiwi, ALMUERSO:Ensalada de canónigos con nueces y parmesano 
-                                1 Taza de Brocoli 1 Taza de Lechuga, ETC.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='../peso_normal/dietas/dist/bajo peso.html#nosotros'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="e();">Descargar</a>
-                              </div>
-                          </div>`
+       conten1.innerHTML += reseta3;
+       conten2.innerHTML += reseta2;
+       conten3.innerHTML +=reseta1;
    }
   }
 }

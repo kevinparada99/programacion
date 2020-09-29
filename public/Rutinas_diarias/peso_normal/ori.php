@@ -234,550 +234,134 @@ function contador3(){
 ?>
    <script>
 
+var reseta1 =  `<div class="card-noticia card_md">
+        <div class="data">
+                              <p class="data_day" id="cont"></p>
+                   <p class="data_moth">Descargas</p>
+                          </div>
+                          <div class="wrap-img">
+                              <img src="img/pesonormal1.jpg" alt="Background">
+                          </div>
+                          <div class="info">
+                              <div class="title">
+                                  <div class="icon">
+                                      <i class="material-icons">Nut5Tec</i>
+                                  </div>
+                                  <h4>Lunes/Jueves!!</h4>
+                              </div>
+                              <div class="description">
+                                  <p>
+                                  Un estilo de vida saludable conlleva muchas decisiones. 
+                                  Entre ellas, la elección de una dieta o un plan de alimentación equilibrado.
+                                  ¿Que deberia Comer Para continuar con el peso normal?
+                                  DESAYUNO: Yogurt, MERIENDA:1 Taza de Jugo etc.
+                                  </p>
+                              </div>
+                              <div class="action">
+                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#nosotros'">Continuar Lendo</button>
+                                  <a class="btn btn-noticias" href="dietaspdf/pesonormal.pdf" download="5tech_pesonormal.pdf" onclick="e();">Descargar</a>
+                              </div> 
+                          </div> `;
+
+         var reseta2 = `<div class="card-noticia card_md">
+                             <div class="data">
+                              <p class="data_day" id="contador2"></p>
+                   <p class="data_moth">Descargas</p>
+                          </div>
+                          <div class="wrap-img">
+                              <img src="img/pesonormal2.jpg" alt="Background">
+                          </div>
+                          <div class="info">
+                              <div class="title">
+                                  <div class="icon">
+                                      <i class="material-icons">Nut5tec</i>
+                                  </div>
+                                  <h4>Martes/Viernes!!</h4>
+                              </div>
+                              <div class="description">
+                                  <p>
+                                      Rutina diaria para personas que se encuentran en un peso normal.
+                                     ¿Que deveria comer si ya tengo un peso normal?
+                                     DESAYUNO:1 Pieza de Huevo, MERIENDA:1 Pieza mediana de Manzana, ALMUERZO:
+                                     1 Taza de Arroz.ETC. 
+                                  </p>
+                              </div>
+                              <div class="action">
+                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#menu'">Continuar Lendo</button>
+                                  <a class="btn btn-noticias" href="dietaspdf/normal2.pdf" download="5tech_pesonormal2.pdf" onclick="contador2();">Descargar</a>
+                              </div>
+                          </div> `;
+
+         var reseta3 = ` <div class="card-noticia card_md">
+                           <div class="data">
+                          <p class="data_day" id="contador3"></p>
+                          <p class="data_moth">Descargas</p>
+                          </div>
+                          <div class="wrap-img">
+                              <img src="img/pesonormal3.jpg" alt="Background">
+                          </div>
+                          <div class="info">
+                              <div class="title">
+                                  <div class="icon">
+                                      <i class="material-icons">Nut5tec</i>
+                                  </div>
+                                  <h4>Miercoles/Sabados</h4>
+                              </div>
+                              <div class="description">
+                                  <p>
+                                     ¿Quieres seguir con un peso normal?
+                                     sigue los pasos de la tersera rutina diaria con las 
+                                     mejores dietas para peso normal!!
+                                     DESAYUNO:1 Pieza de Tortilla, MERIENDA:1 Taza de Papaya, CENA:1 Taza de Lechuga,
+                                     ETC. 
+                                  </p>
+                              </div>
+                              <div class="action">
+                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#tercera'">Continuar Lendo</button>
+                                  <a class="btn btn-noticias" href="dietaspdf/normal3.pdf" download="5tech_pesonormal3.pdf" onclick="contador3();">Descargar</a>
+                              </div>
+                          </div>  `;                                
+
+
+
  function ordenar(a,dos,tres){ 
-if(a >= dos && a>= tres){
+     if(a >= dos && a>= tres){
 
-      if(dos>tres){
-        conten1.innerHTML += `<div class="card-noticia card_md">
-        <div class="data">
-                              <p class="data_day" id="cont"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal1.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5Tec</i>
-                                  </div>
-                                  <h4>Lunes/Jueves!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                  Un estilo de vida saludable conlleva muchas decisiones. 
-                                  Entre ellas, la elección de una dieta o un plan de alimentación equilibrado.
-                                  ¿Que deberia Comer Para continuar con el peso normal?
-                                  DESAYUNO: Yogurt, MERIENDA:1 Taza de Jugo etc.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#nosotros'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="e();">Descargar</a>
-                              </div>
-                          </div> `
-                          
-                          conten2.innerHTML += `<div class="card-noticia card_md">
-                             <div class="data">
-                              <p class="data_day" id="contador2"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal2.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Martes/Viernes!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                      Rutina diaria para personas que se encuentran en un peso normal.
-                                     ¿Que deveria comer si ya tengo un peso normal?
-                                     DESAYUNO:1 Pieza de Huevo, MERIENDA:1 Pieza mediana de Manzana, ALMUERZO:
-                                     1 Taza de Arroz.ETC. 
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#menu'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador2();">Descargar</a>
-                              </div>
-                          </div> `
+   if(dos>tres){
+  conten1.innerHTML += reseta1;              
+  conten2.innerHTML += reseta2;
+  conten3.innerHTML += reseta3;
+    
+    }else{
+conten1.innerHTML += reseta1;
+conten2.innerHTML += reseta3;
+conten3.innerHTML += reseta2;
 
-                         conten3.innerHTML += ` <div class="card-noticia card_md">
-                           <div class="data">
-                          <p class="data_day" id="contador3"></p>
-                          <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal3.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Miercoles/Sabados</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                     ¿Quieres seguir con un peso normal?
-                                     sigue los pasos de la tersera rutina diaria con las 
-                                     mejores dietas para peso normal!!
-                                     DESAYUNO:1 Pieza de Tortilla, MERIENDA:1 Taza de Papaya, CENA:1 Taza de Lechuga,
-                                     ETC. 
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#tercera'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador3();">Descargar</a>
-                              </div>
-                          </div>  `
-
-
-
-                          }else{
-                            conten1.innerHTML += `<div class="card-noticia card_md">
-        <div class="data">
-                              <p class="data_day" id="cont"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal1.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5Tec</i>
-                                  </div>
-                                  <h4>Lunes/Jueves!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                  Un estilo de vida saludable conlleva muchas decisiones. 
-                                  Entre ellas, la elección de una dieta o un plan de alimentación equilibrado.
-                                  ¿Que deberia Comer Para continuar con el peso normal?
-                                  DESAYUNO: Yogurt, MERIENDA:1 Taza de Jugo etc.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#nosotros'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="e();">Descargar</a>
-                              </div>
-                          </div> `
-                          conten2.innerHTML += ` <div class="card-noticia card_md">
-                           <div class="data">
-                          <p class="data_day" id="contador3"></p>
-                          <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal3.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Miercoles/Sabados</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                     ¿Quieres seguir con un peso normal?
-                                     sigue los pasos de la tersera rutina diaria con las 
-                                     mejores dietas para peso normal!!
-                                     DESAYUNO:1 Pieza de Tortilla, MERIENDA:1 Taza de Papaya, CENA:1 Taza de Lechuga,
-                                     ETC. 
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#tercera'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador3();">Descargar</a>
-                              </div>
-                          </div> `
-              
-                          conten3.innerHTML += ` <div class="card-noticia card_md">
-                             <div class="data">
-                              <p class="data_day" id="contador2"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal2.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Martes/Viernes!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                      Rutina diaria para personas que se encuentran en un peso normal.
-                                     ¿Que deveria comer si ya tengo un peso normal?
-                                     DESAYUNO:1 Pieza de Huevo, MERIENDA:1 Pieza mediana de Manzana, ALMUERZO:
-                                     1 Taza de Arroz.ETC. 
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#menu'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador2();">Descargar</a>
-                              </div>
-                          </div>` 
-
-  }                   
+}                   
 }else if(dos>=a && dos>=tres){
- if(a>tres){
-    conten1.innerHTML +=`<div class="card-noticia card_md">
-                             <div class="data">
-                              <p class="data_day" id="contador2"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal2.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Martes/Viernes!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                      Rutina diaria para personas que se encuentran en un peso normal.
-                                     ¿Que deveria comer si ya tengo un peso normal?
-                                     DESAYUNO:1 Pieza de Huevo, MERIENDA:1 Pieza mediana de Manzana, ALMUERZO:
-                                     1 Taza de Arroz.ETC. 
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#menu'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador2();">Descargar</a>
-                              </div>
-                          </div>`
+if(a>tres){
+conten1.innerHTML += reseta2;
+conten2.innerHTML += reseta1;
+conten3.innerHTML += reseta3;
 
-    conten2.innerHTML +=`<div class="card-noticia card_md">
-        <div class="data">
-                              <p class="data_day" id="cont"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal1.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5Tec</i>
-                                  </div>
-                                  <h4>Lunes/Jueves!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                  Un estilo de vida saludable conlleva muchas decisiones. 
-                                  Entre ellas, la elección de una dieta o un plan de alimentación equilibrado.
-                                  ¿Que deberia Comer Para continuar con el peso normal?
-                                  DESAYUNO: Yogurt, MERIENDA:1 Taza de Jugo etc.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#nosotros'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="e();">Descargar</a>
-                              </div>
-                          </div> `
-
-    conten3.innerHTML +=` <div class="card-noticia card_md">
-                           <div class="data">
-                          <p class="data_day" id="contador3"></p>
-                          <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal3.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Miercoles/Sabados</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                     ¿Quieres seguir con un peso normal?
-                                     sigue los pasos de la tersera rutina diaria con las 
-                                     mejores dietas para peso normal!!
-                                     DESAYUNO:1 Pieza de Tortilla, MERIENDA:1 Taza de Papaya, CENA:1 Taza de Lechuga,
-                                     ETC. 
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#tercera'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador3();">Descargar</a>
-                              </div>
-                          </div> `
-
- }else{
-    conten1.innerHTML +=`<div class="card-noticia card_md">
-                             <div class="data">
-                              <p class="data_day" id="contador2"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal2.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Martes/Viernes!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                      Rutina diaria para personas que se encuentran en un peso normal.
-                                     ¿Que deveria comer si ya tengo un peso normal?
-                                     DESAYUNO:1 Pieza de Huevo, MERIENDA:1 Pieza mediana de Manzana, ALMUERZO:
-                                     1 Taza de Arroz.ETC. 
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#menu'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador2();">Descargar</a>
-                              </div>
-                          </div>`
-
-                          conten2.innerHTML +=` <div class="card-noticia card_md">
-                           <div class="data">
-                          <p class="data_day" id="contador3"></p>
-                          <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal3.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Miercoles/Sabados</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                     ¿Quieres seguir con un peso normal?
-                                     sigue los pasos de la tersera rutina diaria con las 
-                                     mejores dietas para peso normal!!
-                                     DESAYUNO:1 Pieza de Tortilla, MERIENDA:1 Taza de Papaya, CENA:1 Taza de Lechuga,
-                                     ETC. 
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#tercera'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador3();">Descargar</a>
-                              </div>
-                          </div> `
-
-                          conten3.innerHTML += `<div class="card-noticia card_md">
-                               <div class="data">
-                              <p class="data_day" id="cont"></p>
-                                  <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal1.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5Tec</i>
-                                  </div>
-                                  <h4>Lunes/Jueves!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                  Un estilo de vida saludable conlleva muchas decisiones. 
-                                  Entre ellas, la elección de una dieta o un plan de alimentación equilibrado.
-                                  ¿Que deberia Comer Para continuar con el peso normal?
-                                  DESAYUNO: Yogurt, MERIENDA:1 Taza de Jugo etc.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#nosotros'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="e();">Descargar</a>
-                              </div>
-                          </div> `
- }
-  }else if(tres>=a && tres>=dos){
-   if(a>dos){
-     conten1.innerHTML += ` <div class="card-noticia card_md">
-                           <div class="data">
-                          <p class="data_day" id="contador3"></p>
-                          <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal3.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Miercoles/Sabados</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                     ¿Quieres seguir con un peso normal?
-                                     sigue los pasos de la tersera rutina diaria con las 
-                                     mejores dietas para peso normal!!
-                                     DESAYUNO:1 Pieza de Tortilla, MERIENDA:1 Taza de Papaya, CENA:1 Taza de Lechuga,
-                                     ETC. 
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#tercera'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador3();">Descargar</a>
-                              </div>
-                          </div> `
-
-     conten2.innerHTML += `<div class="card-noticia card_md">
-        <div class="data">
-                              <p class="data_day" id="cont"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal1.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5Tec</i>
-                                  </div>
-                                  <h4>Lunes/Jueves!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                  Un estilo de vida saludable conlleva muchas decisiones. 
-                                  Entre ellas, la elección de una dieta o un plan de alimentación equilibrado.
-                                  ¿Que deberia Comer Para continuar con el peso normal?
-                                  DESAYUNO: Yogurt, MERIENDA:1 Taza de Jugo etc.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#nosotros'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="e();">Descargar</a>
-                              </div>
-                          </div> `
-
-
-     conten3.innerHTML += `<div class="card-noticia card_md">
-                             <div class="data">
-                              <p class="data_day" id="contador2"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal2.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Martes/Viernes!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                      Rutina diaria para personas que se encuentran en un peso normal.
-                                     ¿Que deveria comer si ya tengo un peso normal?
-                                     DESAYUNO:1 Pieza de Huevo, MERIENDA:1 Pieza mediana de Manzana, ALMUERZO:
-                                     1 Taza de Arroz.ETC. 
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#menu'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador2();">Descargar</a>
-                              </div>
-                          </div>`
-   }else{
-       conten1.innerHTML += ` <div class="card-noticia card_md">
-                           <div class="data">
-                          <p class="data_day" id="contador3"></p>
-                          <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal3.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Miercoles/Sabados</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                     ¿Quieres seguir con un peso normal?
-                                     sigue los pasos de la tersera rutina diaria con las 
-                                     mejores dietas para peso normal!!
-                                     DESAYUNO:1 Pieza de Tortilla, MERIENDA:1 Taza de Papaya, CENA:1 Taza de Lechuga,
-                                     ETC. 
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#tercera'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador3();">Descargar</a>
-                              </div>
-                          </div> `
-
-
-       conten2.innerHTML += `<div class="card-noticia card_md">
-                             <div class="data">
-                              <p class="data_day" id="contador2"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal2.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5tec</i>
-                                  </div>
-                                  <h4>Martes/Viernes!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                      Rutina diaria para personas que se encuentran en un peso normal.
-                                     ¿Que deveria comer si ya tengo un peso normal?
-                                     DESAYUNO:1 Pieza de Huevo, MERIENDA:1 Pieza mediana de Manzana, ALMUERZO:
-                                     1 Taza de Arroz.ETC. 
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#menu'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="contador2();">Descargar</a>
-                              </div>
-                          </div>`
-
-       conten3.innerHTML += `<div class="card-noticia card_md">
-        <div class="data">
-                              <p class="data_day" id="cont"></p>
-                   <p class="data_moth">Descargas</p>
-                          </div>
-                          <div class="wrap-img">
-                              <img src="img/pesonormal1.jpg" alt="Background">
-                          </div>
-                          <div class="info">
-                              <div class="title">
-                                  <div class="icon">
-                                      <i class="material-icons">Nut5Tec</i>
-                                  </div>
-                                  <h4>Lunes/Jueves!!</h4>
-                              </div>
-                              <div class="description">
-                                  <p>
-                                  Un estilo de vida saludable conlleva muchas decisiones. 
-                                  Entre ellas, la elección de una dieta o un plan de alimentación equilibrado.
-                                  ¿Que deberia Comer Para continuar con el peso normal?
-                                  DESAYUNO: Yogurt, MERIENDA:1 Taza de Jugo etc.
-                                  </p>
-                              </div>
-                              <div class="action">
-                                  <button class="btn btn-noticias" onclick="window.location.href='dietas/dist/pesonormal.html#nosotros'">Continuar Lendo</button>
-                                  <a class="btn btn-noticias" onclick="e();">Descargar</a>
-                              </div>
-                          </div> `
-   }
-  }
+}else{
+conten1.innerHTML += reseta2;
+conten2.innerHTML += reseta3;
+conten3.innerHTML +=reseta1;
 }
+}else if(tres>=a && tres>=dos){
+if(a>dos){
+conten1.innerHTML += reseta3;
+conten2.innerHTML += reseta1;
+conten3.innerHTML +=reseta2;
+}else{
+ conten1.innerHTML += reseta3;
+ conten2.innerHTML += reseta2;
+ conten3.innerHTML +=reseta1;
+}
+}
+}
+
 var dos =  <?php echo contador2()?>;
 var a = <?php echo contador()?>;
 var tres = <?php echo contador3()?>;
