@@ -23,7 +23,6 @@ var appusuario = new Vue({
             fechaini   : '',
             actual     : '',
             fechaac    : '',
-            medicamento: '',
             enfermedad : '',
             naci       : '',
             observacion: '',

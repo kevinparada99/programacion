@@ -10,7 +10,6 @@ var appproducto = new Vue({
         producto:{
             idProducto  : 0,
             accion    : 'nuevo',
-            codigo    : '',
             nombre    : '',
             cantidad  : '',
             tipo      : '',
@@ -32,7 +31,6 @@ var appproducto = new Vue({
         },
             limpiarProducto: function () {/**deja en blanco los campos del imput */
                 this.producto.idProducto = 0;
-                this.producto.codigo     = '';
                 this.producto.nombre     = '';
                 this.producto.cantidad   = '';
                 this.producto.tipo       = '';

@@ -27,7 +27,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="produc in misproductos" :key="produc.idProducto" v-on:click="modificarProducto(produc)">
-                        <td>{{ produc.codigo }}</td>
+                        <td>{{ produc.idProducto }}</td>
                         <td>{{ produc.nombre }}</td>
                         <td>{{ produc.cantidad }}</td>
                         <td>{{ produc.tipo }}</td>
@@ -42,4 +42,5 @@
         </div>
     </div>
 </form>
+
 <script src="../../../public/vistas/productos/buscar-productos.js"></script>

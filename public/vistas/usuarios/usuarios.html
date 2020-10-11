@@ -11,7 +11,7 @@
             </button>
         </div>
         <div class="card-body">
-            <div class="row p-2">
+            <div class="row p-2" style="display: none;">
                 <div class="col-4">
                     Código
                 </div>
@@ -101,7 +101,7 @@
                     Observación
                 </div>
                 <div class="col-8">
-                    <input type="text" v-model="usuario.observacion" placeholder="Alergias a medicamento.etc" class="form-control">
+                    <input type="text" v-model="usuario.observacion" placeholder="Alergias a medicamento.etc" class="form-control" list="ninguna">
                 </div>
             </div>
             <div class="row p-2" style="display: none;">

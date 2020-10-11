@@ -38,9 +38,10 @@ class producto{
      * funcion para validar que todos los campos no esten vacios
      */
     private function validar_datos(){
-        if( empty(trim($this->datos['codigo'])) ){
-            $this->respuesta['msg'] = 'Por favor ingrese el codigo del producto.';
-        }
+        date_default_timezone_set('America/El_salvador');
+        $fecha_actual = date("d/m/y H:i:s A");
+      
+      
         if( empty(trim($this->datos['nombre'])) ){
             $this->respuesta['msg'] = 'Por favor ingrese el nombre del producto.';
         }
@@ -54,8 +55,10 @@ class producto{
             $this->respuesta['msg'] = 'Por favor ingrese la caducidad del producto.';
         }
         if( empty(trim($this->datos['registro'])) ){
-            $this->respuesta['msg'] = 'Por favor ingrese la fecha de registro del producto.';
+            $this->datos['registro'] = $fecha_actual;
         }
+
+      
         $this->almacenar_producto();
     }
     /**
@@ -66,8 +69,7 @@ class producto{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO productos (codigo,nombre,cantidad,tipo,fecha,registro) VALUES(
-                        "'. $this->datos['codigo'] .'",
+                    INSERT INTO productos (nombre,cantidad,tipo,fecha,registro) VALUES(
                         "'. $this->datos['nombre'] .'",
                         "'. $this->datos['cantidad'] .'",
                         "'. $this->datos['tipo'] .'",
@@ -82,11 +84,10 @@ class producto{
             } else if( $this->datos['accion']==='modificar' ){
                 $this->db->consultas('
                     UPDATE productos SET
-                        codigo     = "'. $this->datos['codigo'] .'",
                         nombre     = "'. $this->datos['nombre'] .'",
                         cantidad   = "'. $this->datos['cantidad'] .'",
                         tipo   = "'. $this->datos['tipo'] .'",
-                        fecha      = "'. $this->datos['fecha'] .'"
+                        fecha      = "'. $this->datos['fecha'] .'",
                         registro    = "'. $this->datos['registro'] .'"
                     WHERE idProducto = "'. $this->datos['idProducto'] .'"
                 ');
@@ -100,9 +101,9 @@ class producto{
      */
     public function buscarProducto($valor = ''){
         $this->db->consultas('
-            select productos.idProducto, productos.codigo, productos.nombre, productos.cantidad, productos.tipo, productos.fecha, productos.registro
+            select productos.idProducto, productos.nombre, productos.cantidad, productos.tipo, productos.fecha, productos.registro
             from productos
-            where productos.codigo like "%'. $valor .'%" or productos.nombre like "%'. $valor .'%" or productos.tipo like "%'. $valor .'%"
+            where productos.idProducto like "%'. $valor .'%" or productos.nombre like "%'. $valor .'%" or productos.tipo like "%'. $valor .'%"
             order by fecha
         ');
         /**

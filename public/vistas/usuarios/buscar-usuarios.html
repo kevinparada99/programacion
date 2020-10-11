@@ -32,7 +32,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="cliente in mis_cliente" :key="cliente.idUsuario" v-on:click="modificarUsuario(cliente)">
-                        <td>{{ cliente.c }}</td>
+                        <td>{{ cliente.idUsuario }}</td>
                         <td>{{ cliente.n }}</td>
                         <td>{{ cliente.e }}</td>
                         <td>{{ cliente.i + cliente.l}}</td>

@@ -44,9 +44,6 @@ class usuario{
          date_default_timezone_set('America/El_salvador');
          $fecha_actual = date("d/m/y H:i:s A");
  
-        if( empty(trim($this->datos['codigo']) )){
-            $this->respuesta['msg'] = 'Por favor ingrese el codigo del usuario.';
-        }
         if( empty(trim($this->datos['nombre']) )){
             $this->respuesta['msg'] = 'Por favor ingrese el nombre del usuario.';
         }
@@ -146,7 +143,7 @@ class usuario{
             from usuarios
                     inner join medicamentos on(medicamentos.idMedicamento=usuarios.idMedicamento)
             where 
-            usuarios.codigo like "%'. $valor .'%" or
+            usuarios.idUsuario like "%'. $valor .'%" or
             usuarios.nombre like "%'. $valor .'%" or 
             usuarios.actual like "%'. $valor .'%"
         
@@ -159,6 +156,7 @@ class usuario{
         foreach ($usuarios as $key => $value) {
             $datos[] = [
                 'idUsuario' => $value['idUsuario'],
+                
                 'codigo'       => $value['c'],
                 'c'           => $value['codigo'],
 
