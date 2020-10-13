@@ -21,16 +21,18 @@
                         <th>Ingredientes</th>
                         <th>Información</th>
                         <th>Fecha registro</th>
+                        <th>Ultima Modificacion</th>
                         <th> </th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="recets in misrecetas" :key="recets.idReceta" v-on:click="modificarReceta(recets)">
-                        <td>{{ recets.codigo }}</td>
+                        <td>{{ recets.idReceta }}</td>
                         <td>{{ recets.nombres }}</td>
                         <td>{{ recets.ingrediente }}</td>
                         <td>{{ recets.informacion }}</td>
                         <td>{{ recets.registro }}</td>
+                        <td>{{ recets.codigo }}</td>
                         <td>
                             <input v-on:click="eliminarReceta(recets.idReceta)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>

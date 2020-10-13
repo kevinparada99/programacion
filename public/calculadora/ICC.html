@@ -5,11 +5,11 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1">
 		
-		<title>Calculadora | Peso Ideal</title>
-		<link rel="stylesheet" href="../alertifyjs/css/alertify.min.css">
+		<title>Calculadora | ICC</title>
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 			integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.1.1/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="http://themes.audemedia.com/html/goodgrowth/css/owl.theme.default.min.css">
 <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
 		<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap" rel="stylesheet">
 		<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -18,8 +18,6 @@
 			integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
 		<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 		<!-- Loading third party fonts -->
-		<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700|" rel="stylesheet" type="text/css">
-		
 		<!-- Loading main css file -->
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="style_calcs.css">
@@ -47,11 +45,11 @@
 								<div class="dropmenuitem"><a href="Metabolismo.html" style="color: #9d9879;">Metabolismo</a></div>
 								<div class="dropmenuitem"><a href="Peso_Ideal.html" style="color: #9d9879;">Peso Ideal</a></div>
 								<div class="dropmenuitem"><a href="IMC.html" style="color: #9d9879;">Indice Masa Corporal</a></div>
-								<div class="dropmenuitem"><a href="ICC.html" style="color: #9d9879;">Indice Cintura Cadera </a></div>
-								<div class="dropmenuitem"><a href="ICT.html" style="color: #9d9879;">Indice Cintura Talla</a></div>	      
+								<div class="dropmenuitem"><a href="ICC.html" style="color: #9d9879;">Indice Cintura-Cadera</a></div>
+								<div class="dropmenuitem"><a href="ICT.html" style="color: #9d9879;">Indice Cintura-Talla</a></div>		      
 							</div>
 							</li>
-						<a href="../../public/recetas/admin/mostrar.php">Recetas</a>
+						<a href="../../public/recetas/admin/index.php">Recetas</a>
 						<a href="../../informacion.html">Información</a>
 						<a href="../../FAQ.html">FAQ</a>
 						<a href="../../private/modulos/index.php">CONTROL</a>
@@ -68,12 +66,14 @@
 				<div class="container">
 					<div class="recipes-list">
 						<article class="recipe">
-							<figure class="recipe-image"><img class="imagen" src="images/peso_ideal.jpg" alt="Food 1"></figure>
+							<figure class="recipe-image"><img class="imagen" src="images/icc.png"></figure>
 							<div class="recipe-detail">
-								<h2 class="recipe-title"><a href="single.html">Peso Ideal</a></h2>
-								<p>El peso ideal es aquel que permite un estado de salud óptimo, con la máxima calidad de vida y esperanza de vida. Si quiere tener datos precisos sobre este tema, lo mejores que acudir a un nutricionista. Nadie mejor que él para que ayudar a determinar cuál es tu peso ideal ya que este varía según la edad, la complexión de la persona y la composición corporal.</p>
+								<h2 class="recipe-title"><a href="single.html">Indice Cintura Cadera</a></h2>
+								<p>El índice se obtiene midiendo el perímetro de la cintura a la altura de la última costilla flotante (aproximadamente dos dedos por encima del ombligo), y el perímetro máximo de la cadera, a nivel de los glúteos. Es un método indirecto que sirve para determinar la distribución de la grasa abdominal. Esta característica varía según se avanza en edad y difiere entre hombres y mujeres como consecuencia del dimorfismo sexual.</p>
+								<p>Los estudios indican que una relación entre cintura y cadera superior a 1.5 varones y a 1 en mujeres, está asociada a un aumento en la probabilidad de contraer diversas enfermedades (diabetes mellitus, enfermedades coronarias, tensión arterial, entre otras).</p>
+								<img src="images/icc_formula.svg" style="width: 50%; float: right; padding-right: 30%;">
 							</div>
-						</article>						
+						</article>
 					</div>
 				</div>
 			</div>
@@ -81,17 +81,13 @@
 			<div class="fullwidth-block cooking-section category-block" style="background-image: url('images/calc_background1.jpg'); background-size: 100% 100%;">
 				<div class="container">
 					<div class="category-content">
-						<h1 class="category-title" style="text-align: center;"><b>Calculadora Peso Ideal</b></h1>
+						<h1 class="category-title" style="text-align: center;"><b>Indice Cintura Cadera</b></h1>
 						<form class="form">
-							<h3 style="color: white;"><input type="radio" name="peso_ideal_genero" value="hombre" checked> Hombre
-							<input type="radio" name="peso_ideal_genero" value="mujer"> Mujer<br><br>
-							Edad: <input id="peso_ideal_edad" type="text" name="edad" size= "5" maxlength="4">
-							Altura(cm): <input id="peso_ideal_altura" type="text" name="altura" size= "5" maxlength="4">
-							Peso(lb): <input id="peso_ideal_peso" type="text" name="peso" size= "5" maxlength="4"></h3>
+							<h3 style="color: white;">Cintura(cm): <input id="icc_cintura" type="text" name="cintura" size= "6" maxlength="5">
+							Cadera(cm): <input id="icc_cadera" type="text" name="cadera" size= "6" maxlength="5"></h3>
 						</form><br>
-						<p id="resultado_pesoideal"></p>
-						<p id="recomendacion_pesoideal"></p>
-						<p><a id="calcular" onClick="pesoIdeal()">Calcular</a></p>
+						<p id="resultado_icc"></p>
+						<p><a id="calcular" onClick="icc()">Calcular</a></p>
 					</div>
 				</div>
 			</div>
@@ -124,14 +120,14 @@
 				</div>
 			</div>
 		</footer>
+
 		<div class="go-top-container">
 			<div class="go-top-button">
 				<i class="fas fa-chevron-up"></i>
 			</div>
 		</div>
 		</div>
-		<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-		<script src="../alertifyjs/alertify.min.js"></script>
+       <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 		<script src="js/calculadoras.js"> </script>
 		<script src="js/jquery-1.11.1.min.js"></script>
 		<script src="js/plugins.js"></script>

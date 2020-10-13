@@ -8,7 +8,7 @@ var metabolismo = function(){
                 return inputs[i].value;}}};
 	var sexo = metabolismo_genero();
 	var edad = document.getElementById("metabolismo_edad").value;
-	var peso = document.getElementById("metabolismo_peso").value;
+	var peso = document.getElementById("metabolismo_peso").value / 2.2046;
 	var altura = document.getElementById("metabolismo_altura").value;
 
 	if(edad == ''){
@@ -23,6 +23,11 @@ var metabolismo = function(){
 			alertify.error("Por favor colocar su altura.. ");
 			return false;
 			}
+			if(edad < 50){
+				alertify.error("Esta calculadora es solo para adultos mayores!!!");
+				return false;
+				}
+
 
 //-------------ASIGNA DIFERENTES DATOS DEPENDIENDO DEL SEXO-----------------------
 	//DATOS PARA METABOLISMO BASAL - HOMBRE
@@ -78,7 +83,7 @@ var pesoIdeal = function(){
 	var sexo = peso_ideal_genero();
 	var edad = document.getElementById("peso_ideal_edad").value;
 	var altura = document.getElementById("peso_ideal_altura").value;
-	var peso = document.getElementById("peso_ideal_peso").value / 2.2046;
+	var peso = document.getElementById("peso_ideal_peso").value;
 
 	if(edad == ''){
 		alertify.error("Por favor colocar su edad.. ");
@@ -92,20 +97,25 @@ var pesoIdeal = function(){
 				alertify.error("Por favor colocar su peso.. ");
 				return false;
 				}
+				if(edad < 50){
+					alertify.error("Esta calculadora es solo para adultos mayores!!!");
+					return false;
+					}
 			
 
 //----------------------------CALCULO DE LA FORMULA----------------------------------------
 	if(sexo == "hombre" ){var k=4;} else if(sexo == "mujer" ){var k=2.5} //Hombres -> k = 4, Mujeres -> 2,5
 	var pI = altura -100 - ((altura - 150) / 4) + ((edad - 20) / k)
-	
+	var PS = pI *2.2046;
 	//Despliega el resultado
-	var desplegar_resultado = "Su peso ideal sería estar en "+Math.floor(pI*2.2046)+" LB.";
+	var desplegar_resultado = "Su peso ideal sería estar en "+Math.floor(PS)+" LB.";
 	var recomendacion;
-	if (pI > peso) { 
-		recomendacion = "<a href='dietas.html#bajo_peso'>Ver dieta recomendada</a>";
-	} else if (pI < peso) {
-		recomendacion = "<a href='dietas.html#sobre_peso'>Ver dieta recomendada</a>";
-	} else {recomendacion = "<a href='dietas.html#peso_normal'>Ver dieta recomendada</a>";}
+	console.log(PS);
+	if (Math.floor(PS) > peso) { 
+		recomendacion = "<a href='../rutinas_diarias/bajo_peso/ori.php'>Ver dietas recomendadas</a>";
+	} else if (Math.floor(PS) < peso) {
+		recomendacion = "<a href='../rutinas_diarias/Sobre_Peso/ori.php'>Ver dietas recomendadas</a>";
+	} else {recomendacion = "<a href='../rutinas_diarias/peso_normal/ori.php'>Ver dietas recomendadas</a>";}
 	
 	document.getElementById("resultado_pesoideal").innerHTML = desplegar_resultado;
 	document.getElementById("recomendacion_pesoideal").innerHTML = recomendacion;
@@ -117,7 +127,7 @@ var pesoIdeal = function(){
 //#####################################----FUNCION IMC----#########################################################
 var imc = function(){
 //----------------------------RECOGIDA DE DATOS PARA LA FÓRMULA---------------------------------
-	var peso = document.getElementById("imc_peso").value;
+	var peso = document.getElementById("imc_peso").value / 2.2046;
 	var altura = document.getElementById("imc_altura").value;
 
 	if(peso == ''){

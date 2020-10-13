@@ -70,6 +70,8 @@ class usuario{
         }
         if( empty(trim($this->datos['fechaac']))){
             $this->datos['fechaac'] = $fecha_actual;
+        }else{
+            $this->datos['codigo'] = $fecha_actual;
         }
         $this->almacenar_usuario();
     }

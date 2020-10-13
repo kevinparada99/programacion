@@ -27,6 +27,7 @@
                         <th>Edad</th>
                         <th>Observación</th>
                         <th>Fecha registro</th>
+                        <th>Ultima Modificacion</th>
                         <th> </th>
                     </tr>
                 </thead>
@@ -43,6 +44,7 @@
                         <td>{{ cliente.t}}</td>
                         <td>{{ cliente.o}}</td>
                         <td>{{ cliente.z}}</td>
+                        <td>{{ cliente.c}}</td>
                         <td>
                             <input v-on:click="eliminarUsuario(cliente.idUsuario)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>

@@ -39,6 +39,9 @@ class nutricion{
      * funcion para validar que todos los campos no esten vacios
      */
     private function validar_datos(){
+        date_default_timezone_set('America/El_salvador');
+        $fecha_actual = date("d/m/y H:i:s A");
+
         if( empty($this->datos['usuario']['id']) ){
             $this->respuesta['msg'] = 'por favor ingrese el usuario';
         }
@@ -48,6 +51,12 @@ class nutricion{
         if( empty($this->datos['hora']['id']) ){
             $this->respuesta['msg'] = 'por favor ingrese la hora';
         }
+        if( empty(trim($this->datos['fecha'])) ){
+            $this->datos['fecha'] = $fecha_actual;
+        }
+
+
+
         $this->almacenar_nutricion();
     }
     /**
@@ -91,8 +100,8 @@ class nutricion{
             $valor = implode('-', array_reverse(explode('-',$valor)));
         }
         $this->db->consultas('
-            select nutriciones.idNutricion, nutriciones.idUsuario, nutriciones.idReceta,nutriciones.idHora, 
-                date_format(nutriciones.fecha,"%d-%m-%Y") AS fecha, nutriciones.fecha AS f, 
+            select nutriciones.idNutricion, nutriciones.idUsuario, nutriciones.idReceta,nutriciones.idHora,  nutriciones.fecha,
+                nutriciones.fecha AS f, 
                 usuarios.codigo, usuarios.nombre,
                 recetas.codigo, recetas.nombres, 
                 horas.numero, horas.tiempo

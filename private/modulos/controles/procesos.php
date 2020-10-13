@@ -32,6 +32,10 @@ class control{
      * funcion para validar que todos los campos no esten vacios
      */
     private function validar_datos(){
+
+        date_default_timezone_set('America/El_salvador');
+        $fecha_actual = date("d/m/y H:i:s A");
+
         if( empty($this->datos['usuario']['id']) ){
             $this->respuesta['msg'] = 'Por favor ingrese el usuario.';
         }
@@ -41,6 +45,11 @@ class control{
         if( empty($this->datos['medicamento']['id']) ){
             $this->respuesta['msg'] = 'Por favor ingrese el medicamento';
         }
+        if( empty($this->datos['fecha']['id']) ){
+            $this->datos['fecha'] = $fecha_actual;
+        }
+        
+        
         $this->almacenar_control();
     }
     /**
@@ -90,8 +99,8 @@ class control{
             $valor = implode('-', array_reverse(explode('-',$valor)));
         }
         $this->db->consultas('
-            select controles.idControl, controles.idUsuario, controles.tipo,controles.siguiente, controles.idMedicamento, controles.otro, controles.observaciones,
-                date_format(controles.fecha,"%d-%m-%Y") AS fecha, controles.fecha AS f, 
+            select controles.idControl, controles.idUsuario, controles.tipo,controles.siguiente, controles.idMedicamento, controles.otro, controles.observaciones,  controles.fecha,
+               controles.fecha AS f, 
                 usuarios.codigo, usuarios.nombre,
                 medicamentos.codigom, medicamentos.nombrem,
                 controles.tipo AS t,

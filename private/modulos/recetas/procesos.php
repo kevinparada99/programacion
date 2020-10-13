@@ -39,9 +39,10 @@ class receta{
      * funcion para validar que todos los campos no esten vacios
      */
     private function validar_datos(){
-        if( empty($this->datos['codigo']) ){
-            $this->respuesta['msg'] = 'Por favor ingrese el codigo de la receta.';
-        }
+        date_default_timezone_set('America/El_salvador');
+        $fecha_actual = date("d/m/y H:i:s A");
+
+       
         if( empty($this->datos['nombres']) ){
             $this->respuesta['msg'] = 'Por favor ingrese el nombres de la receta.';
         }
@@ -52,7 +53,9 @@ class receta{
             $this->respuesta['msg'] = 'Por favor ingrese información de la receta.';
         }
         if( empty(trim($this->datos['registro'])) ){
-            $this->respuesta['msg'] = 'Por favor ingrese la fecha de registro de la receta.';
+            $this->datos['registro'] = $fecha_actual;
+        }else{
+            $this->datos['codigo'] = $fecha_actual;
         }
         $this->almacenar_receta();
     }

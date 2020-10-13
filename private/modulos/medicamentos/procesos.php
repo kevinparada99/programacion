@@ -38,9 +38,11 @@ class medicamento{
      * funcion para validar que todos los campos no esten vacios
      */
     private function validar_datos(){
-        if( empty($this->datos['codigom']) ){
-            $this->respuesta['msg'] = 'Por favor ingrese el codigo del medicamento.';
-        }
+
+        date_default_timezone_set('America/El_salvador');
+        $fecha_actual = date("d/m/y H:i:s A");
+
+       
         if( empty($this->datos['nombrem']) ){
             $this->respuesta['msg'] = 'Por favor ingrese el nombre del medicamento. ';
         }
@@ -57,7 +59,9 @@ class medicamento{
             $this->respuesta['msg'] = 'Por favor ingrese la caducidad de medicamento.';
         }
         if( empty(trim($this->datos['registro'])) ){
-            $this->respuesta['msg'] = 'Por favor ingrese la fecha de registro del medicamento.';
+            $this->datos['registro'] = $fecha_actual;
+        }else{
+            $this->datos['codigom'] = $fecha_actual;
         }
         $this->almacenar_medicamento();
     }
