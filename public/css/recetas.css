@@ -385,7 +385,7 @@ nav {
     }
 
     .questions>img {
-        width: 400px;
+        width: 500px;
     }
 
     /* results */
@@ -452,12 +452,25 @@ nav {
         height: 650px;
     }
 
+    .questions {
+        height: 1000px;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+
+    .questions>img {
+        width: 500px;
+        margin-top: 20px;
+    }
+
+
     .nav {
         padding: 0 10px;
     }
 
     .contenido-header>img {
-        width: 200px;
+        
+        display: none;
     }
 
     .enlaces-header {
