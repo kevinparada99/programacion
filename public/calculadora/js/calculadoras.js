@@ -24,7 +24,7 @@ var metabolismo = function(){
 			return false;
 			}
 			if(edad < 50){
-				alertify.error("Esta calculadora es solo para adultos mayores!!!");
+				alertify.error("Esta calculadora es solo para adultos mayores!!");
 				return false;
 				}
 
