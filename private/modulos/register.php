@@ -3,7 +3,8 @@
  * @author 5 tech <usis003118@ugb.edu.sv>
     *este es el que sirve para registrar un usuario
  */
-
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
     if(isset($_SESSION['usuario'])) {//si ahy un usuario activo lo manda al index
         header('location: index.php');
     }
@@ -90,12 +91,58 @@
                 ':clave' => $clave
                 
             ));
-            
+ /* 
+            require '../PHPMailer/Exception.php';
+            require '../PHPMailer/PHPMailer.php';
+            require '../PHPMailer/SMTP.php';
+
+            $mail = new PHPMailer(true);
+
+    try {
+
+    $mail->SMTPOptions = array(
+		'ssl' => array(
+		'verify_peer' => false,
+		'verify_peer_name' => false,
+		'allow_self_signed' => true
+		)
+	);
+    //Server settings
+    $mail->SMTPDebug = 0;                   
+    $mail->isSMTP();                                            
+    $mail->Host       = 'smtp.gmail.com';                    
+    $mail->SMTPAuth   = true;                                   
+    $mail->Username   = '';                    
+    $mail->Password   = '';                               
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
+    $mail->Port       = 587;                                 
+
+    //Recipients
+    $mail->setFrom('geovannyparada99@gmail.com', 'Nutri5Tehc');
+    $mail->addAddress($correo, 'Usuarioo');    
+
+
+    // Content
+    $mail->isHTML(true);                                 
+    $mail->Subject = 'holaaaaaa pruevaa';
+    $mail->Body    = 'Pruevaa  <b>nutri!</b>';
+
+    $mail->send();
+  
+      } catch (Exception $e) {
+
+      } 
+     */
             $error .= "'Sea registrado exitosamente'";//mensaje que se registro
         }
+       
     }
+
+  
 
 
     require '../../public/frontend/register-vista.php';//vista de registrar
+   
 
 ?>
+  
