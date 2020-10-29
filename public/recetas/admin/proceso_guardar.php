@@ -14,7 +14,7 @@ $resultado = $conexion->query($query);
 if($resultado){
     echo'
        <script type="text/javascript">
-        alert("Reseta Guardada");
+        alert("La Reseta se  Guardo Correctamente!!");
         window.location.href="res.php";
         </script>';
 }else{

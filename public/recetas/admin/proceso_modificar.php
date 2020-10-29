@@ -14,7 +14,7 @@ if($resultado){
      echo'
 
      <script>
-     alert("receta guardada");
+     alert(" La receta se modifico correctamente");
      window.location.href="res.php";
      </script>
      ';

@@ -121,7 +121,27 @@ class control{
          * y los campos de la tabla controles
          */
         $controles = $this->respuesta = $this->db->obtener_data();
+        $fechadehoy = new DateTime();
         foreach ($controles as $key => $value) {
+            $vencimiento = new DateTime($value['s']);
+            $diferencia = $vencimiento -> diff($fechadehoy);
+            $mes = $diferencia ->m;
+            $dia = $diferencia ->d;
+            $verificado = $diferencia ->invert;
+
+            if($verificado == 0){
+              $resultado = 'table-danger color';
+             $mes = $mes*(-1);
+             $dia = $dia*(-1);
+             }else{
+                if($dia > 3){
+                    $resultado = 'blanco';
+                  }
+                  if($dia <= 3){
+                     $resultado = 'table-warning color';
+                  }
+             }
+
             $datos[] = [
                 'idControl' => $value['idControl'],
                 'usuario'      => [
@@ -141,7 +161,11 @@ class control{
                 'fecha'       => $value['f'],
                 'f'           => $value['fecha'],
                 'siguiente'       => $value['s'],
-                's'           => $value['siguiente']
+                's'           => $value['siguiente'],
+                'mes' => $mes,
+                'dia' => $dia,
+                'resultado' => $resultado
+
 
             ]; 
         }

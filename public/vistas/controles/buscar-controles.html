@@ -8,11 +8,11 @@
             </button>
         </div>
         <div class="card-body">
-            <table id="tbl-buscar-controls" class="table-striped bg-success table-bordered table-hover">
+            <table id="tbl-buscar-controls" class="table-striped table-bordered table-hover">
             <cation>controles</cation>
                 <thead>
                     <tr>
-                        <th colspan="5">-
+                        <th colspan="9">-
                             <input type="text" v-model="valor" v-on:keyup="buscarControles" placeholder="Usuario, enfermedad y Fecha" class="form-control">
                         </th>
                     </tr>
@@ -23,18 +23,23 @@
                         <th>Observaciones</th>
                         <th>Fecha de control</th> 
                         <th>proximo control</th>
+                       
                         <th> </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="mi_control in mis_controles" :key="mi_control.idControl" v-on:click="modificarControl(mi_control)" >
+                    <tr v-for="mi_control in mis_controles" :key="mi_control.idControl" v-on:click="modificarControl(mi_control)" :class="(mi_control.resultado)" >
                         <td>{{ mi_control.usuario.label }}</td>
                         <td>{{ mi_control.t }}</td>
                         <td>{{ mi_control.medicamento.label +', '+ mi_control.k }}</td>
                         <td>{{ mi_control.o }}</td>
                         <td>{{ mi_control.f }}</td>
                         <td>{{ mi_control.s }}</td>
+                       
+                       
 
+                      
+                    
                         <td>
                             <input v-on:click="eliminarControl(mi_control.idControl)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>
