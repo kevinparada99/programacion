@@ -91,7 +91,7 @@ use PHPMailer\PHPMailer\Exception;
                 ':clave' => $clave
                 
             ));
- /* 
+ 
             require '../PHPMailer/Exception.php';
             require '../PHPMailer/PHPMailer.php';
             require '../PHPMailer/SMTP.php';
@@ -112,27 +112,30 @@ use PHPMailer\PHPMailer\Exception;
     $mail->isSMTP();                                            
     $mail->Host       = 'smtp.gmail.com';                    
     $mail->SMTPAuth   = true;                                   
-    $mail->Username   = '';                    
-    $mail->Password   = '';                               
+    $mail->Username   = 'nnutri5tech@gmail.com';                    
+    $mail->Password   = 'Nutri5tech12345';                               
     $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         
     $mail->Port       = 587;                                 
 
     //Recipients
-    $mail->setFrom('geovannyparada99@gmail.com', 'Nutri5Tehc');
-    $mail->addAddress($correo, 'Usuarioo');    
+    $mail->setFrom('nnutri5tech@gmail.com', 'Nutri5Tehc');
+    $mail->addAddress($correo, $usuario);    
 
 
     // Content
     $mail->isHTML(true);                                 
-    $mail->Subject = 'holaaaaaa pruevaa';
-    $mail->Body    = 'Pruevaa  <b>nutri!</b>';
+    $mail->Subject = 'Hola Bienvenido ha Nutri5Tehc';
+    $mail->Body    = 'Contamos con resetas para todas personas que quieren comer sano y saludable
+      <b>Ademas contamos con Rutinas diarias de alimentacion saludable segun tu peso y una herramienta
+      para que puedas crear tu propia Rutina!!!!!</b> Y contamos con una calculadora Nutricional para ver tu
+      peso ideal, tu metabolismo, entre otras cosas';
 
     $mail->send();
   
       } catch (Exception $e) {
 
       } 
-     */
+     
             $error .= "'Sea registrado exitosamente'";//mensaje que se registro
         }
        

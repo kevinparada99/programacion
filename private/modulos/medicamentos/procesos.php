@@ -108,13 +108,87 @@ class medicamento{
      * todos los campos
      */
     public function buscarMedicamento($valor = ''){
+        
         $this->db->consultas('
-            select medicamentos.idMedicamento, medicamentos.codigom, medicamentos.nombrem, medicamentos.cantidad, medicamentos.tipo, medicamentos.ingreso, medicamentos.fecha, medicamentos.registro
+            select medicamentos.idMedicamento, medicamentos.codigom, medicamentos.nombrem, medicamentos.cantidad, medicamentos.tipo, medicamentos.ingreso, medicamentos.fecha, medicamentos.registro,
+            medicamentos.codigom AS c,
+            medicamentos.nombrem AS n,
+            medicamentos.cantidad AS a,
+            medicamentos.tipo AS t,
+            medicamentos.ingreso AS i,
+            medicamentos.fecha AS f,
+            medicamentos.registro AS r
             from medicamentos
             where medicamentos.codigom like "%'. $valor .'%" or medicamentos.nombrem like "%'. $valor .'%" or medicamentos.tipo like "%'. $valor .'%"
             order by fecha
             ');
-        return $this->respuesta = $this->db->obtener_data();
+
+            $Medicamentos = $this->respuesta = $this->db->obtener_data();
+            $fechadehoy = new DateTime();
+            foreach ($Medicamentos as $key => $value) {
+
+                $vencimiento = new DateTime($value['f']);
+                $diferencia = $vencimiento -> diff($fechadehoy);
+                $mes = $diferencia ->m;
+                $dia = $diferencia ->d;
+                $verificado = $diferencia ->invert;
+
+                if($verificado == 0){
+                    $resultado = 'table-danger color';
+                   $mes = $mes*(-1);
+                   $dia = $dia*(-1);
+                   }else{
+                      if($dia > 3){
+                          $resultado = 'blanco';
+                        }
+                        if($dia <= 3){
+                           $resultado = 'table-warning color';
+                        }
+                   }
+                
+                   if($value['a'] <= 0){
+                    $resul = 'table-danger color';
+                   }else{
+                    if($value['a'] > 15){
+                        $resul = '';
+                    }else{
+                        $resul = 'table-warning color';
+                    }
+                   
+                   }
+    
+
+                $datos[] = [
+                    'idMedicamento' => $value['idMedicamento'],
+                  
+                  
+                    'codigom'       => $value['c'],
+                    'c'           => $value['codigom'],
+
+                    'nombrem'       => $value['n'],
+                    'n'           => $value['nombrem'],
+    
+                    'cantidad'       => $value['a'],
+                    'a'           => $value['cantidad'],
+
+                    'tipo'       => $value['t'],
+                    't'           => $value['tipo'],
+
+                    'ingreso'       => $value['i'],
+                    'i'           => $value['ingreso'],
+
+                    'fecha'       => $value['f'],
+                    'f'           => $value['fecha'],
+
+                    'registro'       => $value['r'],
+                    'r'           => $value['registro'],
+                    'mes' => $mes,
+                    'dia' => $dia,
+                    'resul' => $resul,
+                    'resultado' => $resultado
+                ]; 
+            }
+        return $this->respuesta = $datos;
     }
     /**
      * funcion para eliminar un registro de la tabla control

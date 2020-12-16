@@ -71,7 +71,6 @@ nav {
 }
 
 .nav .logo {
-    height: 80px;
 
 }
 
@@ -481,7 +480,9 @@ footer {
     .results-text {
         width: 100%;
     }
-    /*services*/
+
+    /* Services */
+
     .services {
         flex-direction: column-reverse;
         align-items: center;
@@ -608,7 +609,7 @@ footer {
 
 .go-top-container{
     position: fixed;
-    bottom: 4rem;
+    bottom: 2rem;
     right: 1rem;
     width: 4rem;
     height: 6.6rem;
@@ -665,6 +666,72 @@ footer {
 }
 
 
+.go-faq-container {
+    position: fixed;
+    bottom: 8rem;
+    right: 1rem;
+    width: 4rem;
+    height: 6.6rem;
+    z-index: -1;
+}
+
+.go-faq-button {
+    width: 0rem;
+    height: 0rem;
+    background: #1FDE82;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .2s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+.go-faq-button i {
+    position: absolute;
+    font-size: 1.7rem;
+    top: 48%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: #fff;
+    transition: .2s;
+}
+
+.show1 {
+    z-index: 10;
+}
+
+.show1 .go-faq-button {
+    animation: popup .3s ease-in-out;
+    width: 4rem;
+    height: 4rem;
+    z-index: 11;
+}
+
+.show1 i {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+@keyframes popup {
+    0% {
+        width: 0rem;
+        height: 0rem;
+    }
+
+    50% {
+        width: 8rem;
+        height: 8rem;
+    }
+
+    100% {
+        width: 6.6rem;
+        height: 6.6rem;
+    }
+
+}
+
+
 .dropdown a{
     font-size: 0.875rem;
 }
@@ -711,4 +778,90 @@ li.dropdown {
 .dropmenuitem:hover, .dropmenuitem:hover a{
     color: #1FDE82 !important; 
     border-bottom: 2px solid #1FDE82; 
+}
+
+
+* {
+    box-sizing: border-box
+}
+
+
+
+/* Slideshow container */
+.slideshow-container {
+    position: relative;
+    background: #f1f1f1f1;
+}
+
+/* Slides */
+.mySlides {
+    display: none;
+    padding: 100px;
+    text-align: center;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #1FDE82;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    position: absolute;
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(90, 230, 164, 0.8);
+    color: white;
+}
+
+/* The dot/bullet/indicator container */
+.dot-container {
+    text-align: center;
+    padding: 20px;
+    background: #ddd;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active,
+.dot:hover {
+    background-color: #1FDE82;
+}
+
+/* Add an italic font style to all quotes */
+h2 {
+    font-style: italic;
+}
+
+/* Add a blue color to the author */
+.author {
+    color: #1FDE82;
+    size: 50px;
 }

@@ -25,25 +25,29 @@
                     <li class="dropdown">
                         <a class="dropbtn">Calculadoras</a>
                         <div class="dropdown-content">
-                            <div class="dropmenuitem"><a href="public/calculadora/Metabolismo.html" style="color: #9d9879;">Metabolismo</a></div>
-                            <div class="dropmenuitem"><a href="public/calculadora/Peso_Ideal.html" style="color: #9d9879;">Peso Ideal</a></div>
-                            <div class="dropmenuitem"><a href="public/calculadora/IMC.html" style="color: #9d9879;">Indice Masa Corporal</a></div>	
-                            <div class="dropmenuitem"><a href="public/calculadora/ICC.html" style="color: #9d9879;">Indice Cintura Cadera </a></div>
-                            <div class="dropmenuitem"><a href="public/calculadora/ICT.html" style="color: #9d9879;">Indice Cintura Talla</a></div>	      
+                            <div class="dropmenuitem"><a href="public/calculadora/Metabolismo.html"
+                                    style="color: #9d9879;">Metabolismo</a></div>
+                            <div class="dropmenuitem"><a href="public/calculadora/Peso_Ideal.html"
+                                    style="color: #9d9879;">Peso Ideal</a></div>
+                            <div class="dropmenuitem"><a href="public/calculadora/IMC.html"
+                                    style="color: #9d9879;">Indice Masa Corporal</a></div>
                         </div>
-                        </li>
-                        <li class="dropdown">
-                            <a class="dropbtn">R.Diarias</a>
-                            <div class="dropdown-content">
-                                <div class="dropmenuitem"><a href="public/Rutinas_diarias/bajo_peso/ori.php" style="color: #9d9879;">Bajo Peso</a></div>
-                                <div class="dropmenuitem"><a href="public/Rutinas_diarias/peso_normal/ori.php" style="color: #9d9879;">Peso Normal</a></div>
-                                <div class="dropmenuitem"><a href="public/Rutinas_diarias/Sobre_Peso/ori.php" style="color: #9d9879;">SobrePeso</a></div>		      
-                            </div>
-                            </li>
+                    </li>
                     <a href="public/recetas/admin/mostrar.php">Recetas</a>
                     <a href="informacion.html">Información</a>
-                    <a href="FAQ.html">FAQ</a>
+                    <li class="dropdown">
+                        <a class="dropbtn">Ayuda</a>
+                        <div class="dropdown-content">
+                            <div class="dropmenuitem"><a href="FAQ.html"
+                                    style="color: #9d9879;">Informacion del sistema </a></div>
+                            <div class="dropmenuitem"><a href="sistema.html"
+                                    style="color: #9d9879;">Funcionalidad del sistema</a></div>
+                                    <div class="dropmenuitem"><a href="FAQ2.html"
+                                    style="color: #9d9879;">FAQ</a></div>
+                        </div>
+                    </li>
                     <a href="private/modulos/index.php">Control</a>
+                    <a href="public/calculadora/dietas.html">Dietas</a>
                 </div>
                 <div class="hamburguer">
                     <i class="fas fa-bars"></i>
@@ -65,7 +69,7 @@
     </header>
     <section class="about-us">
         <div class="contenedor1">
-            <h2 class="titulo">Conoce las herramientas de Nutri5tech</h2>
+            <h1 class="titulo">Conoce las herramientas de Nutri5tech</h1>
             <div class="contenedor-articulo">
                 <div class="articulo" data-aos="zoom-in-right">
                     <i class="fas fa-apple-alt"></i>
@@ -86,7 +90,6 @@
                     <h3>Desarrollo de Control</h3>
                     <p>Desarrollo del sistema para un control, ayuda y seguimiento para las personas mayores.</p>
                 </div>
-
             </div>
         </div>
     </section>
@@ -100,12 +103,42 @@
         <img src="public/Nutricion-master/img/a1.jpg" alt="" data-aos="zoom-out-up" data-aos-duration="2000">
     </section>
 
+    <div class="slideshow-container">
+    
+        <div class="mySlides">
+            <h2>"Aquellos que piensan que no tienen tiempo para una alimentación saludable tarde o temprano encontrarán
+                tiempo para la enfermedad”</h2>
+            <h3 class="author">- Edward Stanley</h3>
+        </div>
+    
+        <div class="mySlides">
+            <h2>“Deje que los alimentos sean su medicina y que la medicina sea su alimento” </h2>
+            <h3 class="author">- Hipócrates.</h3>
+        </div>
+    
+        <div class="mySlides">
+            <h2>El hombre inteligente debería considerar que la salud es la mayor de las bendiciones humanas. Que la
+                comida sea tu medicina.</h2>
+            <h3 class="author">- Hipócrates</h3>
+        </div>
+    
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+    
+    </div>
+    
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+
     <section class="results">
         <div class="contenedor1 conten-results">
             <section class="numbers">
                 <div class="number" data-aos="zoom-in-left">
-                    <h4>+0</h4>
-                    <p>Personas que han visitado el sitio o app.</p>
+                    <h4>+<?php echo contador3();?></h4>
+                    <p>Personas que han visitado el sitio</p>
                 </div>
                 <div class="number" data-aos="zoom-in-left">
                     <h4>+0</h4>
@@ -129,6 +162,33 @@
         </div>
     </section>
 
+    <?php
+    function contador3(){
+    $gg = 0;
+    $archivo = "visitas.txt"; //el archivo que contiene en numero
+    $f = fopen($archivo, "r"); //abrimos el archivo en modo de lectura
+    if($gg == 0)
+    {
+        $contador = fread($f, filesize($archivo)); //leemos el archivo
+        $contador = $contador +1; //sumamos +1 al contador
+        fclose($f);
+    }else{
+        $contador = fread($f, filesize($archivo)); //leemos el archivo
+        $contador = $contador; //sumamos +1 al contador
+        fclose($f);
+    }
+    $f = fopen($archivo, "w+");
+    if($f)
+    {
+        fwrite($f, $contador);
+        fclose($f);
+    }
+    return $contador;
+ 
+  }
+
+
+?>
 
     <section class="contenedor1 services">
         <img src="public/Nutricion-master/img/imagen4.svg" alt="">
@@ -168,11 +228,18 @@
             </div>
         </div>
     </footer>
+    <div class="go-faq-container">
+        <div class="go-faq-button">
+            <i class="fas fa-question"></i></far>
+        </div>
+    </div>
     <div class="go-top-container">
         <div class="go-top-button">
             <i class="fas fa-chevron-up"></i>
         </div>
     </div>
+    
+    <script src="public/js/slider.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://kit.fontawesome.com/c15b744a04.js" crossorigin="anonymous"></script>
     <script src="public/Nutricion-master/js/main.js"></script>

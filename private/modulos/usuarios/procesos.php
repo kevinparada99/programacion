@@ -6,7 +6,7 @@
  */
 
 /**
- * conexion a la base de datos desde config
+ * @link incluir conexion a la base de datos desde config
  */
 include('../../config/config.php');
 $usuario = new usuario($conexion);
@@ -18,7 +18,8 @@ if( isset($_GET['proceso']) && strlen($_GET['proceso'])>0 ){
 $usuario->$proceso( $_GET['usuario'] );
 print_r(json_encode($usuario->respuesta));
 /**
- * @class control
+ *  @package clase de usuario
+ * 
  */
 
 class usuario{
@@ -70,8 +71,6 @@ class usuario{
         }
         if( empty(trim($this->datos['fechaac']))){
             $this->datos['fechaac'] = $fecha_actual;
-        }else{
-            $this->datos['codigo'] = $fecha_actual;
         }
         $this->almacenar_usuario();
     }
@@ -83,7 +82,7 @@ class usuario{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO usuarios (codigo,nombre,edad,inicial,libras,fechaini,actual,fechaac,idMedicamento,enfermedad,nacimiento,observacion) VALUES(
+                    INSERT INTO usuarios (codigo,nombre,edad,inicial,libras,fechaini,actual,fechaac,idMedicamento,enfermedad,nacimiento,observacion,metabolismo,pesoideal,imc) VALUES(
                         "'. $this->datos['codigo'] .'",
                         "'. $this->datos['nombre'] .'",
                         "'. $this->datos['edad'] .'",
@@ -95,7 +94,10 @@ class usuario{
                         "'. $this->datos['medicamento']['id'] .'",
                         "'. $this->datos['enfermedad'] .'",
                         "'. $this->datos['naci'] .'",
-                        "'. $this->datos['observacion'] .'"
+                        "'. $this->datos['observacion'] .'",
+                        "'. $this->datos['metabolismo'] .'",
+                        "'. $this->datos['pesoideal'] .'",
+                        "'. $this->datos['imc'] .'"
                     )
                 ');
                 $this->respuesta['msg'] = 'Registro insertado correctamente';
@@ -116,7 +118,10 @@ class usuario{
                         idMedicamento  = "'. $this->datos['medicamento']['id'] .'",
                         enfermedad     = "'. $this->datos['enfermedad'] .'",
                         nacimiento     = "'. $this->datos['naci'] .'",
-                        observacion   = "'. $this->datos['observacion'] .'"
+                        observacion   = "'. $this->datos['observacion'] .'",
+                        metabolismo   = "'. $this->datos['metabolismo'] .'",
+                        pesoideal   = "'. $this->datos['pesoideal'] .'",
+                        imc   = "'. $this->datos['imc'] .'"
                     WHERE idUsuario = "'. $this->datos['idUsuario'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';
@@ -213,7 +218,7 @@ class usuario{
         return $this->respuesta = ['medicamentos'=>$medicamentos];
     }
 /**
-         * funcion para traer el nombre del medicamento de la tabla medicamento
+         *  para traer el nombre del medicamento de la tabla medicamento
          */
 
     public function eliminarUsuario($idUsuario = 0){
@@ -225,5 +230,7 @@ class usuario{
         ');
         return $this->respuesta['msg'] = 'Registro eliminado correctamente';/** mensaje que se elimino*/ 
     }
+    
 }
+
 ?>

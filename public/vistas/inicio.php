@@ -16,24 +16,37 @@
         <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato'>
 </head>
 <body class="bg-secondary">
-    <nav>
-    <input type="checkbox" id="check">
-    <label for="check" class="checkbtn">
-        <i class="fas fa-bars"></i>
-    </label>    
+<nav>
+        <div id="logo"><img src="../../../public/Nutricion-master/img/logo1.png" href="../../../public/recetas/admin/index.php" alt=""></img></div>
 
-    <img src="../../../public/Nutricion-master/img/logo1.png" href="../../../public/recetas/admin/index.php" alt=""></img>
-        <ul id="barra">
-        <li> <a class="active" href="../cerrar.php">Cerrar <span class="sr-only">(current)</span></a></li>
-        <li> <a class="nav-link mostrar-usuarios" data-modulo="usuarios" data-form="usuarios" href="#">Usuarios</a></li>
-        <li> <a class="nav-link mostrar-productos" data-modulo="productos" data-form="productos" href="#">Productos</a></li>
+        <label for="drop" class="toggle">Menu</label>
+        <input type="checkbox" id="drop" />
+            <ul class="menu">
+                <li><a href="../cerrar.php">Cerrar</a></li>
+                <li>
+                    <!-- First Tier Drop Down -->
+                    <label for="drop-1" class="toggle">WordPress +</label>
+                    <a href="#">Crear Rutina</a>
+                    <input type="checkbox" id="drop-1"/>
+                    <ul>
+                        <li><a href="../../Crea_Rutina">Bajo Peso</a></li>
+                        <li><a href="../../Crea_Rutina/peso_normal">Peso Normal</a></li>
+                        <li><a href="../../Crea_Rutina/Sobrepeso">Sobre Peso</a></li>
+                    </ul> 
+
+                </li>
+                <li><a class="nav-link mostrar-usuarios" data-modulo="usuarios" data-form="usuarios" href="#">Usuarios</a></li>
+                <li> <a class="nav-link mostrar-productos" data-modulo="productos" data-form="productos" href="#">Productos</a></li>
         <li> <a class="nav-link mostrar-medicamentos" data-modulo="medicamentos" data-form="medicamentos" href="#">Medicamentos</a></li>
         <li> <a class="nav-link mostrar-recetas" data-modulo="recetas" data-form="recetas" href="#">Recetas</a></li>
         <li> <a class="nav-link mostrar-controles" data-modulo="controles" data-form="controles" href="#">Controles</a></li>
         <li> <a class="nav-link mostrar-nutriciones" data-modulo="nutriciones" data-form="nutriciones" href="#">Nutriciones</a></li>
-        <li> <a class="active" href="../../../public/recetas/admin/res.php">Agregar R <span class="sr-only">(current)</span></a></li>
-        </ul>
-    </nav>
+        <li> <a  href="../../../public/recetas/admin/res.php">Agregar R</a></li>
+              
+            </ul>
+        </nav>
+
+
      <!-- partial:index.partial.html -->
      <form class="form-inline" v-on:submit.prevent="enviarMensaje" v-on:reset="limpiarChat" id="frm-chat1">
     <button class="chatbox-open">

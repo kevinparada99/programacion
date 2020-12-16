@@ -38,9 +38,22 @@
                     </div>
                     <div class="col-8">
                         <v-select v-model="control.medicamento" :options="medicamentos" placeholder="Medicamento Resetado" />
+                        </div>
+                        <div class="col">
+                            <input  id="botonde" type="button" class="btn btn-primary text-white" value="Otro">
+                        </div>
                     </div>
-                    <div class="col">
-                        <input  id="botonde" type="button" class="btn btn-primary text-white" value="Otro">
+                   
+                </div>
+                <div class="row row-cols-1 p-2">
+                    <div class="row-col">
+                        <div class="col">
+                            Cantidad De Medicamentos
+                        </div>
+                        <div class="col-5"> 
+                            <input type="number" v-model="control.cantidad" placeholder="AAAAAAA"
+                                class="form-control">
+                        </div>
                     </div>
                 </div>
                 <div class="row row-cols-1 p-2" id="mostrarocultar" style="display: none;">

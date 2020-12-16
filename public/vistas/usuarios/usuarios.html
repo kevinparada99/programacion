@@ -10,15 +10,6 @@
                 <span aria-hidden="true">&times;</span>
             </button>
         </div>
-        <div class="card-body">
-            <div class="row p-2" style="display: none;">
-                <div class="col-4">
-                    Código
-                </div>
-                <div class="col-8">
-                    <input type="text" v-model="usuario.codigo" placeholder="AAAA000000" class="form-control">
-                </div>
-            </div>
             <div class="row p-2">
                 <div class="col-4">
                     Nombre
@@ -77,6 +68,15 @@
                         </select>
                 </div>
             </div>
+            <div class="card-body">
+                <div class="row p-2">
+                    <div class="col-4">
+                        Altura
+                    </div>
+                    <div class="col-8">
+                        <input type="number" v-model="usuario.codigo" placeholder="cm" class="form-control">
+                    </div>
+                </div>
             <div class="row p-2">
                 <div class="col-4">
                     Medicamento
@@ -112,10 +112,35 @@
                     <input type="date" v-model="usuario.fechaac" class="form-control form-control-sm">
                 </div>
             </div>
+            <div class="row p-2" style="display: none;">
+                <div class="col-4">
+                    Fecha registro
+                </div>
+                <div class="col">
+                    <input type="date" v-model="usuario.metabolismo" class="form-control form-control-sm">
+                </div>
+            </div>
+            <div class="row p-2" style="display: none;">
+                <div class="col-4">
+                    Fecha registro
+                </div>
+                <div class="col">
+                    <input type="date" v-model="usuario.pesoideal" class="form-control form-control-sm">
+                </div>
+            </div>
+            <div class="row p-2" style="display: none;">
+                <div class="col-4">
+                    Fecha registro
+                </div>
+                <div class="col">
+                    <input type="date" v-model="usuario.imc" class="form-control form-control-sm">
+                </div>
+            </div>
             <div class="row p-2"> 
                 <div class="col-12 text-center">
                     <input id="btnGuardarUsuarios" type="submit" class="btn btn-primary text-white" value="Guardar">
                     <input type="reset" class="btn btn-warning text-white" value="Limpiar">
+                    <a href="../../generar_repote_usuarios/index.php" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Descargar</a>
                 </div>
             </div>
                     </div>

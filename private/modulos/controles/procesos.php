@@ -13,6 +13,7 @@ print_r(json_encode($control->respuesta));
 /**
  * @class control
  */
+
 class control{
     private $datos = array(), $db;
     public $respuesta = ['msg'=>'correcto'];
@@ -32,7 +33,7 @@ class control{
      * funcion para validar que todos los campos no esten vacios
      */
     private function validar_datos(){
-
+      
         date_default_timezone_set('America/El_salvador');
         $fecha_actual = date("d/m/y H:i:s A");
 
@@ -48,11 +49,17 @@ class control{
         if( empty($this->datos['fecha']['id']) ){
             $this->datos['fecha'] = $fecha_actual;
         }
-        
+        if( empty($this->datos['cantidad']) ){
+            $this->respuesta['msg'] = 'Por favor ingrese la cantidad de Medicamento';
+        }
+       
         
         $this->almacenar_control();
+       
     }
+    
     /**
+     * 
      * funcion para almacenar en la tabla de controles
      * se introducen los datos obtenidos a los campos de la tabla en myqsl 
      */
@@ -60,17 +67,21 @@ class control{
         if( $this->respuesta['msg']==='correcto' ){
             if( $this->datos['accion']==='nuevo' ){
                 $this->db->consultas('
-                    INSERT INTO controles (idUsuario,tipo,idMedicamento,otro,observaciones,fecha,siguiente) VALUES(
+                    INSERT INTO controles (idUsuario,tipo,idMedicamento,otro,observaciones,fecha,siguiente,cantidad) VALUES(
                         "'. $this->datos['usuario']['id'] .'",
                         "'. $this->datos['tipo'].'",
                         "'. $this->datos['medicamento']['id'] .'",
                         "'. $this->datos['otro'] .'",
                         "'. $this->datos['observaciones'] .'",
                         "'. $this->datos['fecha'] .'",
-                        "'. $this->datos['siguiente'] .'"
+                        "'. $this->datos['siguiente'] .'",
+                        "'. $this->datos['cantidad'] .'"
                     )
                 ');
-                $this->respuesta['msg'] = 'Registro insertado correctamente';//mensaje de registrado
+                $this->respuesta['msg'] = 'Registro insertado correctamente';
+              //mensaje de registrado
+                
+              $this->actualizar_cantidad();
                 /**
                  * se obtienen los datos que se actualizan y los actualiza los campos de la tabla
                  */
@@ -83,13 +94,24 @@ class control{
                         otro         = "'. $this->datos['otro'] .'",
                         observaciones         = "'. $this->datos['observaciones'] .'",
                         fecha         = "'. $this->datos['fecha'] .'",
-                        siguiente       = "'. $this->datos['siguiente'] .'"
+                        siguiente       = "'. $this->datos['siguiente'] .'",
+                        cantidad       = "'. $this->datos['cantidad'] .'"
                     WHERE idControl = "'. $this->datos['idControl'] .'"
                 ');
                 $this->respuesta['msg'] = 'Registro actualizado correctamente';//mensaje que se actualizo
+              
             }
         }
     }
+    public function actualizar_cantidad(){
+      
+         $this->db->consultas('
+        UPDATE medicamentos SET cantidad = cantidad - '. $this->datos['cantidad'].' WHERE idMedicamento = "'. $this->datos['medicamento']['id'] .'"
+    ');
+
+    }
+       
+
     /**
      * funcion de buscar los datos de de la tabla controles y se realiza la consuta para que muetre 
      * todos los campos
@@ -99,14 +121,15 @@ class control{
             $valor = implode('-', array_reverse(explode('-',$valor)));
         }
         $this->db->consultas('
-            select controles.idControl, controles.idUsuario, controles.tipo,controles.siguiente, controles.idMedicamento, controles.otro, controles.observaciones,  controles.fecha,
+            select controles.idControl, controles.idUsuario, controles.tipo,controles.siguiente, controles.idMedicamento, controles.otro, controles.observaciones,  controles.fecha,controles.cantidad,
                controles.fecha AS f, 
                 usuarios.codigo, usuarios.nombre,
                 medicamentos.codigom, medicamentos.nombrem,
                 controles.tipo AS t,
                 controles.otro AS k,
                 controles.observaciones AS o,
-                controles.siguiente AS s
+                controles.siguiente AS s,
+                controles.cantidad AS c
             from controles
                 inner join usuarios on(usuarios.idUsuario=controles.idUsuario)
                 inner join medicamentos on(medicamentos.idMedicamento=controles.idMedicamento)
@@ -121,27 +144,7 @@ class control{
          * y los campos de la tabla controles
          */
         $controles = $this->respuesta = $this->db->obtener_data();
-        $fechadehoy = new DateTime();
         foreach ($controles as $key => $value) {
-            $vencimiento = new DateTime($value['s']);
-            $diferencia = $vencimiento -> diff($fechadehoy);
-            $mes = $diferencia ->m;
-            $dia = $diferencia ->d;
-            $verificado = $diferencia ->invert;
-
-            if($verificado == 0){
-              $resultado = 'table-danger color';
-             $mes = $mes*(-1);
-             $dia = $dia*(-1);
-             }else{
-                if($dia > 3){
-                    $resultado = 'blanco';
-                  }
-                  if($dia <= 3){
-                     $resultado = 'table-warning color';
-                  }
-             }
-
             $datos[] = [
                 'idControl' => $value['idControl'],
                 'usuario'      => [
@@ -162,11 +165,9 @@ class control{
                 'f'           => $value['fecha'],
                 'siguiente'       => $value['s'],
                 's'           => $value['siguiente'],
-                'mes' => $mes,
-                'dia' => $dia,
-                'resultado' => $resultado
-
-
+                'cantidad'       => $value['c'],
+                'c'           => $value['cantidad']
+      
             ]; 
         }
         return $this->respuesta = $datos;

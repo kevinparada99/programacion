@@ -1,0 +1,169 @@
+
+
+* {		/*Mini reset*/
+	padding:0;
+	margin:0;
+	text-rendering:optimizelegibility;	/*invalido*/
+	font-family: 'Raleway', helvetica, arial, verdana;
+}
+
+body {
+	background:#f6f6f6;
+}
+
+#boxContent {
+	background:#eee;
+	padding:10px;
+	margin:10px auto;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+#boxContent h1{
+	text-align: center;
+	font-size: 2.4em;
+	font-weight: 100;
+}
+
+.contenedorForm {
+	display: block;
+}
+
+.derecha {
+	text-align: right;
+}
+
+.campoTexto {
+	width:76%;
+	padding:5px 9px;
+	height:25px;
+	border:0;
+	border-radius: 3px;
+	box-shadow:inset 0px 0px 2px rgba(0,0,0,0.3);
+	outline: none;
+	font-size:18px;
+	position: relative;
+}
+
+.campoTexto:focus {
+	box-shadow:inset 0px 0px 6px rgba(0,0,0,0.2);
+}
+
+#nombre {
+	margin:5px 0 5px -10px;
+}
+#email {
+	margin:5px -10px 5px 0;
+}
+#mensaje {
+	margin:5px 0 10px -18px;
+	height: 70px;
+	padding:5px 15px;
+	display: inline-block;
+	vertical-align: middle;
+	max-height: 70px;
+	max-width:76%;
+}
+
+.enviar-btn {
+	width:30%;
+	display: block;
+	margin: 10px auto;
+	padding:10px 2px;
+	background: #1FDE82;
+	font-size: 20px;
+	border:0;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.enviar-btn:hover {
+	opacity:0.9;
+}
+
+.enviar-btn:active {
+	box-shadow:inset 0px 0px 6px rgba(0,0,0,0.3);
+	outline: none;
+	color:#fff;
+}
+
+#formMobile {
+	display: none;
+}
+
+label {
+	background: #1FDE82;
+	border-radius: 100%;
+	padding:10px;
+	display: inline-block;
+	width:100px;
+	height:100px;
+	text-align:center;
+	color:white;
+	line-height: 120px;
+	font-size: 20px;
+	position: relative;
+	z-index: 1;
+	cursor: pointer;
+}
+
+	/*Media queries*/
+
+@media screen and (min-width:1024px) { 	/*Minimo pantallas pequeñas*/
+	#boxContent {
+		width:64%;
+	}
+}
+
+@media screen and (max-width:1024px) {	/*Maximo pantallas pequeñas*/
+	#boxContent {
+		width:84%;
+	}
+}
+@media screen and (max-width:768px) {	/*Estilos para móviles*/
+	#formContent {
+		display: none;
+	}
+
+	#formMobile {
+	display: block;
+	}
+	.radio {
+		visibility: hidden;
+		display: none;
+	}
+
+	label {
+	display: block;
+	margin: 0 auto;
+	text-decoration: underline;
+	}
+
+	.campoTexto {
+		transition:.2s;  /*Dar compatibilidad*/
+	margin: 10px auto;
+	opacity:0;
+	display: block;
+	}
+
+	#radioNombre:checked ~ #nombreMobile {
+		opacity:1;
+	}
+
+	#radioEmail:checked ~ #emailMobile {
+		opacity:1;
+	}
+
+	#radioMensaje:checked ~ #mensajeMobile {
+		opacity:1;
+    }
+    #radioPreparacion:checked ~ #preparacionMobile {
+		opacity:1;
+    }
+    #radioCalorias:checked ~ #caloriasMobile {
+		opacity:1;
+    }
+    #radioImagen:checked ~ #imagenMobile {
+		opacity:1;
+	}
+}

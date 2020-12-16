@@ -23,6 +23,8 @@ var appusuario = new Vue({
             fechaini   : '',
             actual     : '',
             fechaac    : '',
+            metabolismo : '',
+            imc : '',
             enfermedad : '',
             naci       : '',
             observacion: '',
@@ -36,6 +38,42 @@ var appusuario = new Vue({
             let ahora = new Date();
             let agnios = ahora.getFullYear() - fechaDenacimiento.getFullYear();
             this.usuario.naci = agnios;
+
+           if(this.usuario.actual == 'Masculino'){
+            var a = 66.4730;
+            var b = 13.7516;
+            var c = 5.0033;
+            var d = 6.7550;
+            var k=4;
+           }else{
+            var a = 655.0955;
+            var b = 9.5634;
+            var c = 1.8496;
+            var d = 4.6756;
+            var k= 2.5;
+           }
+            
+           if(this.usuario.libras == 'Libras'){
+              var peso = this.usuario.inicial/2.2046;
+           }else{
+               var peso = this.usuario.inicial;
+           }
+            
+           var mb = a+(b*peso)+(c*this.usuario.codigo)-(d*this.usuario.naci);
+          
+           this.usuario.metabolismo = Math.floor(mb);
+
+           var pI = this.usuario.codigo -100 - ((this.usuario.codigo - 150) / 4) + ((this.usuario.naci - 20) / k)
+
+           var PS = pI *2.2046; 
+           this.usuario.pesoideal = Math.floor(PS);
+
+           var alturacmi = this.usuario.codigo / 100.00;
+
+           var tuIMC = peso / (alturacmi*alturacmi)
+
+           this.usuario.imc = tuIMC.toFixed(2);
+
             fetch(`../usuarios/procesos.php?proceso=recibirDatos&usuario=${JSON.stringify(this.usuario)}`).then( resp=>resp.json() ).then(resp=>{
                 if( resp.msg.indexOf("correctamente")>=0 ){
                     alertify.success(resp.msg);

@@ -55,12 +55,22 @@
          * si el usuario es correcto lo manda a prinsipal.php
          * y sino muestra en mensaje 
          */
+    
         if ($resultado !== false){
             $_SESSION['usuario'] = $usuario;
+            $conn=mysqli_connect('localhost','root','','proyec_nutricion');
+            $sql="SELECT * FROM login WHERE usuario='$usuario' AND clave='$clave'";
+            $run_query=mysqli_query($conn,$sql);
+            mysqli_data_seek ($run_query, 0);
+            $extraido= mysqli_fetch_array($run_query);
+            $_SESSION['uid']=$extraido['id'];
+    
             header('location: principal/principal.php');
         }else{
             $error .= "'Este usuario no existe'";
         }
+
+    
     }
 }
 require '../../public/frontend/login-vista.php';//vista del login

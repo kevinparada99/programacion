@@ -21,6 +21,7 @@ var appcontroles = new Vue({
                 idMedicamento : 0,
                 medicamento   : ''
             },
+            cantidad : '',
             otro : '',
             observaciones:  '',
             fecha     : '',

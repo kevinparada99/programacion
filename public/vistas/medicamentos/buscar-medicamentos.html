@@ -21,7 +21,7 @@
                         <th>Cantidad</th>
                         <th>Tipo</th>
                         <th>Ingreso</th>
-                        <th>Caducidad</th>
+                        <th style="width: 100px;">Caducidad</th>
                         <th>Fecha registro</th>
                         <th>Ultima Modificacion</th>
                         <th> </th>
@@ -30,13 +30,13 @@
                 <tbody>
                     <tr v-for="medic in mismedicamentos" :key="medic.idMedicamento" v-on:click="modificarMedicamento(medic)">
                         <td>{{ medic.idMedicamento }}</td>
-                        <td>{{ medic.nombrem }}</td>
-                        <td>{{ medic.cantidad }}</td>
-                        <td>{{ medic.tipo }}</td>
-                        <td>{{ medic.ingreso }}</td>
-                        <td>{{ medic.fecha }}</td>
-                        <td>{{ medic.registro }}</td>
-                        <td>{{ medic.codigom }}</td>
+                        <td>{{ medic.n }}</td>
+                        <td :class="(medic.resul)">{{ medic.a }}</td>
+                        <td>{{ medic.t }}</td>
+                        <td>{{ medic.i }}</td>
+                        <td :class="(medic.resultado)">{{ medic.f }}</td>
+                        <td>{{ medic.r }}</td>
+                        <td>{{ medic.c }}</td>
                         <td>
                             <input v-on:click="eliminarMedicamento(medic.idMedicamento)" type="button" class="btn btn-outline-danger text-white" value="del">
                         </td>
